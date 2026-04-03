@@ -1,4 +1,3 @@
-
 // Particles - only on home page
 const particlesContainer = document.getElementById('particles-js');
 if (particlesContainer) {
@@ -434,47 +433,68 @@ document.addEventListener('DOMContentLoaded', fetchPortfolioData);
 /* --- Manual Image Lightbox for Certificates --- */
 document.addEventListener('DOMContentLoaded', () => {
     const certModal = document.getElementById('certModal');
-    const modalImg = document.getElementById('modalImg');
+    const modalImg  = document.getElementById('modalImg');
     const certThumbs = document.querySelectorAll('.certificate-thumb img');
 
-    if (certModal && modalImg) {
-        // Open Modal
-        certThumbs.forEach(thumb => {
-            thumb.addEventListener('click', (e) => {
-                modalImg.src = e.target.src;
-                modalImg.alt = e.target.alt;
+    if (!certModal || !modalImg) return;
 
-                // Show modal with animation
-                certModal.style.display = 'flex';
-                // Small timeout to trigger CSS transition
-                setTimeout(() => {
-                    certModal.classList.add('active');
-                }, 10);
-
-                document.body.style.overflow = 'hidden'; // Disable page scroll
+    // ── دالة الفتح ──────────────────────────────────────────
+    function openCertModal(src, alt) {
+        modalImg.src = src;
+        modalImg.alt = alt || '';
+        certModal.style.display = 'flex';
+        requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+                certModal.classList.add('active');
             });
         });
+        document.body.style.overflow = 'hidden';
+    }
 
-        // Close Modal: Click anywhere (background or image) as requested
-        certModal.addEventListener('click', () => {
-            certModal.classList.remove('active');
+    // ── دالة الغلق ──────────────────────────────────────────
+    function closeCertModal() {
+        certModal.classList.remove('active');
+        setTimeout(() => {
+            certModal.style.display = 'none';
+            modalImg.src = '';
+        }, 400);
+        document.body.style.overflow = '';
+    }
 
-            // Wait for transition, then hide
-            setTimeout(() => {
-                certModal.style.display = 'none';
-                modalImg.src = ''; // Clear image src
-            }, 400);
-
-            document.body.style.overflow = ''; // Restore page scroll
+    // ── فتح عند الضغط على الصورة ───────────────────────────
+    certThumbs.forEach(thumb => {
+        thumb.addEventListener('click', (e) => {
+            e.stopPropagation();
+            openCertModal(e.target.src, e.target.alt);
         });
+    });
 
-        // Keyboard support: Close on Escape
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && certModal.classList.contains('active')) {
-                certModal.click(); // Trigger the close logic
-            }
+    // ── زرار الغلق × ────────────────────────────────────────
+    const certCloseBtn = certModal.querySelector('.cert-close-btn');
+    if (certCloseBtn) {
+        certCloseBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            closeCertModal();
+        });
+        // دعم اللمس على الموبايل
+        certCloseBtn.addEventListener('touchend', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            closeCertModal();
         });
     }
+
+    // ── غلق عند الضغط على الـ background بس ────────────────
+    certModal.addEventListener('click', (e) => {
+        if (e.target === certModal) closeCertModal();
+    });
+
+    // ── غلق بالـ Escape ──────────────────────────────────────
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && certModal.classList.contains('active')) {
+            closeCertModal();
+        }
+    });
 });
 
 /* --- 3D Vanilla-Tilt.js Interactions --- */
@@ -502,4 +522,3 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
-
