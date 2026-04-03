@@ -202,76 +202,81 @@ if (document.querySelector('.typing')) {
 // Contact form submit handler: EmailJS + formatted mailto fallback
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
-    contactForm.addEventListener('submit', function (e) {
+    contactForm.addEventListener('submit', async function (e) {
         e.preventDefault();
-        const nameEl = document.getElementById('name');
-        const emailEl = document.getElementById('email');
-        const subjectEl = document.getElementById('subject');
-        const messageEl = document.getElementById('message');
-        const name = nameEl ? nameEl.value.trim() : '';
-        const email = emailEl ? emailEl.value.trim() : '';
-        const subject = subjectEl ? subjectEl.value.trim() : '';
-        const message = messageEl ? messageEl.value.trim() : '';
+
         const lang = document.documentElement.lang || 'en';
 
-        const missingMsg = lang === 'ar' ? 'يرجى تعبئة جميع الحقول المطلوبة.' : 'Please fill in all required fields.';
+        // ── Validation ───────────────────────────────────────
+        const name    = document.getElementById('name')?.value.trim()    || '';
+        const email   = document.getElementById('email')?.value.trim()   || '';
+        const subject = document.getElementById('subject')?.value.trim() || '';
+        const message = document.getElementById('message')?.value.trim() || '';
+
         if (!name || !email || !subject || !message) {
-            alert(missingMsg);
+            alert(lang === 'ar' ? 'يرجى تعبئة جميع الحقول المطلوبة.' : 'Please fill in all required fields.');
             return;
         }
 
-        // Check if EmailJS is configured
-        const serviceId = contactForm.dataset.service;
-        const templateId = contactForm.dataset.template;
-        const userId = contactForm.dataset.user;
+        // ── UI: Loading state ─────────────────────────────────
+        const submitBtn = contactForm.querySelector('.submit-btn');
+        const originalBtnHTML = submitBtn ? submitBtn.innerHTML : '';
+        if (submitBtn) {
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = `<i class="fas fa-spinner fa-spin"></i> ${lang === 'ar' ? 'جاري الإرسال...' : 'Sending...'}`;
+        }
 
-        // Helper to show localized confirmation
-        function showConfirmation(text) {
+        // ── Helper: success/error message ────────────────────
+        function showResult(success) {
             const formContainer = document.querySelector('.contact-form-container');
-            if (formContainer) {
-                formContainer.innerHTML = `<div class="form-sent" style="padding:20px;background:rgba(99,102,241,0.06);border-radius:8px;text-align:center;font-weight:600;">${text}</div>`;
+            if (!formContainer) return;
+            if (success) {
+                formContainer.innerHTML = `
+                <div style="
+                    padding: 40px 20px;
+                    text-align: center;
+                    background: rgba(99,102,241,0.07);
+                    border: 1px solid rgba(99,102,241,0.2);
+                    border-radius: 16px;
+                ">
+                    <i class="fas fa-check-circle" style="font-size:3rem; color:#6366f1; margin-bottom:16px; display:block;"></i>
+                    <h3 style="color:#e2e8f0; margin-bottom:10px;">
+                        ${lang === 'ar' ? 'تم إرسال رسالتك بنجاح!' : 'Message Sent Successfully!'}
+                    </h3>
+                    <p style="color:#94a3b8; font-size:0.95rem;">
+                        ${lang === 'ar' ? 'شكراً لتواصلك، سأرد عليك في أقرب وقت.' : 'Thank you for reaching out. I will get back to you soon.'}
+                    </p>
+                </div>`;
+            } else {
+                if (submitBtn) {
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = originalBtnHTML;
+                }
+                alert(lang === 'ar' ? 'حدث خطأ أثناء الإرسال. حاول مرة أخرى.' : 'Something went wrong. Please try again.');
             }
         }
 
-        // Try EmailJS first if configured with real IDs
-        if (serviceId && serviceId !== 'YOUR_EMAILJS_SERVICE_ID' && templateId && templateId !== 'YOUR_EMAILJS_TEMPLATE_ID' && userId && userId !== 'YOUR_EMAILJS_USER_ID' && window.emailjs) {
-            try {
-                emailjs.init(userId);
-                emailjs.sendForm(serviceId, templateId, '#contactForm')
-                    .then(function () {
-                        const okText = lang === 'ar' ? 'تم إرسال رسالتك بنجاح. شكراً!' : 'Your message was sent successfully. Thank you!';
-                        showConfirmation(okText);
-                    }, function (err) {
-                        console.error('EmailJS error:', err);
-                        const failText = lang === 'ar' ? 'حدث خطأ. المرجو المحاولة مجددا.' : 'An error occurred. Please try again.';
-                        alert(failText);
-                    });
-            } catch (err) {
-                console.error('EmailJS exception:', err);
-                fallbackToFormattedEmail();
+        // ── Formspree Send ────────────────────────────────────
+        try {
+            const formspreeId = contactForm.dataset.formspree; // هتحط الـ ID هنا
+            if (!formspreeId || formspreeId === 'YOUR_FORMSPREE_ID') {
+                throw new Error('Formspree ID not configured');
             }
-        } else {
-            // EmailJS not configured or SDK not loaded
-            fallbackToFormattedEmail();
-        }
 
-        // Fallback function: formatted mailto with all fields clearly separated
-        function fallbackToFormattedEmail() {
-            const recipient = 'mohamedmahmouddorah@gmail.com';
-            const bodyText = `${lang === 'ar' ? '=== معلومات المرسل ===' : '=== Sender Information ==='}
-${lang === 'ar' ? 'الاسم:' : 'Name:'} ${name}
-${lang === 'ar' ? 'البريد الإلكتروني:' : 'Email:'} ${email}
+            const res = await fetch(`https://formspree.io/f/${formspreeId}`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                body: JSON.stringify({ name, email, subject, message })
+            });
 
-${lang === 'ar' ? '=== الموضوع ===' : '=== Subject ==='}
-${subject}
-
-${lang === 'ar' ? '=== الرسالة ===' : '=== Message ==='}
-${message}`;
-            const mailto = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyText)}`;
-
-            // Open user's mail client
-            window.location.href = mailto;
-            showConfirmation(lang === 'ar' ? 'تم فتح برنامج البريد. شكراً!' : 'Your mail client was opened. Thank you!');
+            if (res.ok) {
+                showResult(true);
+            } else {
+                throw new Error('Formspree returned error');
+            }
+        } catch (err) {
+            console.error('Form error:', err);
+            showResult(false);
         }
     });
 }

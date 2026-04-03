@@ -1691,7 +1691,7 @@
                         </div>
                         <div class="contact-details">
                             <h3 data-en="Email Me" data-ar="البريد الإلكتروني"></h3>
-                            <a href="mailto:mohamedmahmouddorah@gmail.com">mohamedmahmouddorah@gmail.com</a>
+                            <a href="/cdn-cgi/l/email-protection#64090b0c0509010009050c090b1100000b16050c240309050d084a070b09"><span class="__cf_email__" data-cfemail="5e3331363f333b3a333f3633312b3a3a312c3f361e39333f3732703d3133">[email&#160;protected]</span></a>
                             <p data-en="I'll respond within 24 hours" data-ar="سأرد على رسالتك خلال 24 ساعة"></p>
                         </div>
                     </div>
@@ -1738,8 +1738,7 @@
                              3) Replace the data attributes below with your service ID, template ID and user ID
                              Example: data-service="service_xxx" data-template="template_yyy" data-user="user_zzz"
                         -->
-                    <form id="contactForm" action="#" method="POST" data-service="YOUR_EMAILJS_SERVICE_ID"
-                        data-template="YOUR_EMAILJS_TEMPLATE_ID" data-user="YOUR_EMAILJS_USER_ID">
+                    <form id="contactForm" action="https://formspree.io/f/mojpnzwz" method="POST" data-formspree="mojpnzwz">
                         <div class="form-group">
                             <label for="name" data-en="Your Name" data-ar="اسمك"></label>
                             <input type="text" id="name" name="name" class="form-control" required>
@@ -1762,7 +1761,7 @@
                         </button>
                     </form>
                     <!-- EmailJS SDK (load only on pages with the form) -->
-                    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+                    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://cdn.emailjs.com/dist/email.min.js"></script>
                 </div>
             </div>
 
@@ -1887,12 +1886,4 @@
             let current = '';
             sections.forEach(s => { if (pageYOffset >= s.offsetTop - 150) current = s.getAttribute('id'); });
             links.forEach(l => {
-                l.classList.remove('active');
-                if (l.getAttribute('href') === '#' + current) l.classList.add('active');
-                if (pageYOffset < 100 && l.getAttribute('href') === '#') l.classList.add('active');
-            });
-        });
-    </script>
-</body>
-
-</html>
+                l.classList.remove('ac
