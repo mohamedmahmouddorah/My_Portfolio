@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mohamed Mahmoud - Full Stack Laravel Develo
-        
+
     </title>
     <meta name="description"
         content="Mohamed Mahmoud - Full Stack Developer specializing in Laravel, PHP, and modern web technologies">
@@ -25,6 +25,28 @@
         @import url('css/contact.css');
         @import url('css/about.css');
         @import url('css/education.css');
+        .modal-content-wrapper { position: relative; }
+
+.cert-close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 2rem;
+    color: #fff;
+    cursor: pointer;
+    z-index: 10;
+    line-height: 1;
+    background: rgba(0,0,0,0.6);
+    border-radius: 50%;
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+}
+
+.cert-close-btn:hover { background: #6366f1; }
     </style>
 </head>
 
@@ -105,7 +127,7 @@
 
                     <p class="about-bio"
                         data-en="Hello! I'm Mohamed Mahmoud, a dedicated Full Stack Developer and IT student at New Assiut Technological University. With over 3 years of professional experience, I specialize in engineering high-performance web applications that balance complex backend logic with intuitive user interfaces. My journey is driven by a passion for solving architectural challenges—whether it's optimizing data streams or building scalable systems with PHP and Laravel. I don't just build websites; I craft digital solutions that are efficient, secure, and future-ready."
-                        data-ar="مرحباً! أنا محمد محمود، مطور ويب متكامل (Full Stack) وطالب بقسم تكنولوجيا المعلومات بجامعة أسيوط التكنولوجية. أمتلك خبرة عملية تزيد عن 3 سنوات في بناء وتطوير تطبيقات الويب الحديثة، مع تركيز خاص على دمج قوة المنطق البرمجي في الخلفية مع سلاسة تجربة المستخدم في الواجهة الأمامية. بدأت رحلتي في هذا المجال بشغف كبير لحل المشكلات التقنية، ومنذ ذلك الحين، عملت على مشاريع متنوعة صقلت مهاراتي في بناء أنظمة برمجية آمنة وقابلة للتوسع، مع الالتزام دائمًا بتحويل الأفكار المعقدة إلى حلول رقمية بسيطة وفعالة.">
+                        data-ar="مرحباً! أنا محمد محمود، مطور ويب متكامل (Full Stack) وطالب بقسم تكنولوجيا المعلومات بجامعة أسيوط الجديده التكنولوجية. أمتلك خبرة عملية تزيد عن 3 سنوات في بناء وتطوير تطبيقات الويب الحديثة، مع تركيز خاص على دمج قوة المنطق البرمجي في الخلفية مع سلاسة تجربة المستخدم في الواجهة الأمامية. بدأت رحلتي في هذا المجال بشغف كبير لحل المشكلات التقنية، ومنذ ذلك الحين، عملت على مشاريع متنوعة صقلت مهاراتي في بناء أنظمة برمجية آمنة وقابلة للتوسع، مع الالتزام دائمًا بتحويل الأفكار المعقدة إلى حلول رقمية بسيطة وفعالة.">
                     </p>
 
                     <div class="about-actions">
@@ -348,14 +370,14 @@
 
                         <div class="timeline-desc">
                             <ul>
-                                <li data-en="Developed and deployed 5+ full-stack web applications using Laravel & MySQL, improving client operational efficiency by 20%."
-                                    data-ar="تطوير ونشر أكثر من 5 تطبيقات ويب متكاملة باستخدام Laravel و MySQL، مما حسن كفاءة العمليات لدى العملاء بنسبة 20%.">
+                                <li data-en="Developed and deployed 10+ full-stack web applications using Laravel & MySQL, improving client operational efficiency by 90%."
+                                    data-ar="تطوير ونشر أكثر من 10 تطبيقات ويب متكاملة باستخدام Laravel و MySQL، مما حسن كفاءة العمليات لدى العملاء بنسبة 90%.">
                                 </li>
                                 <li data-en="Designed robust RESTful APIs supporting high-load data processing and secure user authentication."
                                     data-ar="تصميم واجهات برمجة تطبيقات (APIs) قوية تدعم معالجة البيانات عالية الحمل وتوثيق المستخدمين الآمن.">
                                 </li>
-                                <li data-en="Optimized database queries and indexing, reducing page load times by 30%."
-                                    data-ar="تحسين استعلامات قواعد البيانات والفهرسة، مما قلل أوقات تحميل الصفحات بنسبة 30%.">
+                                <li data-en="Optimized database queries and indexing, reducing page load times by 80%."
+                                    data-ar="تحسين استعلامات قواعد البيانات والفهرسة، مما قلل أوقات تحميل الصفحات بنسبة 80%.">
                                 </li>
                             </ul>
                         </div>
@@ -411,7 +433,7 @@
             <div class="education-intro">
                 <p class="education-intro-desc"
                     data-en="Bridging academic knowledge with industry-leading certifications from ITI, Huawei, and Cisco to build next-generation software solutions."
-                    data-ar="أربط بين المعرفة الأكاديمية والشهادات العالمية من معهد تكنولوجيا المعلومات (ITI)، هواوي، وسيسكو لبناء حلول برمجية متطورة.">
+                    data-ar="أربط بين المعرفة الأكاديمية والشهادات العالمية من معهد تكنولوجيا المعلومات (ITI)، هواوي، وسيسكو وغيرهم لبناء حلول برمجية متطورة.">
                 </p>
             </div>
 
@@ -458,721 +480,1114 @@
             <h2 class="education-subtitle" data-en="Licenses & Professional Certificates"
                 data-ar="التراخيص والشهادات الاحترافية"></h2>
 
-            <div class="certificates-grid" id="certificates-container">
+          <div class="certificates-grid" id="certificates-container">
 
-                <div class="certificate-card">
-                    <h3 data-en="Full Stack Web Development (PHP)" data-ar="تطوير ويب Full Stack (PHP)"></h3>
-                    <p class="certificate-meta" data-en="ITI - Information Technology Institute"
-                        data-ar="معهد تكنولوجيا المعلومات (ITI)"></p>
-                    <p class="certificate-desc" data-en="Comprehensive training in PHP/Laravel ecosystem."
-                        data-ar="تدريب شامل في بيئة عمل PHP و Laravel."></p>
-                    <div class="certificate-thumb">
-                        <img src="imges/certificates/Full-stack-in-port-said.jpg" alt="Full Stack PHP">
+    <div class="certificate-card">
+        <h3 data-en="Advanced HTML5 & CSS3" data-ar="تقنيات HTML5 و CSS3 المتقدمة"></h3>
+        <p class="certificate-meta" data-en="Maharah - ITI" data-ar="منصة مهارة - ITI"></p>
+        <p class="certificate-desc"
+            data-en="Building semantic web structures and applying advanced CSS3 styling techniques for modern, responsive browsers."
+            data-ar="بناء هياكل الويب الدلالية وتطبيق تقنيات CSS3 المتقدمة لإنشاء صفحات متجاوبة على المتصفحات الحديثة."></p>
+        <div class="certificate-thumb">
+            <img src="imges/certificates/html&css.png" alt="HTML and CSS Certificate">
+        </div>
+    </div>
+
+    <div class="certificate-card">
+        <h3 data-en="Database Administration Fundamentals" data-ar="أساسيات إدارة قواعد البيانات"></h3>
+        <p class="certificate-meta" data-en="Information Technology Institute (ITI)" data-ar="معهد تكنولوجيا المعلومات (ITI)"></p>
+        <p class="certificate-desc"
+            data-en="Mastering SQL, relational database design, data integrity, and core administration tasks."
+            data-ar="إتقان لغة SQL وتصميم قواعد البيانات العلائقية وضمان سلامة البيانات وتنفيذ مهام الإدارة الأساسية."></p>
+        <div class="certificate-thumb">
+            <img src="imges/certificates/DataBase.png" alt="Database Fundamentals">
+        </div>
+    </div>
+
+    <div class="certificate-card">
+        <h3 data-en="PHP Web Development" data-ar="تطوير تطبيقات الويب باستخدام PHP"></h3>
+        <p class="certificate-meta" data-en="Maharah Platform - ITI" data-ar="منصة مهارة - معهد تكنولوجيا المعلومات"></p>
+        <p class="certificate-desc"
+            data-en="Building dynamic, server-side web applications using PHP for efficient backend logic and content management."
+            data-ar="بناء تطبيقات ويب ديناميكية من جانب الخادم باستخدام PHP لإدارة المحتوى وتطوير منطق الخلفية بكفاءة."></p>
+        <div class="certificate-thumb">
+            <img src="imges/certificates/php Development.jpg" alt="PHP Development ITI">
+        </div>
+    </div>
+
+    <div class="certificate-card">
+        <h3 data-en="Full Stack Web Development (PHP)" data-ar="تطوير ويب Full Stack (PHP)"></h3>
+        <p class="certificate-meta" data-en="ITI - Information Technology Institute" data-ar="معهد تكنولوجيا المعلومات (ITI)"></p>
+        <p class="certificate-desc"
+            data-en="Comprehensive training covering both frontend and backend development within the PHP and Laravel ecosystem."
+            data-ar="تدريب شامل يغطي تطوير الواجهة الأمامية والخلفية ضمن بيئة عمل PHP و Laravel المتكاملة."></p>
+        <div class="certificate-thumb">
+            <img src="imges/certificates/Full-stack-in-port-said.jpg" alt="Full Stack PHP">
+        </div>
+    </div>
+
+    <div class="certificate-card">
+        <h3 data-en="Professional Web Designer" data-ar="مصمم ويب محترف (NTI)"></h3>
+        <p class="certificate-meta" data-en="National Telecommunication Institute (NTI)" data-ar="المعهد القومي للاتصالات (NTI)"></p>
+        <p class="certificate-desc"
+            data-en="Specialized training in responsive layouts, UI/UX principles, and modern web design standards."
+            data-ar="تدريب متخصص في تصميم التخطيطات المتجاوبة ومبادئ تجربة المستخدم ومعايير تصميم الويب الحديثة."></p>
+        <div class="certificate-thumb">
+            <img src="imges/certificates/Web Designer NTI.png" alt="Web Designer NTI">
+        </div>
+    </div>
+
+    <div class="certificate-card">
+        <h3 data-en="Cybersecurity Essentials" data-ar="أساسيات الأمن السيبراني"></h3>
+        <p class="certificate-meta" data-en="Cisco Networking Academy" data-ar="أكاديمية سيسكو للشبكات"></p>
+        <p class="certificate-desc"
+            data-en="Covering core concepts of network security, threat detection, and data protection strategies."
+            data-ar="تغطية المفاهيم الأساسية لأمن الشبكات واكتشاف التهديدات واستراتيجيات حماية البيانات."></p>
+        <div class="certificate-thumb">
+            <img src="imges/certificates/Cybersecurity.png" alt="Cybersecurity">
+        </div>
+    </div>
+
+    <div class="certificate-card">
+        <h3 data-en="Python Programming" data-ar="برمجة بايثون"></h3>
+        <p class="certificate-meta" data-en="MaharaTech - ITI" data-ar="مهارة تك - ITI"></p>
+        <p class="certificate-desc"
+            data-en="Mastering Python fundamentals, data structures, and core programming logic for problem-solving."
+            data-ar="إتقان أساسيات بايثون وهياكل البيانات والمنطق البرمجي الأساسي لحل المشكلات."></p>
+        <div class="certificate-thumb">
+            <img src="imges/certificates/python.png" alt="Python">
+        </div>
+    </div>
+
+    <div class="certificate-card highlight-card">
+        <h3 data-en="HCIA-AI V3.5 Professional" data-ar="شهادة HCIA-AI الاحترافية"></h3>
+        <p class="certificate-meta" data-en="Huawei Certified Academy" data-ar="أكاديمية هواوي المعتمدة"></p>
+        <p class="certificate-desc"
+            data-en="Advanced professional certification in Artificial Intelligence technologies, issued by Huawei Certified Academy."
+            data-ar="شهادة احترافية متقدمة في تقنيات الذكاء الاصطناعي، صادرة من أكاديمية هواوي المعتمدة."></p>
+        <div class="certificate-thumb">
+            <img src="imges/certificates/HCIA-AI_Professional_certification.jpg" alt="HCIA-AI">
+        </div>
+    </div>
+
+    <div class="certificate-card">
+        <h3 data-en="Artificial Intelligence Fundamentals" data-ar="أساسيات الذكاء الاصطناعي"></h3>
+        <p class="certificate-meta" data-en="Huawei ICT Academy" data-ar="أكاديمية هواوي لتكنولوجيا المعلومات"></p>
+        <p class="certificate-desc"
+            data-en="Introduction to core AI concepts, Machine Learning, and Deep Learning applications within the Huawei ICT program."
+            data-ar="مقدمة في مفاهيم الذكاء الاصطناعي الأساسية وتعلم الآلة وتطبيقات التعلم العميق ضمن برنامج هواوي لتكنولوجيا المعلومات."></p>
+        <div class="certificate-thumb">
+            <img src="imges/certificates/HCIA-AI.jpg" alt="Huawei AI Fundamentals">
+        </div>
+    </div>
+
+    <div class="certificate-card">
+        <h3 data-en="HCIA-AI V3.5 Certification" data-ar="شهادة HCIA-AI V3.5 من هواوي"></h3>
+        <p class="certificate-meta" data-en="Huawei ICT Academy" data-ar="أكاديمية هواوي لتكنولوجيا المعلومات"></p>
+        <p class="certificate-desc"
+            data-en="Certified associate in AI covering Deep Learning, Neural Networks, and AI application frameworks by Huawei."
+            data-ar="شهادة معتمدة في الذكاء الاصطناعي تشمل التعلم العميق والشبكات العصبية وأطر عمل تطبيقات الذكاء الاصطناعي من هواوي."></p>
+        <div class="certificate-thumb">
+            <img src="imges/certificates/ai_huawei.png" alt="HCIA-AI Huawei">
+        </div>
+    </div>
+
+    <div class="certificate-card">
+        <h3 data-en="WordPress Development" data-ar="تطوير ووردبريس"></h3>
+        <p class="certificate-meta" data-en="MaharaTech - ITI" data-ar="مهارة تك - ITI"></p>
+        <p class="certificate-desc"
+            data-en="Building and customizing WordPress-based websites with a focus on CMS management and theme development."
+            data-ar="بناء وتخصيص المواقع القائمة على ووردبريس مع التركيز على إدارة نظام المحتوى وتطوير القوالب."></p>
+        <div class="certificate-thumb">
+            <img src="imges/certificates/wordpress.png" alt="WordPress">
+        </div>
+    </div>
+
+    <div class="certificate-card">
+        <h3 data-en="Leadership Cup Track" data-ar="مسار كأس القيادة"></h3>
+        <p class="certificate-meta" data-en="Ministry of Youth & Sports" data-ar="وزارة الشباب والرياضة"></p>
+        <p class="certificate-desc"
+            data-en="Developing strategic thinking, teamwork, and leadership skills through the Ministry of Youth & Sports program."
+            data-ar="تطوير مهارات التفكير الاستراتيجي والعمل الجماعي والقيادة من خلال برنامج وزارة الشباب والرياضة."></p>
+        <div class="certificate-thumb">
+            <img src="imges/certificates/Freeway.png" alt="Leadership">
+        </div>
+    </div>
+
+</div>
+    </section>
+
+    <!-- Projects Section -->
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section">
+        <div class="container">
+            <h1 class="section-title projects-header-center" data-en="My Projects" data-ar="مشاريعي"></h1>
+
+            <div class="projects-filter">
+                <button class="filter-btn active" data-filter="all" data-en="All" data-ar="الكل">All</button>
+                <button class="filter-btn" data-filter="web" data-en="Web Development" data-ar="تطوير الويب">Web
+                    Development</button>
+                <button class="filter-btn" data-filter="mobile" data-en="Mobile Apps" data-ar="تطبيقات الموبايل">Mobile
+                    Apps</button>
+                <button class="filter-btn" data-filter="design" data-en="UI/UX Design" data-ar="تخيل / UX UI">UI/UX
+                    Design</button>
+                <button class="filter-btn" data-filter="java" data-en="Java" data-ar="جافا">Java</button>
+            </div>
+
+            <div class="projects-grid" id="projectsGrid">
+
+                <!-- ═══════════════════════════════════════════
+                 DestinationConnect
+            ═══════════════════════════════════════════ -->
+                <div class="project-card fade-in" data-category="web">
+                    <div class="project-image">
+                        <img src="imges/projects/DestinationConnect/DestinationConnect.png" alt="DestinationConnect"
+                            onerror="this.src='https://placehold.co/400x250/1a1a2e/6366f1?text=DestinationConnect'">
+                        <span class="project-category" data-en="Frontend" data-ar="واجهة مستخدم">Frontend</span>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title" data-en="DestinationConnect" data-ar="ديستنيشن كونكت">
+                            DestinationConnect</h3>
+                        <p class="project-description"
+                            data-en="Interactive travel platform with dynamic destination selection, traveler requirement forms, and booking logic."
+                            data-ar="منصة سفر تفاعلية تتيح اختيار الوجهات ديناميكياً، مع نماذج متكاملة لإدخال متطلبات المسافر ومنطق الحجز.">
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML/CSS</span>
+                            <span class="tech-tag">JS Logic</span>
+                            <span class="tech-tag">Validation</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link primary view-project" data-project="project-travel">
+                                <i class="fas fa-eye"></i> <span data-en="View" data-ar="عرض">عرض</span>
+                            </a>
+                            <a href="https://github.com/mohamedmahmouddorah/DestinationConnect" target="_blank"
+                                class="project-link secondary">
+                                <i class="fab fa-github"></i> <span data-en="Code" data-ar="الكود">الكود</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
 
-                <div class="certificate-card highlight-card">
-                    <h3 data-en="HCIA-AI V3.5 Professional" data-ar="شهادة HCIA-AI الاحترافية"></h3>
-                    <p class="certificate-meta" data-en="Huawei Certified Academy" data-ar="أكاديمية هواوي المعتمدة">
-                    </p>
-                    <p class="certificate-desc"
-                        data-en="Advanced certification in Artificial Intelligence technologies."
-                        data-ar="شهادة متقدمة في تقنيات الذكاء الاصطناعي."></p>
-                    <div class="certificate-thumb">
-                        <img src="imges/certificates/HCIA-AI_Professional_certification.jpg" alt="HCIA-AI">
+                <div id="project-travel" class="project-modal">
+                    <div class="modal-content">
+                        <span class="close-modal">&times;</span>
+                        <div class="modal-gallery-wrapper" style="padding:15px;">
+                            <div class="main-display-container"
+                                style="margin-bottom:12px; text-align:center; background:#000; border-radius:12px; overflow:hidden;">
+                                <img src="imges/projects/DestinationConnect/DestinationConnect1.png"
+                                    id="travel_main_img" style="width:100%; max-height:400px; object-fit:contain;"
+                                    alt="Destination Preview">
+                            </div>
+                            <div class="thumbnails-grid"
+                                style="display:grid; grid-template-columns:repeat(auto-fill, minmax(80px, 1fr)); gap:10px;">
+                                <img src="imges/projects/DestinationConnect/DestinationConnect2.png"
+                                    onclick="showImage('travel_main_img',this.src)"
+                                    style="width:100%; height:60px; object-fit:cover; cursor:pointer; border-radius:6px; border:2px solid #6366f1;">
+                                <img src="imges/projects/DestinationConnect/DestinationConnect3.png"
+                                    onclick="showImage('travel_main_img',this.src)"
+                                    style="width:100%; height:60px; object-fit:cover; cursor:pointer; border-radius:6px; border:1px solid #444;">
+                                <img src="imges/projects/DestinationConnect/DestinationConnect4.png"
+                                    onclick="showImage('travel_main_img',this.src)"
+                                    style="width:100%; height:60px; object-fit:cover; cursor:pointer; border-radius:6px; border:1px solid #444;">
+                                <img src="imges/projects/DestinationConnect/DestinationConnect5.png"
+                                    onclick="showImage('travel_main_img',this.src)"
+                                    style="width:100%; height:60px; object-fit:cover; cursor:pointer; border-radius:6px; border:1px solid #444;">
+                                <img src="imges/projects/DestinationConnect/DestinationConnect6.png"
+                                    onclick="showImage('travel_main_img',this.src)"
+                                    style="width:100%; height:60px; object-fit:cover; cursor:pointer; border-radius:6px; border:1px solid #444;">
+                            </div>
+                        </div>
+                        <div class="modal-body">
+                            <h2 class="modal-title" data-en="DestinationConnect: Smart Booking"
+                                data-ar="ديستنيشن كونكت: الحجز الذكي">DestinationConnect</h2>
+                            <p class="modal-description"
+                                data-en="DestinationConnect provides a seamless travel planning experience. Users can browse world-class destinations, select specific countries, and fill out a comprehensive booking form that captures traveler requirements and validates data in real-time."
+                                data-ar="يوفر ديستنيشن كونكت تجربة سلسة لتخطيط السفر مع نظام تحقق فوري من البيانات.">
+                            </p>
+                            <div class="features-section"
+                                style="margin-top:20px; border-top:1px solid #444; padding-top:15px;">
+                                <h4 style="color:#6366f1; margin-bottom:10px;" data-en="Core Logic:"
+                                    data-ar="المنطق الأساسي:"></h4>
+                                <ul style="list-style:none; padding:0; color:#ccc; font-size:0.95rem;">
+                                    <li style="margin-bottom:8px;"><i class="fas fa-check-circle"
+                                            style="color:#6366f1; margin-left:8px;"></i> <span
+                                            data-en="Interactive Country Selection"
+                                            data-ar="اختيار الدولة والوجهة بشكل تفاعلي"></span></li>
+                                    <li style="margin-bottom:8px;"><i class="fas fa-check-circle"
+                                            style="color:#6366f1; margin-left:8px;"></i> <span
+                                            data-en="Dynamic Booking & Requirement Forms"
+                                            data-ar="نماذج حجز ديناميكية لجمع المتطلبات"></span></li>
+                                    <li style="margin-bottom:8px;"><i class="fas fa-check-circle"
+                                            style="color:#6366f1; margin-left:8px;"></i> <span
+                                            data-en="Frontend Form Validation"
+                                            data-ar="نظام تحقق (Validation) لضمان صحة البيانات"></span></li>
+                                </ul>
+                            </div>
+                            <div class="tech-stack-used"
+                                style="margin-top:20px; border-top:1px solid #444; padding-top:15px;">
+                                <h4 data-en="Tech Stack:" data-ar="التقنيات:"></h4>
+                                <div class="project-tech">
+                                    <span class="tech-tag">HTML5/CSS3</span>
+                                    <span class="tech-tag">JavaScript</span>
+                                    <span class="tech-tag">UI/UX Flow</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="certificate-card">
-                    <h3 data-en="Cybersecurity Essentials" data-ar="أساسيات الأمن السيبراني"></h3>
-                    <p class="certificate-meta" data-en="Cisco Networking Academy" data-ar="أكاديمية سيسكو للشبكات"></p>
-                    <p class="certificate-desc" data-en="Focus on network security and data protection."
-                        data-ar="التركيز على أمن الشبكات وحماية البيانات."></p>
-                    <div class="certificate-thumb">
-                        <img src="imges/certificates/Cybersecurity.png" alt="Cybersecurity">
+                <!-- Flow Store -->
+                <div class="project-card fade-in" data-category="web">
+                    <div class="project-image">
+                        <img src="imges/projects/flow_store/flow_store.png" alt="Flow Store Beni Suef"
+                            onerror="this.src='https://placehold.co/400x250/dc321f/ffffff?text=Flow+Store+Main'">
+                        <span class="project-category" data-en="Front-End" data-ar="واجهات أمامية">Front-End</span>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title" data-en="Flow Store: E-commerce Ecosystem"
+                            data-ar="فلو ستور: منظومة المتجر الإلكتروني">Flow Store: E-commerce Ecosystem</h3>
+                        <p class="project-description"
+                            data-en="A premium UI showcase featuring multiple views: Product Grid, Category Filtering, and full RTL architecture. Built with Pure CSS."
+                            data-ar="عرض واجهات احترافي يشمل زوايا متعددة: شبكة المنتجات، فلترة الأقسام، وتصميم متجاوب بالكامل. مبني بـ CSS خالص.">
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS Grid</span>
+                            <span class="tech-tag">Multi-View</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link primary view-project" data-project="flow_store_multi">
+                                <i class="fas fa-eye"></i> <span data-en="View" data-ar="عرض">عرض</span>
+                            </a>
+                            <a href="https://github.com/mohamedmahmouddorah/Flow_Store_beni_suef" target="_blank"
+                                class="project-link secondary">
+                                <i class="fab fa-github"></i> <span data-en="Code" data-ar="الكود">Code</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
 
-                <div class="certificate-card">
-                    <h3 data-en="Python Programming" data-ar="برمجية بايثون"></h3>
-                    <p class="certificate-meta" data-en="MaharaTech - ITI" data-ar="مهارة تك - ITI"></p>
-                    <p class="certificate-desc" data-en="Mastering Python fundamentals and logic."
-                        data-ar="إتقان أساسيات بايثون والمنطق البرمجي."></p>
-                    <div class="certificate-thumb">
-                        <img src="imges/certificates/python.png" alt="Python">
+                <div id="flow_store_multi" class="project-modal">
+                    <div class="modal-content">
+                        <span class="close-modal">&times;</span>
+                        <div class="modal-gallery-wrapper" style="padding:15px;">
+                            <div class="main-display-container" style="margin-bottom:10px; text-align:center;">
+                                <img src="imges/projects/flow_store/flow_store1.png" id="flow_main_img"
+                                    style="width:100%; max-height:500px; object-fit:contain; border-radius:8px; border:1px solid #333;"
+                                    alt="Main Showcase">
+                            </div>
+                            <div class="thumbnails-grid"
+                                style="display:grid; grid-template-columns:repeat(auto-fill, minmax(80px, 1fr)); gap:10px;">
+                                <img src="imges/projects/flow_store/flow_store2.png"
+                                    onclick="showImage('flow_main_img',this.src)"
+                                    style="width:100%; height:60px; object-fit:cover; cursor:pointer; border-radius:4px; border:1px solid #444;">
+                                <img src="imges/projects/flow_store/flow_store3.png"
+                                    onerror="this.src='https://placehold.co/150x100/333/fff?text=View+2'"
+                                    onclick="showImage('flow_main_img',this.src)"
+                                    style="width:100%; height:60px; object-fit:cover; cursor:pointer; border-radius:4px; border:1px solid #444;">
+                                <img src="imges/projects/flow_store/flow_store4.png"
+                                    onerror="this.src='https://placehold.co/150x100/333/fff?text=View+3'"
+                                    onclick="showImage('flow_main_img',this.src)"
+                                    style="width:100%; height:60px; object-fit:cover; cursor:pointer; border-radius:4px; border:1px solid #444;">
+                                <img src="imges/projects/flow_store/flow_store5.png"
+                                    onerror="this.src='https://placehold.co/150x100/333/fff?text=View+4'"
+                                    onclick="showImage('flow_main_img',this.src)"
+                                    style="width:100%; height:60px; object-fit:cover; cursor:pointer; border-radius:4px; border:1px solid #444;">
+                            </div>
+                        </div>
+                        <div class="modal-body">
+                            <div class="modal-header-flex"
+                                style="display:flex; justify-content:space-between; align-items:center; margin-bottom:15px;">
+                                <div>
+                                    <h2 class="modal-title" data-en="Flow Store: Multi-Interface Showcase"
+                                        data-ar="فلو ستور: عرض الواجهات المتعددة"></h2>
+                                    <span class="modal-subtitle" data-en="Pure CSS E-commerce Architecture"
+                                        data-ar="بنية تجارة إلكترونية بـ CSS خالص"></span>
+                                </div>
+                                <i class="fas fa-images" style="font-size:2rem; color:#dc321f;"></i>
+                            </div>
+                            <p class="modal-description"
+                                data-en="Explore the complete user journey of Flow Store through multiple views, showcasing the product catalog, category transitions, and responsive design layouts."
+                                data-ar="استكشف رحلة المستخدم الكاملة في متجر فلو من خلال زوايا عرض متعددة."></p>
+                            <div class="tech-stack-used"
+                                style="margin-top:25px; border-top:1px solid #333; padding-top:15px;">
+                                <h4 data-en="Built With:" data-ar="تم البناء بواسطة:"></h4>
+                                <div class="project-tech">
+                                    <span class="tech-tag">HTML5</span>
+                                    <span class="tech-tag">Advanced CSS3</span>
+                                    <span class="tech-tag">Responsive Grid</span>
+                                    <span class="tech-tag">Vanilla JS Gallery</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="certificate-card">
-                    <h3 data-en="WordPress Development" data-ar="تطوير ووردبريس"></h3>
-                    <p class="certificate-meta" data-en="MaharaTech - ITI" data-ar="مهارة تك - ITI"></p>
-                    <p class="certificate-desc" data-en="CMS customization and management."
-                        data-ar="تخصيص وإدارة أنظمة إدارة المحتوى."></p>
-                    <div class="certificate-thumb">
-                        <img src="imges/certificates/wordpress.png" alt="WordPress">
+                <!-- University Management System -->
+                <div class="project-card fade-in" data-category="web">
+                    <div class="project-image">
+                        <img src="imges/projects/unvrsity/unvrsity.png" alt="University Management System"
+                            onerror="this.src='https://placehold.co/400x250/1a1a2e/6366f1?text=University+System'">
+                        <span class="project-category" data-en="Full-Stack" data-ar="فول ستاك">Full-Stack</span>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title" data-en="University Management System"
+                            data-ar="إيدو-تراك: نظام إدارة الجامعة">EduTrack: University LMS</h3>
+                        <p class="project-description"
+                            data-en="A sophisticated LMS featuring QR-based attendance, assignment management, and dynamic access control. Built with a focus on real-time academic workflows between Students, Faculty, and Admins."
+                            data-ar="نظام إدارة تعلم متطور يتميز بالتحضير الذكي عبر الـ QR Code، وإدارة التكليفات، والتحكم الديناميكي في الصلاحيات.">
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Laravel 10</span>
+                            <span class="tech-tag">MySQL</span>
+                            <span class="tech-tag">QR-Scanner.js</span>
+                            <span class="tech-tag">RBAC System</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link primary view-project" data-project="edu_track_system">
+                                <i class="fas fa-eye"></i> <span data-en="View" data-ar="عرض">View</span>
+                            </a>
+                            <a href="https://github.com/aymangamalofficial/UniversityManagementSystem" target="_blank"
+                                class="project-link secondary">
+                                <i class="fab fa-github"></i> <span data-en="Code" data-ar="الكود">Code</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
 
-                <div class="certificate-card">
-                    <h3 data-en="Leadership Cup Track" data-ar="مسار كأس القيادة"></h3>
-                    <p class="certificate-meta" data-en="Ministry of Youth & Sports" data-ar="وزارة الشباب والرياضة">
-                    </p>
-                    <p class="certificate-desc" data-en="Strategic thinking and leadership skills."
-                        data-ar="التفكير الاستراتيجي ومهارات القيادة."></p>
-                    <div class="certificate-thumb">
-                        <img src="imges/certificates/Freeway.png" alt="Leadership">
+                <div id="edu_track_system" class="project-modal">
+                    <div class="modal-content">
+                        <span class="close-modal">&times;</span>
+                        <div class="modal-gallery-wrapper" style="padding:15px;">
+                            <div class="main-display-container"
+                                style="margin-bottom:12px; text-align:center; background:#000; border-radius:12px; overflow:hidden;">
+                                <img src="imges/projects/unvrsity/unvrsity1.png" id="edu_main_img"
+                                    style="width:100%; max-height:450px; object-fit:contain;" alt="Main System View">
+                            </div>
+                            <div class="thumbnails-grid"
+                                style="display:grid; grid-template-columns:repeat(auto-fill, minmax(80px, 1fr)); gap:10px;">
+                                <img src="imges/projects/unvrsity/unvrsity1.png"
+                                    onclick="showImage('edu_main_img',this.src)"
+                                    style="width:100%; height:60px; object-fit:cover; cursor:pointer; border-radius:6px; border:2px solid #6366f1;"
+                                    alt="Dashboard">
+                                <img src="imges/projects/unvrsity/unvrsity2.png"
+                                    onerror="this.src='https://placehold.co/150x100/1a1a2e/fff?text=Students'"
+                                    onclick="showImage('edu_main_img',this.src)"
+                                    style="width:100%; height:60px; object-fit:cover; cursor:pointer; border-radius:6px; border:1px solid #444;">
+                                <img src="imges/projects/unvrsity/unvrsity3.png"
+                                    onerror="this.src='https://placehold.co/150x100/1a1a2e/fff?text=QR+System'"
+                                    onclick="showImage('edu_main_img',this.src)"
+                                    style="width:100%; height:60px; object-fit:cover; cursor:pointer; border-radius:6px; border:1px solid #444;">
+                                <img src="imges/projects/unvrsity/unvrsity4.png"
+                                    onerror="this.src='https://placehold.co/150x100/1a1a2e/fff?text=Courses'"
+                                    onclick="showImage('edu_main_img',this.src)"
+                                    style="width:100%; height:60px; object-fit:cover; cursor:pointer; border-radius:6px; border:1px solid #444;">
+                                <img src="imges/projects/unvrsity/unvrsity5.png"
+                                    onerror="this.src='https://placehold.co/150x100/1a1a2e/fff?text=Admin+Panel'"
+                                    onclick="showImage('edu_main_img',this.src)"
+                                    style="width:100%; height:60px; object-fit:cover; cursor:pointer; border-radius:6px; border:1px solid #444;">
+                                <img src="imges/projects/unvrsity/unvrsity6.png"
+                                    onerror="this.src='https://placehold.co/150x100/1a1a2e/fff?text=Assignment+Portal'"
+                                    onclick="showImage('edu_main_img',this.src)"
+                                    style="width:100%; height:60px; object-fit:cover; cursor:pointer; border-radius:6px; border:1px solid #444;">
+                                <img src="imges/projects/unvrsity/unvrsity7.png"
+                                    onerror="this.src='https://placehold.co/150x100/1a1a2e/fff?text=Grade+Tracking'"
+                                    onclick="showImage('edu_main_img',this.src)"
+                                    style="width:100%; height:60px; object-fit:cover; cursor:pointer; border-radius:6px; border:1px solid #444;">
+                                <img src="imges/projects/unvrsity/unvrsity8.png"
+                                    onerror="this.src='https://placehold.co/150x100/1a1a2e/fff?text=Access+Control'"
+                                    onclick="showImage('edu_main_img',this.src)"
+                                    style="width:100%; height:60px; object-fit:cover; cursor:pointer; border-radius:6px; border:1px solid #444;">
+                                <img src="imges/projects/unvrsity/unvrsity9.png"
+                                    onerror="this.src='https://placehold.co/150x100/1a1a2e/fff?text=Mobile+View'"
+                                    onclick="showImage('edu_main_img',this.src)"
+                                    style="width:100%; height:60px; object-fit:cover; cursor:pointer; border-radius:6px; border:1px solid #444;">
+                                <img src="imges/projects/unvrsity/unvrsity10.png"
+                                    onerror="this.src='https://placehold.co/150x100/1a1a2e/fff?text=User+Roles'"
+                                    onclick="showImage('edu_main_img',this.src)"
+                                    style="width:100%; height:60px; object-fit:cover; cursor:pointer; border-radius:6px; border:1px solid #444;">
+                                <img src="imges/projects/unvrsity/unvrsity11.png"
+                                    onerror="this.src='https://placehold.co/150x100/1a1a2e/fff?text=Course+Materials'"
+                                    onclick="showImage('edu_main_img',this.src)"
+                                    style="width:100%; height:60px; object-fit:cover; cursor:pointer; border-radius:6px; border:1px solid #444;">
+                            </div>
+                        </div>
+                        <div class="modal-body">
+                            <div class="modal-header-flex"
+                                style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+                                <h2 class="modal-title" data-en="Advanced LMS Ecosystem"
+                                    data-ar="نظام إدارة التعلم المتقدم"></h2>
+                                <i class="fas fa-qrcode" style="font-size:2rem; color:#6366f1;"></i>
+                            </div>
+                            <p class="modal-description"
+                                data-en="This ecosystem bridges the gap between public university information and internal academic management. It features a unique QR-based attendance system and a secure assignment portal."
+                                data-ar="هذا النظام يجمع بين عرض معلومات الجامعة العامة وبين الإدارة الأكاديمية الداخلية.">
+                            </p>
+                            <div class="modal-features-grid"
+                                style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:15px; margin-top:20px;">
+                                <div class="feature-group">
+                                    <h4 data-en="For Doctors & TAs:" data-ar="للدكاترة والمعيدين:"></h4>
+                                    <ul style="list-style:none; padding:0;">
+                                        <li style="margin-bottom:8px;"><i class="fas fa-check-circle"
+                                                style="color:#6366f1; margin-left:5px;"></i> <span
+                                                data-en="Generate QR for fast attendance"
+                                                data-ar="توليد QR Code لتحضير الطلاب"></span></li>
+                                        <li><i class="fas fa-check-circle" style="color:#6366f1; margin-left:5px;"></i>
+                                            <span data-en="Grade assignments instantly"
+                                                data-ar="رصد درجات التكليفات فورياً"></span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="feature-group">
+                                    <h4 data-en="For Students:" data-ar="للطلاب:"></h4>
+                                    <ul style="list-style:none; padding:0;">
+                                        <li style="margin-bottom:8px;"><i class="fas fa-check-circle"
+                                                style="color:#6366f1; margin-left:5px;"></i> <span
+                                                data-en="Submit assignments online"
+                                                data-ar="رفع وتسليم التكليفات"></span></li>
+                                        <li style="margin-bottom:8px;"><i class="fas fa-check-circle"
+                                                style="color:#6366f1; margin-left:5px;"></i> <span
+                                                data-en="Access course materials"
+                                                data-ar="مشاهدة المحتوى الدراسي"></span></li>
+                                        <li><i class="fas fa-check-circle" style="color:#6366f1; margin-left:5px;"></i>
+                                            <span data-en="Real-time grade notifications"
+                                                data-ar="متابعة الدرجات فور رصدها"></span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="feature-group">
+                                    <h4 data-en="For Super Admin:" data-ar="للمشرف العام:"></h4>
+                                    <ul style="list-style:none; padding:0;">
+                                        <li style="margin-bottom:8px;"><i class="fas fa-check-circle"
+                                                style="color:#6366f1; margin-left:5px;"></i> <span
+                                                data-en="Dynamic Access Control (ACL)"
+                                                data-ar="تحكم ديناميكي كامل في الصلاحيات"></span></li>
+                                        <li><i class="fas fa-check-circle" style="color:#6366f1; margin-left:5px;"></i>
+                                            <span data-en="Delegate Admin permissions"
+                                                data-ar="تخصيص وتفويض المهام للإداريين"></span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="tech-stack-used"
+                                style="margin-top:25px; border-top:1px solid #444; padding-top:15px;">
+                                <h4 data-en="Technical Stack:" data-ar="التقنيات المستخدمة:"></h4>
+                                <div class="project-tech">
+                                    <span class="tech-tag">Laravel (PHP)</span>
+                                    <span class="tech-tag">MySQL</span>
+                                    <span class="tech-tag">QR Library</span>
+                                    <span class="tech-tag">Custom Middleware</span>
+                                    <span class="tech-tag">File Storage System</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Student Grade Tracker -->
+                <div class="project-card fade-in" data-category="java">
+                    <div class="project-image">
+                        <img src="imges/projects/java/student_tracker.png" alt="Student Grade Tracker"
+                            onerror="this.src='https://placehold.co/400x250/1a1a2e/6366f1?text=Java+Tracker'">
+                        <span class="project-category" data-en="Java" data-ar="جافا">Java</span>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title" data-en="Student Grade Tracker" data-ar="متابع درجات الطلاب">Student
+                            Grade Tracker</h3>
+                        <p class="project-description"
+                            data-en="Desktop app to manage student records using Java Swing. Add, edit, delete, and list students with file persistence."
+                            data-ar="تطبيق سطح مكتب لإدارة سجلات الطلاب باستخدام Java Swing."></p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Java SE</span>
+                            <span class="tech-tag">Swing UI</span>
+                            <span class="tech-tag">File I/O</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link primary view-project" data-project="project-java-student">
+                                <i class="fas fa-eye"></i> <span data-en="View" data-ar="عرض">View</span>
+                            </a>
+                            <a href="https://github.com/mohamedmahmouddorah/CodeAlpha_StudentGradeTracker"
+                                target="_blank" class="project-link secondary">
+                                <i class="fab fa-github"></i> <span data-en="Code" data-ar="الكود">Code</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="project-java-student" class="project-modal">
+                    <div class="modal-content">
+                        <span class="close-modal">&times;</span>
+                        <div class="modal-gallery-wrapper" style="padding:15px;">
+                            <div class="main-display-container"
+                                style="margin-bottom:12px; text-align:center; background:#000; border-radius:12px; overflow:hidden;">
+                                <img src="imges/projects/java/student_tracker.png" id="student_main_img"
+                                    style="width:100%; max-height:450px; object-fit:contain;" alt="Main View">
+                            </div>
+                            <div class="thumbnails-grid"
+                                style="display:grid; grid-template-columns:repeat(auto-fill, minmax(80px, 1fr)); gap:10px;">
+                                <img src="imges/projects/java/student_tracker.png"
+                                    onclick="showImage('student_main_img',this.src)"
+                                    style="width:100%; height:60px; object-fit:cover; cursor:pointer; border-radius:6px; border:2px solid #6366f1;">
+                                <img src="imges/projects/java/student_tracker2.png"
+                                    onerror="this.src='https://placehold.co/150x100/1a1a2e/fff?text=View+2'"
+                                    onclick="showImage('student_main_img',this.src)"
+                                    style="width:100%; height:60px; object-fit:cover; cursor:pointer; border-radius:6px; border:1px solid #444;">
+                                <img src="imges/projects/java/student_tracker3.png"
+                                    onerror="this.src='https://placehold.co/150x100/1a1a2e/fff?text=View+3'"
+                                    onclick="showImage('student_main_img',this.src)"
+                                    style="width:100%; height:60px; object-fit:cover; cursor:pointer; border-radius:6px; border:1px solid #444;">
+                                <img src="imges/projects/java/student_tracker4.png"
+                                    onerror="this.src='https://placehold.co/150x100/1a1a2e/fff?text=View+4'"
+                                    onclick="showImage('student_main_img',this.src)"
+                                    style="width:100%; height:60px; object-fit:cover; cursor:pointer; border-radius:6px; border:1px solid #444;">
+                                <img src="imges/projects/java/student_tracker5.png"
+                                    onerror="this.src='https://placehold.co/150x100/1a1a2e/fff?text=View+5'"
+                                    onclick="showImage('student_main_img',this.src)"
+                                    style="width:100%; height:60px; object-fit:cover; cursor:pointer; border-radius:6px; border:1px solid #444;">
+                            </div>
+                        </div>
+                        <div class="modal-body">
+                            <h2 class="modal-title" data-en="Advanced Grade Management System"
+                                data-ar="نظام متقدم لإدارة الدرجات"></h2>
+                            <p class="modal-description"
+                                data-en="This system utilizes Java Object-Oriented Programming to handle student data. It features a robust file storage mechanism (File I/O) to ensure that student records and grades are persistent and securely saved on the local machine."
+                                data-ar="يعتمد هذا النظام على البرمجة كائنية التوجه (OOP) في جافا للتعامل مع بيانات الطلاب.">
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stock Trading Platform -->
+                <div class="project-card fade-in" data-category="java">
+                    <div class="project-image">
+                        <img src="imges/projects/java/stock_platform.png" alt="Stock Trading Platform"
+                            onerror="this.src='https://placehold.co/400x250/1a1a2e/6366f1?text=Stock+Trading'">
+                        <span class="project-category" data-en="Java" data-ar="جافا">Java</span>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title" data-en="Stock Trading Platform" data-ar="منصة تداول الأسهم">Stock
+                            Trading Platform</h3>
+                        <p class="project-description"
+                            data-en="Simplified stock trading simulator with tabs for Stocks, Portfolio, and Transactions. Real-time UI updates."
+                            data-ar="محاكي مبسط لتداول الأسهم مع تبويبات للأسهم، المحفظة، والمعاملات."></p>
+                        <div class="project-tech">
+                            <span class="tech-tag">MVC Pattern</span>
+                            <span class="tech-tag">Swing</span>
+                            <span class="tech-tag">Algorithms</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link primary view-project" data-project="project-java-stock">
+                                <i class="fas fa-eye"></i> <span data-en="View" data-ar="عرض">View</span>
+                            </a>
+                            <a href="https://github.com/mohamedmahmouddorah/Stock_Trading_Simulator" target="_blank"
+                                class="project-link secondary">
+                                <i class="fab fa-github"></i> <span data-en="Code" data-ar="الكود">Code</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="project-java-stock" class="project-modal">
+                    <div class="modal-content">
+                        <span class="close-modal">&times;</span>
+                        <div class="modal-gallery-wrapper" style="padding:15px;">
+                            <div class="main-display-container"
+                                style="margin-bottom:12px; text-align:center; background:#000; border-radius:12px; overflow:hidden;">
+                                <img src="imges/projects/java/stock_platform.png" id="stock_main_img"
+                                    style="width:100%; max-height:450px; object-fit:contain;" alt="Main System View">
+                            </div>
+                            <div class="thumbnails-grid"
+                                style="display:grid; grid-template-columns:repeat(auto-fill, minmax(80px, 1fr)); gap:10px;">
+                                <img src="imges/projects/java/stock_platform1.png"
+                                    onclick="showImage('stock_main_img',this.src)"
+                                    style="width:100%; height:60px; object-fit:cover; cursor:pointer; border-radius:6px; border:2px solid #6366f1;">
+                                <img src="imges/projects/java/stock_platform2.png"
+                                    onerror="this.src='https://placehold.co/150x100/1a1a2e/fff?text=Portfolio'"
+                                    onclick="showImage('stock_main_img',this.src)"
+                                    style="width:100%; height:60px; object-fit:cover; cursor:pointer; border-radius:6px; border:1px solid #444;">
+                                <img src="imges/projects/java/stock_platform3.png"
+                                    onerror="this.src='https://placehold.co/150x100/1a1a2e/fff?text=History'"
+                                    onclick="showImage('stock_main_img',this.src)"
+                                    style="width:100%; height:60px; object-fit:cover; cursor:pointer; border-radius:6px; border:1px solid #444;">
+                                <img src="imges/projects/java/stock_platform4.png"
+                                    onerror="this.src='https://placehold.co/150x100/1a1a2e/fff?text=Trading+Tab'"
+                                    onclick="showImage('stock_main_img',this.src)"
+                                    style="width:100%; height:60px; object-fit:cover; cursor:pointer; border-radius:6px; border:1px solid #444;">
+                                <img src="imges/projects/java/stock_platform5.png"
+                                    onerror="this.src='https://placehold.co/150x100/1a1a2e/fff?text=Transaction+History'"
+                                    onclick="showImage('stock_main_img',this.src)"
+                                    style="width:100%; height:60px; object-fit:cover; cursor:pointer; border-radius:6px; border:1px solid #444;">
+                            </div>
+                        </div>
+                        <div class="modal-body">
+                            <h2 class="modal-title" data-en="Stock Market Simulator" data-ar="محاكي سوق الأسهم"></h2>
+                            <p class="modal-description"
+                                data-en="A complex financial simulator implementing the MVC (Model-View-Controller) design pattern. It simulates real-world trading logic, calculates portfolio values dynamically, and provides a multi-tabbed interface for seamless user experience."
+                                data-ar="محاكي مالي معقد يطبق نمط تصميم MVC ويحسب قيم المحفظة ديناميكياً."></p>
+                            <div class="tech-stack-used"
+                                style="margin-top:25px; border-top:1px solid #444; padding-top:15px;">
+                                <h4 data-en="Technical Stack:" data-ar="التقنيات المستخدمة:"></h4>
+                                <div class="project-tech">
+                                    <span class="tech-tag">Java SE</span>
+                                    <span class="tech-tag">Swing UI</span>
+                                    <span class="tech-tag">MVC Pattern</span>
+                                    <span class="tech-tag">Object-Oriented Design</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI Chatbot Calculator -->
+                <div class="project-card fade-in" data-category="java">
+                    <div class="project-image">
+                        <img src="imges/projects/java/chatbot.png" alt="AI Chatbot Calculator"
+                            onerror="this.src='https://placehold.co/400x250/1a1a2e/6366f1?text=AI+Chatbot'">
+                        <span class="project-category" data-en="Java" data-ar="جافا">Java</span>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title" data-en="AI Chatbot Calculator" data-ar="شات بوت آلة حاسبة">AI Chatbot
+                            Calculator</h3>
+                        <p class="project-description"
+                            data-en="Chatbot-style calculator that parses textual math expressions and returns results with error handling."
+                            data-ar="آلة حاسبة بأسلوب الشات بوت تقوم بتحليل التعبيرات الرياضية النصية وإرجاع النتائج.">
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Java SE</span>
+                            <span class="tech-tag">String Parsing</span>
+                            <span class="tech-tag">Logic Handling</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link primary view-project" data-project="project-java-chatbot">
+                                <i class="fas fa-eye"></i> <span data-en="View" data-ar="عرض">View</span>
+                            </a>
+                            <a href="https://github.com/mohamedmahmouddorah/AI_Chatbot" target="_blank"
+                                class="project-link secondary">
+                                <i class="fab fa-github"></i> <span data-en="Code" data-ar="الكود">Code</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="project-java-chatbot" class="project-modal">
+                    <div class="modal-content">
+                        <span class="close-modal">&times;</span>
+                        <div class="modal-gallery-wrapper" style="padding:15px;">
+                            <div class="main-display-container"
+                                style="margin-bottom:12px; text-align:center; background:#000; border-radius:12px; overflow:hidden;">
+                                <img src="imges/projects/java/chatbot.png" id="chatbot_main_img"
+                                    style="width:100%; max-height:450px; object-fit:contain;" alt="Chatbot View">
+                            </div>
+                        </div>
+                        <div class="modal-body">
+                            <h2 class="modal-title" data-en="Text-Based Logic Bot" data-ar="بوت المنطق النصي"></h2>
+                            <p class="modal-description"
+                                data-en="This AI-driven calculator focuses on natural language processing principles. It can interpret string-based mathematical commands, parse them into executable logic, and handle user errors gracefully through custom exception management."
+                                data-ar="تركز هذه الآلة الحاسبة على مبادئ معالجة اللغة الطبيعية وتفسير الأوامر الرياضية النصية.">
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ITI E-commerce System -->
+                <div class="project-card fade-in" data-category="php">
+                    <div class="project-image">
+                        <img src="imges/projects/ITI_E-commerce_System/em.png" alt="ITI E-commerce System"
+                            onerror="this.src='https://placehold.co/400x250/1a1a2e/6366f1?text=ITI+E-commerce'">
+                        <span class="project-category" data-en="Full Stack PHP" data-ar="باك إند PHP">Full Stack
+                            PHP</span>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title" data-en="ITI E-commerce System" data-ar="نظام ITI للتجارة">ITI
+                            E-commerce System</h3>
+                        <p class="project-description"
+                            data-en="A full-stack e-commerce solution with product management, CRUD operations, and secure database integration."
+                            data-ar="حل متكامل للتجارة الإلكترونية مع إدارة المنتجات، عمليات CRUD كاملة، وربط آمن لقاعدة البيانات.">
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">PHP</span>
+                            <span class="tech-tag">MySQL</span>
+                            <span class="tech-tag">Bootstrap 5</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link primary view-project" data-project="project-ecommerce">
+                                <i class="fas fa-eye"></i> <span data-en="View" data-ar="عرض">عرض</span>
+                            </a>
+                            <a href="https://github.com/mohamedmahmouddorah/E-Commerce-Product-Cart-Management-System-PHP-MySQL-"
+                                target="_blank" class="project-link secondary">
+                                <i class="fab fa-github"></i> <span data-en="Code" data-ar="الكود">Code</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="project-ecommerce" class="project-modal">
+                    <div class="modal-content">
+                        <span class="close-modal">&times;</span>
+                        <div class="modal-gallery-wrapper" style="padding:15px;">
+                            <div class="main-display-container"
+                                style="background:#000; border-radius:12px; overflow:hidden; margin-bottom:12px; text-align:center; border:1px solid #333;">
+                                <img src="imges/projects/ITI_E-commerce_System/em1.png" id="ecommerce_main_img"
+                                    style="width:100%; max-height:400px; object-fit:contain;" alt="Dashboard Preview">
+                            </div>
+                            <div class="thumbnails-grid"
+                                style="display:grid; grid-template-columns:repeat(auto-fill, minmax(80px, 1fr)); gap:10px;">
+                                <img src="imges/projects/ITI_E-commerce_System/em2.png"
+                                    onclick="showImage('ecommerce_main_img',this.src)"
+                                    style="width:100%; height:60px; object-fit:cover; cursor:pointer; border-radius:6px; border:2px solid #6366f1;">
+                                <img src="imges/projects/ITI_E-commerce_System/em3.png"
+                                    onerror="this.src='https://placehold.co/150x100/1a1a2e/fff?text=Products'"
+                                    onclick="showImage('ecommerce_main_img',this.src)"
+                                    style="width:100%; height:60px; object-fit:cover; cursor:pointer; border-radius:6px; border:1px solid #444;">
+                                <img src="imges/projects/ITI_E-commerce_System/em4.png"
+                                    onerror="this.src='https://placehold.co/150x100/1a1a2e/fff?text=Login'"
+                                    onclick="showImage('ecommerce_main_img',this.src)"
+                                    style="width:100%; height:60px; object-fit:cover; cursor:pointer; border-radius:6px; border:1px solid #444;">
+                                <img src="imges/projects/ITI_E-commerce_System/em5.png"
+                                    onerror="this.src='https://placehold.co/150x100/1a1a2e/fff?text=Add+Product'"
+                                    onclick="showImage('ecommerce_main_img',this.src)"
+                                    style="width:100%; height:60px; object-fit:cover; cursor:pointer; border-radius:6px; border:1px solid #444;">
+                                <img src="imges/projects/ITI_E-commerce_System/em6.png"
+                                    onerror="this.src='https://placehold.co/150x100/1a1a2e/fff?text=Edit+Product'"
+                                    onclick="showImage('ecommerce_main_img',this.src)"
+                                    style="width:100%; height:60px; object-fit:cover; cursor:pointer; border-radius:6px; border:1px solid #444;">
+                                <img src="imges/projects/ITI_E-commerce_System/em7.png"
+                                    onerror="this.src='https://placehold.co/150x100/1a1a2e/fff?text=Delete+Product'"
+                                    onclick="showImage('ecommerce_main_img',this.src)"
+                                    style="width:100%; height:60px; object-fit:cover; cursor:pointer; border-radius:6px; border:1px solid #444;">
+                                <img src="imges/projects/ITI_E-commerce_System/em8.png"
+                                    onerror="this.src='https://placehold.co/150x100/1a1a2e/fff?text=Database+Schema'"
+                                    onclick="showImage('ecommerce_main_img',this.src)"
+                                    style="width:100%; height:60px; object-fit:cover; cursor:pointer; border-radius:6px; border:1px solid #444;">
+                            </div>
+                        </div>
+                        <div class="modal-body">
+                            <h2 class="modal-title" data-en="Advanced E-commerce Management"
+                                data-ar="إدارة التجارة الإلكترونية المتقدمة"></h2>
+                            <p class="modal-description"
+                                data-en="This system handles the core logic of an online store. Developed during ITI training, it features a robust admin dashboard for managing stock, processing user data via PHP, and maintaining data integrity with MySQL."
+                                data-ar="يدير هذا النظام المنطق الأساسي للمتجر الإلكتروني. تم تطويره خلال تدريب ITI.">
+                            </p>
+                            <div class="features-section"
+                                style="margin-top:20px; border-top:1px solid #444; padding-top:15px;">
+                                <h4 style="color:#6366f1; margin-bottom:10px;" data-en="Technical Breakdown:"
+                                    data-ar="التفاصيل التقنية:"></h4>
+                                <ul style="list-style:none; padding:0; color:#ccc; font-size:0.95rem;">
+                                    <li style="margin-bottom:8px;"><i class="fas fa-database"
+                                            style="color:#6366f1; margin-left:8px;"></i> <span
+                                            data-en="Relational Database Design (Users, Products, Categories)"
+                                            data-ar="تصميم قاعدة بيانات علائقية (المستخدمين، المنتجات، الأقسام)"></span>
+                                    </li>
+                                    <li style="margin-bottom:8px;"><i class="fas fa-lock"
+                                            style="color:#6366f1; margin-left:8px;"></i> <span
+                                            data-en="Secure Authentication using PHP Sessions"
+                                            data-ar="نظام تسجيل دخول آمن باستخدام جلسات PHP"></span></li>
+                                    <li style="margin-bottom:8px;"><i class="fas fa-code"
+                                            style="color:#6366f1; margin-left:8px;"></i> <span
+                                            data-en="Full CRUD system for product inventory"
+                                            data-ar="نظام CRUD كامل لإدارة مخزون المنتجات"></span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- User & Media System -->
+                <div class="project-card fade-in" data-category="php">
+                    <div class="project-image">
+                        <img src="imges/projects/Management_System/mana_sy.png" alt="User Management System">
+                        <span class="project-category" data-en="PHP Development" data-ar="تطوير PHP">PHP
+                            Development</span>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title" data-en="User & Media System" data-ar="نظام المستخدمين والوسائط">User
+                            & Media System</h3>
+                        <p class="project-description"
+                            data-en="A dual-method user management system implementing both Flat-File storage and MySQL database integration."
+                            data-ar="نظام إدارة مستخدمين ثنائي الطريقة، يطبق كلاً من التخزين في الملفات والربط مع قواعد بيانات MySQL.">
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Full CRUD</span>
+                            <span class="tech-tag">Image Upload</span>
+                            <span class="tech-tag">PHP Logic</span>
+                        </div>
+                        <div class="project-links-container"
+                            style="display:flex; flex-direction:column; gap:10px; margin-top:15px;">
+                            <a href="#" class="project-link primary view-project"
+                                data-project="project-php-system-final"
+                                style="width:100%; justify-content:center; padding:10px 0;">
+                                <i class="fas fa-eye"></i> <span data-en="View" data-ar="عرض">عرض</span>
+                            </a>
+                            <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
+                                <a href="https://github.com/mohamedmahmouddorah/PHP-User-Auth-FlatFile" target="_blank"
+                                    class="project-link secondary"
+                                    style="font-size:0.75rem; padding:8px; justify-content:center;">
+                                    <i class="fab fa-github"></i> <span data-en="Flat-File Logic"
+                                        data-ar="منطق الملفات">منطق الملفات</span>
+                                </a>
+                                <a href="https://github.com/mohamedmahmouddorah/PHP-User-Auth-MySQL" target="_blank"
+                                    class="project-link secondary"
+                                    style="font-size:0.75rem; padding:8px; justify-content:center;">
+                                    <i class="fab fa-github"></i> <span data-en="MySQL Logic" data-ar="منطق MySQL">منطق
+                                        MySQL</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="project-php-system-final" class="project-modal">
+                    <div class="modal-content">
+                        <span class="close-modal">&times;</span>
+                        <div class="modal-gallery-wrapper" style="padding:15px;">
+                            <div class="main-display-container"
+                                style="background:#000; border-radius:12px; overflow:hidden; margin-bottom:12px; text-align:center; border:1px solid #444;">
+                                <img src="imges/projects/Management_System/mana_sy1.png" id="final_preview_img"
+                                    style="width:100%; max-height:400px; object-fit:contain;" alt="System Preview">
+                            </div>
+                            <div class="thumbnails-grid"
+                                style="display:flex; gap:10px; justify-content:flex-start; flex-wrap:wrap;">
+                                <img src="imges/projects/Management_System/mana_sy2.png"
+                                    onclick="showImage('final_preview_img',this.src); updateActiveThumb(this)"
+                                    style="width:75px; height:45px; object-fit:cover; cursor:pointer; border-radius:4px; border:2px solid #6366f1;"
+                                    class="php-thumb active">
+                                <img src="imges/projects/Management_System/mana_sy3.png"
+                                    onclick="showImage('final_preview_img',this.src); updateActiveThumb(this)"
+                                    style="width:75px; height:45px; object-fit:cover; cursor:pointer; border-radius:4px; border:1px solid #444;"
+                                    class="php-thumb">
+                                <img src="imges/projects/Management_System/mana_sy4.png"
+                                    onclick="showImage('final_preview_img',this.src); updateActiveThumb(this)"
+                                    style="width:75px; height:45px; object-fit:cover; cursor:pointer; border-radius:4px; border:1px solid #444;"
+                                    class="php-thumb">
+                                <img src="imges/projects/Management_System/mana_sy5.png"
+                                    onclick="showImage('final_preview_img',this.src); updateActiveThumb(this)"
+                                    style="width:75px; height:45px; object-fit:cover; cursor:pointer; border-radius:4px; border:1px solid #444;"
+                                    class="php-thumb">
+                            </div>
+                        </div>
+                        <div class="modal-body">
+                            <h2 class="modal-title" data-en="System Logic Comparison" data-ar="مقارنة منطق النظام"></h2>
+                            <p class="modal-description"
+                                data-en="I developed this system using two storage architectures to compare performance and scalability. Both versions handle user registration, profile image uploads, and full CRUD operations."
+                                data-ar="قمت بتطوير هذا النظام باستخدام بنيتين للتخزين لمقارنة الأداء والقابلية للتوسع.">
+                            </p>
+                            <div class="technical-grid"
+                                style="display:grid; grid-template-columns:1fr 1fr; gap:20px; border-top:1px solid #333; padding-top:20px; margin-top:15px;">
+                                <div class="tech-box">
+                                    <h4 style="color:#6366f1; margin-bottom:10px;" data-en="File-Based Storage"
+                                        data-ar="التخزين المعتمد على الملفات"></h4>
+                                    <ul
+                                        style="list-style:none; padding:0; color:#ccc; font-size:0.85rem; line-height:1.8;">
+                                        <li><i class="fas fa-file-code" style="color:#6366f1;"></i> <span
+                                                data-en="Direct File IO Logic"
+                                                data-ar="منطق معالجة الملفات المباشر"></span></li>
+                                        <li><i class="fas fa-folder-open" style="color:#6366f1;"></i> <span
+                                                data-en="Local Directory Uploads"
+                                                data-ar="رفع الملفات للمجلدات المحلية"></span></li>
+                                        <li><i class="fas fa-save" style="color:#6366f1;"></i> <span
+                                                data-en="Manual Data Serialization"
+                                                data-ar="تنسيق وحفظ البيانات يدوياً"></span></li>
+                                    </ul>
+                                </div>
+                                <div class="tech-box">
+                                    <h4 style="color:#6366f1; margin-bottom:10px;" data-en="Database Integration"
+                                        data-ar="الربط مع قواعد البيانات"></h4>
+                                    <ul
+                                        style="list-style:none; padding:0; color:#ccc; font-size:0.85rem; line-height:1.8;">
+                                        <li><i class="fas fa-database" style="color:#6366f1;"></i> <span
+                                                data-en="MySQLi CRUD Operations"
+                                                data-ar="عمليات CRUD عبر MySQLi"></span></li>
+                                        <li><i class="fas fa-table" style="color:#6366f1;"></i> <span
+                                                data-en="Structured Table Schema"
+                                                data-ar="هيكلة الجداول المنظمة"></span></li>
+                                        <li><i class="fas fa-key" style="color:#6366f1;"></i> <span
+                                                data-en="Relational Data Handling"
+                                                data-ar="معالجة البيانات العلائقية"></span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="skills-highlight"
+                                style="margin-top:20px; padding:12px; background:#111; border-radius:8px; border:1px solid #333;">
+                                <h4 style="font-size:0.9rem; color:#6366f1;" data-en="Key Features:"
+                                    data-ar="المميزات الرئيسية:"></h4>
+                                <p style="font-size:0.8rem; color:#bbb; margin-top:5px;"
+                                    data-en="Implemented secure image uploading with extension validation and integrated seamless data retrieval across both storage engines."
+                                    data-ar="تنفيذ رفع صور آمن مع التحقق من الامتدادات، وتكامل استرجاع البيانات بسلاسة عبر كلا محركي التخزين.">
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Secure Store Engine -->
+                <div class="project-card fade-in" data-category="web">
+                    <div class="project-image">
+                        <img src="imges/projects/e-commerce_system/e-com1.png" alt="E-Commerce System">
+                        <span class="project-category" data-en="Native & Laravel" data-ar="نيتف ولارافيل">Native &
+                            Laravel</span>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title" data-en="Secure Store Engine" data-ar="محرك المتجر الآمن">Secure Store
+                            Engine</h3>
+                        <p class="project-description"
+                            data-en="E-commerce system with advanced binary file validation (Mime-Type) for maximum security."
+                            data-ar="نظام متجر إلكتروني مع فحص متقدم لمحتوى الملفات الثنائي (Mime-Type) لأقصى درجات الأمان.">
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">PHP Native</span>
+                            <span class="tech-tag">Laravel</span>
+                            <span class="tech-tag">MIME Security</span>
+                        </div>
+                        <div class="project-links-container"
+                            style="display:flex; flex-direction:column; gap:10px; margin-top:15px;">
+                            <a href="#" class="project-link primary view-project" data-project="modal-store-pro"
+                                style="width:100%; justify-content:center; padding:10px 0;">
+                                <i class="fas fa-eye"></i> <span data-en="View Project" data-ar="عرض المشروع">عرض
+                                    المشروع</span>
+                            </a>
+                            <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
+                                <a href="https://github.com/mohamedmahmouddorah/Pure-Ecommerce-Native" target="_blank"
+                                    class="project-link secondary"
+                                    style="font-size:0.75rem; padding:8px; justify-content:center;">
+                                    <i class="fab fa-github"></i> <span data-en="Native PHP" data-ar="نيتف PHP">Native
+                                        PHP</span>
+                                </a>
+                                <a href="https://github.com/mohamedmahmouddorah/Pure-Lara-E-commerce" target="_blank" class="project-link secondary"
+                                    style="font-size:0.75rem; padding:8px; justify-content:center;">
+                                    <i class="fab fa-github"></i> <span data-en="Laravel"
+                                        data-ar="لارافيل">Laravel</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="modal-store-pro" class="project-modal">
+                    <div class="modal-content">
+                        <span class="close-modal">&times;</span>
+                        <div class="modal-gallery-wrapper" style="padding:15px;">
+                            <div class="main-display-container"
+                                style="background:#000; border-radius:12px; overflow:hidden; margin-bottom:12px; text-align:center; border:1px solid #444;">
+                                <img src="imges/projects/e-commerce_system/e-com1.png" id="store_preview_img"
+                                    style="width:100%; max-height:400px; object-fit:contain;" alt="Store Preview">
+                            </div>
+                            <div class="thumbnails-grid"
+                                style="display:flex; gap:10px; justify-content:flex-start; flex-wrap:wrap;">
+                                <img src="imges/projects/e-commerce_system/e-com3.png"
+                                    onclick="showImage('store_preview_img',this.src); updateActiveThumb(this)"
+                                    style="width:75px; height:45px; object-fit:cover; cursor:pointer; border-radius:4px; border:2px solid #6366f1;"
+                                    class="php-thumb active">
+                                <img src="imges/projects/e-commerce_system/e-com4.png"
+                                    onerror="this.src='https://placehold.co/150x100/1a1a2e/fff?text=View+2'"
+                                    onclick="showImage('store_preview_img',this.src); updateActiveThumb(this)"
+                                    style="width:75px; height:45px; object-fit:cover; cursor:pointer; border-radius:4px; border:1px solid #444;"
+                                    class="php-thumb">
+                                <img src="imges/projects/e-commerce_system/e-com5.png"
+                                    onerror="this.src='https://placehold.co/150x100/1a1a2e/fff?text=View+3'"
+                                    onclick="showImage('store_preview_img',this.src); updateActiveThumb(this)"
+                                    style="width:75px; height:45px; object-fit:cover; cursor:pointer; border-radius:4px; border:1px solid #444;"
+                                    class="php-thumb">
+                                <img src="imges/projects/e-commerce_system/e-com6.png"
+                                    onerror="this.src='https://placehold.co/150x100/1a1a2e/fff?text=View+4'"
+                                    onclick="showImage('store_preview_img',this.src); updateActiveThumb(this)"
+                                    style="width:75px; height:45px; object-fit:cover; cursor:pointer; border-radius:4px; border:1px solid #444;"
+                                    class="php-thumb">
+                                <img src="imges/projects/e-commerce_system/e-com7.png"
+                                    onerror="this.src='https://placehold.co/150x100/1a1a2e/fff?text=View+5'"
+                                    onclick="showImage('store_preview_img',this.src); updateActiveThumb(this)"
+                                    style="width:75px; height:45px; object-fit:cover; cursor:pointer; border-radius:4px; border:1px solid #444;"
+                                    class="php-thumb">
+                                <img src="imges/projects/e-commerce_system/e-com8.png"
+                                    onerror="this.src='https://placehold.co/150x100/1a1a2e/fff?text=View+6'"
+                                    onclick="showImage('store_preview_img',this.src); updateActiveThumb(this)"
+                                    style="width:75px; height:45px; object-fit:cover; cursor:pointer; border-radius:4px; border:1px solid #444;"
+                                    class="php-thumb">
+                                <img src="imges/projects/e-commerce_system/e-com9.png"
+                                    onerror="this.src='https://placehold.co/150x100/1a1a2e/fff?text=View+7'"
+                                    onclick="showImage('store_preview_img',this.src); updateActiveThumb(this)"
+                                    style="width:75px; height:45px; object-fit:cover; cursor:pointer; border-radius:4px; border:1px solid #444;"
+                                    class="php-thumb">
+                                <img src="imges/projects/e-commerce_system/e-com10.png"
+                                    onerror="this.src='https://placehold.co/150x100/1a1a2e/fff?text=View+8'"
+                                    onclick="showImage('store_preview_img',this.src); updateActiveThumb(this)"
+                                    style="width:75px; height:45px; object-fit:cover; cursor:pointer; border-radius:4px; border:1px solid #444;"
+                                    class="php-thumb">
+                                <img src="imges/projects/e-commerce_system/e-com11.png"
+                                    onerror="this.src='https://placehold.co/150x100/1a1a2e/fff?text=View+9'"
+                                    onclick="showImage('store_preview_img',this.src); updateActiveThumb(this)"
+                                    style="width:75px; height:45px; object-fit:cover; cursor:pointer; border-radius:4px; border:1px solid #444;"
+                                    class="php-thumb">
+                            </div>
+                        </div>
+                        <div class="modal-body">
+                            <h2 class="modal-title" data-en="Binary Level Security"
+                                data-ar="الأمان على مستوى المحتوى الثنائي"></h2>
+                            <p class="modal-description"
+                                data-en="Two implementations of the same store — one in raw PHP, one in Laravel — both validating files by actual binary content, not just extension."
+                                data-ar="تطبيقان لنفس المتجر — واحد بـ PHP الخام والآخر بـ Laravel — كلاهما يتحقق من الملفات بناءً على المحتوى الثنائي الفعلي وليس الامتداد فقط.">
+                            </p>
+                            <div class="technical-grid"
+                                style="display:grid; grid-template-columns:1fr 1fr; gap:20px; border-top:1px solid #333; padding-top:20px; margin-top:15px;">
+                                <div class="tech-box">
+                                    <h4 style="color:#6366f1; margin-bottom:10px;" data-en="Native PHP Validation"
+                                        data-ar="التحقق بـ PHP النيتف"></h4>
+                                    <ul
+                                        style="list-style:none; padding:0; color:#ccc; font-size:0.85rem; line-height:1.8;">
+                                        <li><i class="fas fa-search" style="color:#6366f1;"></i> <span
+                                                data-en="finfo_file() Magic Bytes"
+                                                data-ar="فحص Magic Bytes بـ finfo_file()"></span></li>
+                                        <li><i class="fas fa-file-alt" style="color:#6366f1;"></i> <span
+                                                data-en="Manual MIME Detection" data-ar="كشف MIME يدوياً"></span></li>
+                                        <li><i class="fas fa-ban" style="color:#6366f1;"></i> <span
+                                                data-en="Strict Extension Blocking"
+                                                data-ar="حجب صارم للامتدادات المشبوهة"></span></li>
+                                    </ul>
+                                </div>
+                                <div class="tech-box">
+                                    <h4 style="color:#6366f1; margin-bottom:10px;" data-en="Laravel Validation"
+                                        data-ar="التحقق بـ Laravel"></h4>
+                                    <ul
+                                        style="list-style:none; padding:0; color:#ccc; font-size:0.85rem; line-height:1.8;">
+                                        <li><i class="fas fa-check-circle" style="color:#6366f1;"></i> <span
+                                                data-en="mimetypes Validation Rules"
+                                                data-ar="قواعد mimetypes للتحقق"></span></li>
+                                        <li><i class="fas fa-shield-alt" style="color:#6366f1;"></i> <span
+                                                data-en="Laravel Request Policies"
+                                                data-ar="سياسات Laravel Request"></span></li>
+                                        <li><i class="fas fa-lock" style="color:#6366f1;"></i> <span
+                                                data-en="Secure File Storage Logic"
+                                                data-ar="منطق تخزين آمن للملفات"></span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="skills-highlight"
+                                style="margin-top:20px; padding:12px; background:#111; border-radius:8px; border:1px solid #333;">
+                                <h4 style="font-size:0.9rem; color:#6366f1;" data-en="Key Features:"
+                                    data-ar="المميزات الرئيسية:"></h4>
+                                <p style="font-size:0.8rem; color:#bbb; margin-top:5px;"
+                                    data-en="Both versions block malicious files disguised as images by reading actual binary content — not relying on the file extension alone."
+                                    data-ar="كلا النسختين تمنعان رفع الملفات الخبيثة المتنكرة في شكل صور، بقراءة المحتوى الثنائي الفعلي وليس الامتداد فقط.">
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Empty State -->
+                <div id="emptyState" style="display:none;">
+                    <div class="empty-state-box">
+                        <i class="fas fa-folder-open"></i>
+                        <h3 data-en="No Projects Yet" data-ar="لا توجد مشاريع بعد">No Projects Yet</h3>
+                        <p data-en="No projects in this category yet — check back soon!"
+                            data-ar="لا توجد مشاريع في هذه الفئة حتى الآن!">No projects in this category yet — check
+                            back soon!</p>
                     </div>
                 </div>
 
             </div>
         </div>
     </section>
-
-    <!-- Projects Section -->
-<!-- Projects Section -->
-<section id="projects" class="projects-section">
-    <div class="container">
-        <h1 class="section-title projects-header-center" data-en="My Projects" data-ar="مشاريعي"></h1>
-
-        <div class="projects-filter">
-            <button class="filter-btn active" data-filter="all" data-en="All" data-ar="الكل">All</button>
-            <button class="filter-btn" data-filter="web" data-en="Web Development" data-ar="تطوير الويب">Web Development</button>
-            <button class="filter-btn" data-filter="mobile" data-en="Mobile Apps" data-ar="تطبيقات الموبايل">Mobile Apps</button>
-            <button class="filter-btn" data-filter="design" data-en="UI/UX Design" data-ar="تخيل / UX UI">UI/UX Design</button>
-            <button class="filter-btn" data-filter="java" data-en="Java" data-ar="جافا">Java</button>
-        </div>
-
-        <div class="projects-grid" id="projectsGrid">
-
-            <!-- ═══════════════════════════════════════════
-                 DestinationConnect
-            ═══════════════════════════════════════════ -->
-           <div class="project-card fade-in" data-category="web">
-                <div class="project-image">
-                    <img src="imges/projects/DestinationConnect/DestinationConnect.png" alt="DestinationConnect"
-                        onerror="this.src='https://placehold.co/400x250/1a1a2e/6366f1?text=DestinationConnect'">
-                    <span class="project-category" data-en="Frontend" data-ar="واجهة مستخدم">Frontend</span>
-                </div>
-                <div class="project-content">
-                    <h3 class="project-title" data-en="DestinationConnect" data-ar="ديستنيشن كونكت">DestinationConnect</h3>
-                    <p class="project-description"
-                        data-en="Interactive travel platform with dynamic destination selection, traveler requirement forms, and booking logic."
-                        data-ar="منصة سفر تفاعلية تتيح اختيار الوجهات ديناميكياً، مع نماذج متكاملة لإدخال متطلبات المسافر ومنطق الحجز."></p>
-                    <div class="project-tech">
-                        <span class="tech-tag">HTML/CSS</span>
-                        <span class="tech-tag">JS Logic</span>
-                        <span class="tech-tag">Validation</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link primary view-project" data-project="project-travel">
-                            <i class="fas fa-eye"></i> <span data-en="View" data-ar="عرض">عرض</span>
-                        </a>
-                        <a href="https://github.com/mohamedmahmouddorah/DestinationConnect" target="_blank" class="project-link secondary">
-                            <i class="fab fa-github"></i> <span data-en="Code" data-ar="الكود">الكود</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div id="project-travel" class="project-modal">
-                <div class="modal-content">
-                    <span class="close-modal">&times;</span>
-                    <div class="modal-gallery-wrapper" style="padding:15px;">
-                        <div class="main-display-container" style="margin-bottom:12px; text-align:center; background:#000; border-radius:12px; overflow:hidden;">
-                            <img src="imges/projects/DestinationConnect/DestinationConnect1.png" id="travel_main_img"
-                                style="width:100%; max-height:400px; object-fit:contain;" alt="Destination Preview">
-                        </div>
-                        <div class="thumbnails-grid" style="display:grid; grid-template-columns:repeat(auto-fill, minmax(80px, 1fr)); gap:10px;">
-                            <img src="imges/projects/DestinationConnect/DestinationConnect2.png" onclick="showImage('travel_main_img',this.src)" style="width:100%; height:60px; object-fit:cover; cursor:pointer; border-radius:6px; border:2px solid #6366f1;">
-                            <img src="imges/projects/DestinationConnect/DestinationConnect3.png" onclick="showImage('travel_main_img',this.src)" style="width:100%; height:60px; object-fit:cover; cursor:pointer; border-radius:6px; border:1px solid #444;">
-                            <img src="imges/projects/DestinationConnect/DestinationConnect4.png" onclick="showImage('travel_main_img',this.src)" style="width:100%; height:60px; object-fit:cover; cursor:pointer; border-radius:6px; border:1px solid #444;">
-                            <img src="imges/projects/DestinationConnect/DestinationConnect5.png" onclick="showImage('travel_main_img',this.src)" style="width:100%; height:60px; object-fit:cover; cursor:pointer; border-radius:6px; border:1px solid #444;">
-                            <img src="imges/projects/DestinationConnect/DestinationConnect6.png" onclick="showImage('travel_main_img',this.src)" style="width:100%; height:60px; object-fit:cover; cursor:pointer; border-radius:6px; border:1px solid #444;">
-                        </div>
-                    </div>
-                    <div class="modal-body">
-                        <h2 class="modal-title" data-en="DestinationConnect: Smart Booking" data-ar="ديستنيشن كونكت: الحجز الذكي">DestinationConnect</h2>
-                        <p class="modal-description"
-                            data-en="DestinationConnect provides a seamless travel planning experience. Users can browse world-class destinations, select specific countries, and fill out a comprehensive booking form that captures traveler requirements and validates data in real-time."
-                            data-ar="يوفر ديستنيشن كونكت تجربة سلسة لتخطيط السفر مع نظام تحقق فوري من البيانات."></p>
-                        <div class="features-section" style="margin-top:20px; border-top:1px solid #444; padding-top:15px;">
-                            <h4 style="color:#6366f1; margin-bottom:10px;" data-en="Core Logic:" data-ar="المنطق الأساسي:"></h4>
-                            <ul style="list-style:none; padding:0; color:#ccc; font-size:0.95rem;">
-                                <li style="margin-bottom:8px;"><i class="fas fa-check-circle" style="color:#6366f1; margin-left:8px;"></i> <span data-en="Interactive Country Selection" data-ar="اختيار الدولة والوجهة بشكل تفاعلي"></span></li>
-                                <li style="margin-bottom:8px;"><i class="fas fa-check-circle" style="color:#6366f1; margin-left:8px;"></i> <span data-en="Dynamic Booking & Requirement Forms" data-ar="نماذج حجز ديناميكية لجمع المتطلبات"></span></li>
-                                <li style="margin-bottom:8px;"><i class="fas fa-check-circle" style="color:#6366f1; margin-left:8px;"></i> <span data-en="Frontend Form Validation" data-ar="نظام تحقق (Validation) لضمان صحة البيانات"></span></li>
-                            </ul>
-                        </div>
-                        <div class="tech-stack-used" style="margin-top:20px; border-top:1px solid #444; padding-top:15px;">
-                            <h4 data-en="Tech Stack:" data-ar="التقنيات:"></h4>
-                            <div class="project-tech">
-                                <span class="tech-tag">HTML5/CSS3</span>
-                                <span class="tech-tag">JavaScript</span>
-                                <span class="tech-tag">UI/UX Flow</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Flow Store -->
-            <div class="project-card fade-in" data-category="web">
-                <div class="project-image">
-                    <img src="imges/projects/flow_store/flow_store.png" alt="Flow Store Beni Suef"
-                        onerror="this.src='https://placehold.co/400x250/dc321f/ffffff?text=Flow+Store+Main'">
-                    <span class="project-category" data-en="Front-End" data-ar="واجهات أمامية">Front-End</span>
-                </div>
-                <div class="project-content">
-                    <h3 class="project-title" data-en="Flow Store: E-commerce Ecosystem" data-ar="فلو ستور: منظومة المتجر الإلكتروني">Flow Store: E-commerce Ecosystem</h3>
-                    <p class="project-description"
-                        data-en="A premium UI showcase featuring multiple views: Product Grid, Category Filtering, and full RTL architecture. Built with Pure CSS."
-                        data-ar="عرض واجهات احترافي يشمل زوايا متعددة: شبكة المنتجات، فلترة الأقسام، وتصميم متجاوب بالكامل. مبني بـ CSS خالص."></p>
-                    <div class="project-tech">
-                        <span class="tech-tag">HTML5</span>
-                        <span class="tech-tag">CSS Grid</span>
-                        <span class="tech-tag">Multi-View</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link primary view-project" data-project="flow_store_multi">
-                            <i class="fas fa-eye"></i> <span data-en="View" data-ar="عرض">عرض</span>
-                        </a>
-                        <a href="https://github.com/mohamedmahmouddorah/Flow_Store_beni_suef" target="_blank" class="project-link secondary">
-                            <i class="fab fa-github"></i> <span data-en="Code" data-ar="الكود">Code</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div id="flow_store_multi" class="project-modal">
-                <div class="modal-content">
-                    <span class="close-modal">&times;</span>
-                    <div class="modal-gallery-wrapper" style="padding:15px;">
-                        <div class="main-display-container" style="margin-bottom:10px; text-align:center;">
-                            <img src="imges/projects/flow_store/flow_store1.png" id="flow_main_img"
-                                style="width:100%; max-height:500px; object-fit:contain; border-radius:8px; border:1px solid #333;" alt="Main Showcase">
-                        </div>
-                        <div class="thumbnails-grid" style="display:grid; grid-template-columns:repeat(auto-fill, minmax(80px, 1fr)); gap:10px;">
-                            <img src="imges/projects/flow_store/flow_store2.png" onclick="showImage('flow_main_img',this.src)" style="width:100%; height:60px; object-fit:cover; cursor:pointer; border-radius:4px; border:1px solid #444;">
-                            <img src="imges/projects/flow_store/flow_store3.png" onerror="this.src='https://placehold.co/150x100/333/fff?text=View+2'" onclick="showImage('flow_main_img',this.src)" style="width:100%; height:60px; object-fit:cover; cursor:pointer; border-radius:4px; border:1px solid #444;">
-                            <img src="imges/projects/flow_store/flow_store4.png" onerror="this.src='https://placehold.co/150x100/333/fff?text=View+3'" onclick="showImage('flow_main_img',this.src)" style="width:100%; height:60px; object-fit:cover; cursor:pointer; border-radius:4px; border:1px solid #444;">
-                            <img src="imges/projects/flow_store/flow_store5.png" onerror="this.src='https://placehold.co/150x100/333/fff?text=View+4'" onclick="showImage('flow_main_img',this.src)" style="width:100%; height:60px; object-fit:cover; cursor:pointer; border-radius:4px; border:1px solid #444;">
-                        </div>
-                    </div>
-                    <div class="modal-body">
-                        <div class="modal-header-flex" style="display:flex; justify-content:space-between; align-items:center; margin-bottom:15px;">
-                            <div>
-                                <h2 class="modal-title" data-en="Flow Store: Multi-Interface Showcase" data-ar="فلو ستور: عرض الواجهات المتعددة"></h2>
-                                <span class="modal-subtitle" data-en="Pure CSS E-commerce Architecture" data-ar="بنية تجارة إلكترونية بـ CSS خالص"></span>
-                            </div>
-                            <i class="fas fa-images" style="font-size:2rem; color:#dc321f;"></i>
-                        </div>
-                        <p class="modal-description"
-                            data-en="Explore the complete user journey of Flow Store through multiple views, showcasing the product catalog, category transitions, and responsive design layouts."
-                            data-ar="استكشف رحلة المستخدم الكاملة في متجر فلو من خلال زوايا عرض متعددة."></p>
-                        <div class="tech-stack-used" style="margin-top:25px; border-top:1px solid #333; padding-top:15px;">
-                            <h4 data-en="Built With:" data-ar="تم البناء بواسطة:"></h4>
-                            <div class="project-tech">
-                                <span class="tech-tag">HTML5</span>
-                                <span class="tech-tag">Advanced CSS3</span>
-                                <span class="tech-tag">Responsive Grid</span>
-                                <span class="tech-tag">Vanilla JS Gallery</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- University Management System -->
-            <div class="project-card fade-in" data-category="web">
-                <div class="project-image">
-                    <img src="imges/projects/unvrsity/unvrsity.png" alt="University Management System"
-                        onerror="this.src='https://placehold.co/400x250/1a1a2e/6366f1?text=University+System'">
-                    <span class="project-category" data-en="Full-Stack" data-ar="فول ستاك">Full-Stack</span>
-                </div>
-                <div class="project-content">
-                    <h3 class="project-title" data-en="University Management System" data-ar="إيدو-تراك: نظام إدارة الجامعة">EduTrack: University LMS</h3>
-                    <p class="project-description"
-                        data-en="A sophisticated LMS featuring QR-based attendance, assignment management, and dynamic access control. Built with a focus on real-time academic workflows between Students, Faculty, and Admins."
-                        data-ar="نظام إدارة تعلم متطور يتميز بالتحضير الذكي عبر الـ QR Code، وإدارة التكليفات، والتحكم الديناميكي في الصلاحيات."></p>
-                    <div class="project-tech">
-                        <span class="tech-tag">Laravel 10</span>
-                        <span class="tech-tag">MySQL</span>
-                        <span class="tech-tag">QR-Scanner.js</span>
-                        <span class="tech-tag">RBAC System</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link primary view-project" data-project="edu_track_system">
-                            <i class="fas fa-eye"></i> <span data-en="View" data-ar="عرض">View</span>
-                        </a>
-                        <a href="https://github.com/aymangamalofficial/UniversityManagementSystem" target="_blank" class="project-link secondary">
-                            <i class="fab fa-github"></i> <span data-en="Code" data-ar="الكود">Code</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div id="edu_track_system" class="project-modal">
-                <div class="modal-content">
-                    <span class="close-modal">&times;</span>
-                    <div class="modal-gallery-wrapper" style="padding:15px;">
-                        <div class="main-display-container" style="margin-bottom:12px; text-align:center; background:#000; border-radius:12px; overflow:hidden;">
-                            <img src="imges/projects/unvrsity/unvrsity1.png" id="edu_main_img"
-                                style="width:100%; max-height:450px; object-fit:contain;" alt="Main System View">
-                        </div>
-                        <div class="thumbnails-grid" style="display:grid; grid-template-columns:repeat(auto-fill, minmax(80px, 1fr)); gap:10px;">
-                            <img src="imges/projects/unvrsity/unvrsity1.png" onclick="showImage('edu_main_img',this.src)" style="width:100%; height:60px; object-fit:cover; cursor:pointer; border-radius:6px; border:2px solid #6366f1;" alt="Dashboard">
-                            <img src="imges/projects/unvrsity/unvrsity2.png" onerror="this.src='https://placehold.co/150x100/1a1a2e/fff?text=Students'" onclick="showImage('edu_main_img',this.src)" style="width:100%; height:60px; object-fit:cover; cursor:pointer; border-radius:6px; border:1px solid #444;">
-                            <img src="imges/projects/unvrsity/unvrsity3.png" onerror="this.src='https://placehold.co/150x100/1a1a2e/fff?text=QR+System'" onclick="showImage('edu_main_img',this.src)" style="width:100%; height:60px; object-fit:cover; cursor:pointer; border-radius:6px; border:1px solid #444;">
-                            <img src="imges/projects/unvrsity/unvrsity4.png" onerror="this.src='https://placehold.co/150x100/1a1a2e/fff?text=Courses'" onclick="showImage('edu_main_img',this.src)" style="width:100%; height:60px; object-fit:cover; cursor:pointer; border-radius:6px; border:1px solid #444;">
-                            <img src="imges/projects/unvrsity/unvrsity5.png" onerror="this.src='https://placehold.co/150x100/1a1a2e/fff?text=Admin+Panel'" onclick="showImage('edu_main_img',this.src)" style="width:100%; height:60px; object-fit:cover; cursor:pointer; border-radius:6px; border:1px solid #444;">
-                            <img src="imges/projects/unvrsity/unvrsity6.png" onerror="this.src='https://placehold.co/150x100/1a1a2e/fff?text=Assignment+Portal'" onclick="showImage('edu_main_img',this.src)" style="width:100%; height:60px; object-fit:cover; cursor:pointer; border-radius:6px; border:1px solid #444;">
-                            <img src="imges/projects/unvrsity/unvrsity7.png" onerror="this.src='https://placehold.co/150x100/1a1a2e/fff?text=Grade+Tracking'" onclick="showImage('edu_main_img',this.src)" style="width:100%; height:60px; object-fit:cover; cursor:pointer; border-radius:6px; border:1px solid #444;">
-                            <img src="imges/projects/unvrsity/unvrsity8.png" onerror="this.src='https://placehold.co/150x100/1a1a2e/fff?text=Access+Control'" onclick="showImage('edu_main_img',this.src)" style="width:100%; height:60px; object-fit:cover; cursor:pointer; border-radius:6px; border:1px solid #444;">
-                            <img src="imges/projects/unvrsity/unvrsity9.png" onerror="this.src='https://placehold.co/150x100/1a1a2e/fff?text=Mobile+View'" onclick="showImage('edu_main_img',this.src)" style="width:100%; height:60px; object-fit:cover; cursor:pointer; border-radius:6px; border:1px solid #444;">
-                            <img src="imges/projects/unvrsity/unvrsity10.png" onerror="this.src='https://placehold.co/150x100/1a1a2e/fff?text=User+Roles'" onclick="showImage('edu_main_img',this.src)" style="width:100%; height:60px; object-fit:cover; cursor:pointer; border-radius:6px; border:1px solid #444;">
-                            <img src="imges/projects/unvrsity/unvrsity11.png" onerror="this.src='https://placehold.co/150x100/1a1a2e/fff?text=Course+Materials'" onclick="showImage('edu_main_img',this.src)" style="width:100%; height:60px; object-fit:cover; cursor:pointer; border-radius:6px; border:1px solid #444;">
-                        </div>
-                    </div>
-                    <div class="modal-body">
-                        <div class="modal-header-flex" style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
-                            <h2 class="modal-title" data-en="Advanced LMS Ecosystem" data-ar="نظام إدارة التعلم المتقدم"></h2>
-                            <i class="fas fa-qrcode" style="font-size:2rem; color:#6366f1;"></i>
-                        </div>
-                        <p class="modal-description"
-                            data-en="This ecosystem bridges the gap between public university information and internal academic management. It features a unique QR-based attendance system and a secure assignment portal."
-                            data-ar="هذا النظام يجمع بين عرض معلومات الجامعة العامة وبين الإدارة الأكاديمية الداخلية."></p>
-                        <div class="modal-features-grid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:15px; margin-top:20px;">
-                            <div class="feature-group">
-                                <h4 data-en="For Doctors & TAs:" data-ar="للدكاترة والمعيدين:"></h4>
-                                <ul style="list-style:none; padding:0;">
-                                    <li style="margin-bottom:8px;"><i class="fas fa-check-circle" style="color:#6366f1; margin-left:5px;"></i> <span data-en="Generate QR for fast attendance" data-ar="توليد QR Code لتحضير الطلاب"></span></li>
-                                    <li><i class="fas fa-check-circle" style="color:#6366f1; margin-left:5px;"></i> <span data-en="Grade assignments instantly" data-ar="رصد درجات التكليفات فورياً"></span></li>
-                                </ul>
-                            </div>
-                            <div class="feature-group">
-                                <h4 data-en="For Students:" data-ar="للطلاب:"></h4>
-                                <ul style="list-style:none; padding:0;">
-                                    <li style="margin-bottom:8px;"><i class="fas fa-check-circle" style="color:#6366f1; margin-left:5px;"></i> <span data-en="Submit assignments online" data-ar="رفع وتسليم التكليفات"></span></li>
-                                    <li style="margin-bottom:8px;"><i class="fas fa-check-circle" style="color:#6366f1; margin-left:5px;"></i> <span data-en="Access course materials" data-ar="مشاهدة المحتوى الدراسي"></span></li>
-                                    <li><i class="fas fa-check-circle" style="color:#6366f1; margin-left:5px;"></i> <span data-en="Real-time grade notifications" data-ar="متابعة الدرجات فور رصدها"></span></li>
-                                </ul>
-                            </div>
-                            <div class="feature-group">
-                                <h4 data-en="For Super Admin:" data-ar="للمشرف العام:"></h4>
-                                <ul style="list-style:none; padding:0;">
-                                    <li style="margin-bottom:8px;"><i class="fas fa-check-circle" style="color:#6366f1; margin-left:5px;"></i> <span data-en="Dynamic Access Control (ACL)" data-ar="تحكم ديناميكي كامل في الصلاحيات"></span></li>
-                                    <li><i class="fas fa-check-circle" style="color:#6366f1; margin-left:5px;"></i> <span data-en="Delegate Admin permissions" data-ar="تخصيص وتفويض المهام للإداريين"></span></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="tech-stack-used" style="margin-top:25px; border-top:1px solid #444; padding-top:15px;">
-                            <h4 data-en="Technical Stack:" data-ar="التقنيات المستخدمة:"></h4>
-                            <div class="project-tech">
-                                <span class="tech-tag">Laravel (PHP)</span>
-                                <span class="tech-tag">MySQL</span>
-                                <span class="tech-tag">QR Library</span>
-                                <span class="tech-tag">Custom Middleware</span>
-                                <span class="tech-tag">File Storage System</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Student Grade Tracker -->
-            <div class="project-card fade-in" data-category="java">
-                <div class="project-image">
-                    <img src="imges/projects/java/student_tracker.png" alt="Student Grade Tracker"
-                        onerror="this.src='https://placehold.co/400x250/1a1a2e/6366f1?text=Java+Tracker'">
-                    <span class="project-category" data-en="Java" data-ar="جافا">Java</span>
-                </div>
-                <div class="project-content">
-                    <h3 class="project-title" data-en="Student Grade Tracker" data-ar="متابع درجات الطلاب">Student Grade Tracker</h3>
-                    <p class="project-description"
-                        data-en="Desktop app to manage student records using Java Swing. Add, edit, delete, and list students with file persistence."
-                        data-ar="تطبيق سطح مكتب لإدارة سجلات الطلاب باستخدام Java Swing."></p>
-                    <div class="project-tech">
-                        <span class="tech-tag">Java SE</span>
-                        <span class="tech-tag">Swing UI</span>
-                        <span class="tech-tag">File I/O</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link primary view-project" data-project="project-java-student">
-                            <i class="fas fa-eye"></i> <span data-en="View" data-ar="عرض">View</span>
-                        </a>
-                        <a href="https://github.com/mohamedmahmouddorah/CodeAlpha_StudentGradeTracker" target="_blank" class="project-link secondary">
-                            <i class="fab fa-github"></i> <span data-en="Code" data-ar="الكود">Code</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div id="project-java-student" class="project-modal">
-                <div class="modal-content">
-                    <span class="close-modal">&times;</span>
-                    <div class="modal-gallery-wrapper" style="padding:15px;">
-                        <div class="main-display-container" style="margin-bottom:12px; text-align:center; background:#000; border-radius:12px; overflow:hidden;">
-                            <img src="imges/projects/java/student_tracker.png" id="student_main_img"
-                                style="width:100%; max-height:450px; object-fit:contain;" alt="Main View">
-                        </div>
-                        <div class="thumbnails-grid" style="display:grid; grid-template-columns:repeat(auto-fill, minmax(80px, 1fr)); gap:10px;">
-                            <img src="imges/projects/java/student_tracker.png" onclick="showImage('student_main_img',this.src)" style="width:100%; height:60px; object-fit:cover; cursor:pointer; border-radius:6px; border:2px solid #6366f1;">
-                            <img src="imges/projects/java/student_tracker2.png" onerror="this.src='https://placehold.co/150x100/1a1a2e/fff?text=View+2'" onclick="showImage('student_main_img',this.src)" style="width:100%; height:60px; object-fit:cover; cursor:pointer; border-radius:6px; border:1px solid #444;">
-                            <img src="imges/projects/java/student_tracker3.png" onerror="this.src='https://placehold.co/150x100/1a1a2e/fff?text=View+3'" onclick="showImage('student_main_img',this.src)" style="width:100%; height:60px; object-fit:cover; cursor:pointer; border-radius:6px; border:1px solid #444;">
-                            <img src="imges/projects/java/student_tracker4.png" onerror="this.src='https://placehold.co/150x100/1a1a2e/fff?text=View+4'" onclick="showImage('student_main_img',this.src)" style="width:100%; height:60px; object-fit:cover; cursor:pointer; border-radius:6px; border:1px solid #444;">
-                            <img src="imges/projects/java/student_tracker5.png" onerror="this.src='https://placehold.co/150x100/1a1a2e/fff?text=View+5'" onclick="showImage('student_main_img',this.src)" style="width:100%; height:60px; object-fit:cover; cursor:pointer; border-radius:6px; border:1px solid #444;">
-                        </div>
-                    </div>
-                    <div class="modal-body">
-                        <h2 class="modal-title" data-en="Advanced Grade Management System" data-ar="نظام متقدم لإدارة الدرجات"></h2>
-                        <p class="modal-description"
-                            data-en="This system utilizes Java Object-Oriented Programming to handle student data. It features a robust file storage mechanism (File I/O) to ensure that student records and grades are persistent and securely saved on the local machine."
-                            data-ar="يعتمد هذا النظام على البرمجة كائنية التوجه (OOP) في جافا للتعامل مع بيانات الطلاب."></p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Stock Trading Platform -->
-            <div class="project-card fade-in" data-category="java">
-                <div class="project-image">
-                    <img src="imges/projects/java/stock_platform.png" alt="Stock Trading Platform"
-                        onerror="this.src='https://placehold.co/400x250/1a1a2e/6366f1?text=Stock+Trading'">
-                    <span class="project-category" data-en="Java" data-ar="جافا">Java</span>
-                </div>
-                <div class="project-content">
-                    <h3 class="project-title" data-en="Stock Trading Platform" data-ar="منصة تداول الأسهم">Stock Trading Platform</h3>
-                    <p class="project-description"
-                        data-en="Simplified stock trading simulator with tabs for Stocks, Portfolio, and Transactions. Real-time UI updates."
-                        data-ar="محاكي مبسط لتداول الأسهم مع تبويبات للأسهم، المحفظة، والمعاملات."></p>
-                    <div class="project-tech">
-                        <span class="tech-tag">MVC Pattern</span>
-                        <span class="tech-tag">Swing</span>
-                        <span class="tech-tag">Algorithms</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link primary view-project" data-project="project-java-stock">
-                            <i class="fas fa-eye"></i> <span data-en="View" data-ar="عرض">View</span>
-                        </a>
-                        <a href="https://github.com/mohamedmahmouddorah/Stock_Trading_Simulator" target="_blank" class="project-link secondary">
-                            <i class="fab fa-github"></i> <span data-en="Code" data-ar="الكود">Code</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div id="project-java-stock" class="project-modal">
-                <div class="modal-content">
-                    <span class="close-modal">&times;</span>
-                    <div class="modal-gallery-wrapper" style="padding:15px;">
-                        <div class="main-display-container" style="margin-bottom:12px; text-align:center; background:#000; border-radius:12px; overflow:hidden;">
-                            <img src="imges/projects/java/stock_platform.png" id="stock_main_img"
-                                style="width:100%; max-height:450px; object-fit:contain;" alt="Main System View">
-                        </div>
-                        <div class="thumbnails-grid" style="display:grid; grid-template-columns:repeat(auto-fill, minmax(80px, 1fr)); gap:10px;">
-                            <img src="imges/projects/java/stock_platform1.png" onclick="showImage('stock_main_img',this.src)" style="width:100%; height:60px; object-fit:cover; cursor:pointer; border-radius:6px; border:2px solid #6366f1;">
-                            <img src="imges/projects/java/stock_platform2.png" onerror="this.src='https://placehold.co/150x100/1a1a2e/fff?text=Portfolio'" onclick="showImage('stock_main_img',this.src)" style="width:100%; height:60px; object-fit:cover; cursor:pointer; border-radius:6px; border:1px solid #444;">
-                            <img src="imges/projects/java/stock_platform3.png" onerror="this.src='https://placehold.co/150x100/1a1a2e/fff?text=History'" onclick="showImage('stock_main_img',this.src)" style="width:100%; height:60px; object-fit:cover; cursor:pointer; border-radius:6px; border:1px solid #444;">
-                            <img src="imges/projects/java/stock_platform4.png" onerror="this.src='https://placehold.co/150x100/1a1a2e/fff?text=Trading+Tab'" onclick="showImage('stock_main_img',this.src)" style="width:100%; height:60px; object-fit:cover; cursor:pointer; border-radius:6px; border:1px solid #444;">
-                            <img src="imges/projects/java/stock_platform5.png" onerror="this.src='https://placehold.co/150x100/1a1a2e/fff?text=Transaction+History'" onclick="showImage('stock_main_img',this.src)" style="width:100%; height:60px; object-fit:cover; cursor:pointer; border-radius:6px; border:1px solid #444;">
-                        </div>
-                    </div>
-                    <div class="modal-body">
-                        <h2 class="modal-title" data-en="Stock Market Simulator" data-ar="محاكي سوق الأسهم"></h2>
-                        <p class="modal-description"
-                            data-en="A complex financial simulator implementing the MVC (Model-View-Controller) design pattern. It simulates real-world trading logic, calculates portfolio values dynamically, and provides a multi-tabbed interface for seamless user experience."
-                            data-ar="محاكي مالي معقد يطبق نمط تصميم MVC ويحسب قيم المحفظة ديناميكياً."></p>
-                        <div class="tech-stack-used" style="margin-top:25px; border-top:1px solid #444; padding-top:15px;">
-                            <h4 data-en="Technical Stack:" data-ar="التقنيات المستخدمة:"></h4>
-                            <div class="project-tech">
-                                <span class="tech-tag">Java SE</span>
-                                <span class="tech-tag">Swing UI</span>
-                                <span class="tech-tag">MVC Pattern</span>
-                                <span class="tech-tag">Object-Oriented Design</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- AI Chatbot Calculator -->
-            <div class="project-card fade-in" data-category="java">
-                <div class="project-image">
-                    <img src="imges/projects/java/chatbot.png" alt="AI Chatbot Calculator"
-                        onerror="this.src='https://placehold.co/400x250/1a1a2e/6366f1?text=AI+Chatbot'">
-                    <span class="project-category" data-en="Java" data-ar="جافا">Java</span>
-                </div>
-                <div class="project-content">
-                    <h3 class="project-title" data-en="AI Chatbot Calculator" data-ar="شات بوت آلة حاسبة">AI Chatbot Calculator</h3>
-                    <p class="project-description"
-                        data-en="Chatbot-style calculator that parses textual math expressions and returns results with error handling."
-                        data-ar="آلة حاسبة بأسلوب الشات بوت تقوم بتحليل التعبيرات الرياضية النصية وإرجاع النتائج."></p>
-                    <div class="project-tech">
-                        <span class="tech-tag">Java SE</span>
-                        <span class="tech-tag">String Parsing</span>
-                        <span class="tech-tag">Logic Handling</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link primary view-project" data-project="project-java-chatbot">
-                            <i class="fas fa-eye"></i> <span data-en="View" data-ar="عرض">View</span>
-                        </a>
-                        <a href="https://github.com/mohamedmahmouddorah/AI_Chatbot" target="_blank" class="project-link secondary">
-                            <i class="fab fa-github"></i> <span data-en="Code" data-ar="الكود">Code</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div id="project-java-chatbot" class="project-modal">
-                <div class="modal-content">
-                    <span class="close-modal">&times;</span>
-                    <div class="modal-gallery-wrapper" style="padding:15px;">
-                        <div class="main-display-container" style="margin-bottom:12px; text-align:center; background:#000; border-radius:12px; overflow:hidden;">
-                            <img src="imges/projects/java/chatbot.png" id="chatbot_main_img"
-                                style="width:100%; max-height:450px; object-fit:contain;" alt="Chatbot View">
-                        </div>
-                    </div>
-                    <div class="modal-body">
-                        <h2 class="modal-title" data-en="Text-Based Logic Bot" data-ar="بوت المنطق النصي"></h2>
-                        <p class="modal-description"
-                            data-en="This AI-driven calculator focuses on natural language processing principles. It can interpret string-based mathematical commands, parse them into executable logic, and handle user errors gracefully through custom exception management."
-                            data-ar="تركز هذه الآلة الحاسبة على مبادئ معالجة اللغة الطبيعية وتفسير الأوامر الرياضية النصية."></p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- ITI E-commerce System -->
-            <div class="project-card fade-in" data-category="php">
-                <div class="project-image">
-                    <img src="imges/projects/ITI_E-commerce_System/em.png" alt="ITI E-commerce System"
-                        onerror="this.src='https://placehold.co/400x250/1a1a2e/6366f1?text=ITI+E-commerce'">
-                    <span class="project-category" data-en="Full Stack PHP" data-ar="باك إند PHP">Full Stack PHP</span>
-                </div>
-                <div class="project-content">
-                    <h3 class="project-title" data-en="ITI E-commerce System" data-ar="نظام ITI للتجارة">ITI E-commerce System</h3>
-                    <p class="project-description"
-                        data-en="A full-stack e-commerce solution with product management, CRUD operations, and secure database integration."
-                        data-ar="حل متكامل للتجارة الإلكترونية مع إدارة المنتجات، عمليات CRUD كاملة، وربط آمن لقاعدة البيانات."></p>
-                    <div class="project-tech">
-                        <span class="tech-tag">PHP</span>
-                        <span class="tech-tag">MySQL</span>
-                        <span class="tech-tag">Bootstrap 5</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link primary view-project" data-project="project-ecommerce">
-                            <i class="fas fa-eye"></i> <span data-en="View" data-ar="عرض">عرض</span>
-                        </a>
-                        <a href="https://github.com/mohamedmahmouddorah/E-Commerce-Product-Cart-Management-System-PHP-MySQL-" target="_blank" class="project-link secondary">
-                            <i class="fab fa-github"></i> <span data-en="Code" data-ar="الكود">Code</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div id="project-ecommerce" class="project-modal">
-                <div class="modal-content">
-                    <span class="close-modal">&times;</span>
-                    <div class="modal-gallery-wrapper" style="padding:15px;">
-                        <div class="main-display-container" style="background:#000; border-radius:12px; overflow:hidden; margin-bottom:12px; text-align:center; border:1px solid #333;">
-                            <img src="imges/projects/ITI_E-commerce_System/em1.png" id="ecommerce_main_img"
-                                style="width:100%; max-height:400px; object-fit:contain;" alt="Dashboard Preview">
-                        </div>
-                        <div class="thumbnails-grid" style="display:grid; grid-template-columns:repeat(auto-fill, minmax(80px, 1fr)); gap:10px;">
-                            <img src="imges/projects/ITI_E-commerce_System/em2.png" onclick="showImage('ecommerce_main_img',this.src)" style="width:100%; height:60px; object-fit:cover; cursor:pointer; border-radius:6px; border:2px solid #6366f1;">
-                            <img src="imges/projects/ITI_E-commerce_System/em3.png" onerror="this.src='https://placehold.co/150x100/1a1a2e/fff?text=Products'" onclick="showImage('ecommerce_main_img',this.src)" style="width:100%; height:60px; object-fit:cover; cursor:pointer; border-radius:6px; border:1px solid #444;">
-                            <img src="imges/projects/ITI_E-commerce_System/em4.png" onerror="this.src='https://placehold.co/150x100/1a1a2e/fff?text=Login'" onclick="showImage('ecommerce_main_img',this.src)" style="width:100%; height:60px; object-fit:cover; cursor:pointer; border-radius:6px; border:1px solid #444;">
-                            <img src="imges/projects/ITI_E-commerce_System/em5.png" onerror="this.src='https://placehold.co/150x100/1a1a2e/fff?text=Add+Product'" onclick="showImage('ecommerce_main_img',this.src)" style="width:100%; height:60px; object-fit:cover; cursor:pointer; border-radius:6px; border:1px solid #444;">
-                            <img src="imges/projects/ITI_E-commerce_System/em6.png" onerror="this.src='https://placehold.co/150x100/1a1a2e/fff?text=Edit+Product'" onclick="showImage('ecommerce_main_img',this.src)" style="width:100%; height:60px; object-fit:cover; cursor:pointer; border-radius:6px; border:1px solid #444;">
-                            <img src="imges/projects/ITI_E-commerce_System/em7.png" onerror="this.src='https://placehold.co/150x100/1a1a2e/fff?text=Delete+Product'" onclick="showImage('ecommerce_main_img',this.src)" style="width:100%; height:60px; object-fit:cover; cursor:pointer; border-radius:6px; border:1px solid #444;">
-                            <img src="imges/projects/ITI_E-commerce_System/em8.png" onerror="this.src='https://placehold.co/150x100/1a1a2e/fff?text=Database+Schema'" onclick="showImage('ecommerce_main_img',this.src)" style="width:100%; height:60px; object-fit:cover; cursor:pointer; border-radius:6px; border:1px solid #444;">
-                        </div>
-                    </div>
-                    <div class="modal-body">
-                        <h2 class="modal-title" data-en="Advanced E-commerce Management" data-ar="إدارة التجارة الإلكترونية المتقدمة"></h2>
-                        <p class="modal-description"
-                            data-en="This system handles the core logic of an online store. Developed during ITI training, it features a robust admin dashboard for managing stock, processing user data via PHP, and maintaining data integrity with MySQL."
-                            data-ar="يدير هذا النظام المنطق الأساسي للمتجر الإلكتروني. تم تطويره خلال تدريب ITI."></p>
-                        <div class="features-section" style="margin-top:20px; border-top:1px solid #444; padding-top:15px;">
-                            <h4 style="color:#6366f1; margin-bottom:10px;" data-en="Technical Breakdown:" data-ar="التفاصيل التقنية:"></h4>
-                            <ul style="list-style:none; padding:0; color:#ccc; font-size:0.95rem;">
-                                <li style="margin-bottom:8px;"><i class="fas fa-database" style="color:#6366f1; margin-left:8px;"></i> <span data-en="Relational Database Design (Users, Products, Categories)" data-ar="تصميم قاعدة بيانات علائقية (المستخدمين، المنتجات، الأقسام)"></span></li>
-                                <li style="margin-bottom:8px;"><i class="fas fa-lock" style="color:#6366f1; margin-left:8px;"></i> <span data-en="Secure Authentication using PHP Sessions" data-ar="نظام تسجيل دخول آمن باستخدام جلسات PHP"></span></li>
-                                <li style="margin-bottom:8px;"><i class="fas fa-code" style="color:#6366f1; margin-left:8px;"></i> <span data-en="Full CRUD system for product inventory" data-ar="نظام CRUD كامل لإدارة مخزون المنتجات"></span></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- User & Media System -->
-            <div class="project-card fade-in" data-category="php">
-                <div class="project-image">
-                    <img src="imges/projects/Management_System/mana_sy.png" alt="User Management System">
-                    <span class="project-category" data-en="PHP Development" data-ar="تطوير PHP">PHP Development</span>
-                </div>
-                <div class="project-content">
-                    <h3 class="project-title" data-en="User & Media System" data-ar="نظام المستخدمين والوسائط">User & Media System</h3>
-                    <p class="project-description"
-                        data-en="A dual-method user management system implementing both Flat-File storage and MySQL database integration."
-                        data-ar="نظام إدارة مستخدمين ثنائي الطريقة، يطبق كلاً من التخزين في الملفات والربط مع قواعد بيانات MySQL."></p>
-                    <div class="project-tech">
-                        <span class="tech-tag">Full CRUD</span>
-                        <span class="tech-tag">Image Upload</span>
-                        <span class="tech-tag">PHP Logic</span>
-                    </div>
-                    <div class="project-links-container" style="display:flex; flex-direction:column; gap:10px; margin-top:15px;">
-                        <a href="#" class="project-link primary view-project" data-project="project-php-system-final" style="width:100%; justify-content:center; padding:10px 0;">
-                            <i class="fas fa-eye"></i> <span data-en="View" data-ar="عرض">عرض</span>
-                        </a>
-                        <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
-                            <a href="https://github.com/mohamedmahmouddorah/PHP-User-Auth-FlatFile" target="_blank" class="project-link secondary" style="font-size:0.75rem; padding:8px; justify-content:center;">
-                                <i class="fab fa-github"></i> <span data-en="Flat-File Logic" data-ar="منطق الملفات">منطق الملفات</span>
-                            </a>
-                            <a href="https://github.com/mohamedmahmouddorah/PHP-User-Auth-MySQL" target="_blank" class="project-link secondary" style="font-size:0.75rem; padding:8px; justify-content:center;">
-                                <i class="fab fa-github"></i> <span data-en="MySQL Logic" data-ar="منطق MySQL">منطق MySQL</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div id="project-php-system-final" class="project-modal">
-                <div class="modal-content">
-                    <span class="close-modal">&times;</span>
-                    <div class="modal-gallery-wrapper" style="padding:15px;">
-                        <div class="main-display-container" style="background:#000; border-radius:12px; overflow:hidden; margin-bottom:12px; text-align:center; border:1px solid #444;">
-                            <img src="imges/projects/Management_System/mana_sy1.png" id="final_preview_img"
-                                style="width:100%; max-height:400px; object-fit:contain;" alt="System Preview">
-                        </div>
-                        <div class="thumbnails-grid" style="display:flex; gap:10px; justify-content:flex-start; flex-wrap:wrap;">
-                            <img src="imges/projects/Management_System/mana_sy2.png" onclick="showImage('final_preview_img',this.src); updateActiveThumb(this)" style="width:75px; height:45px; object-fit:cover; cursor:pointer; border-radius:4px; border:2px solid #6366f1;" class="php-thumb active">
-                            <img src="imges/projects/Management_System/mana_sy3.png" onclick="showImage('final_preview_img',this.src); updateActiveThumb(this)" style="width:75px; height:45px; object-fit:cover; cursor:pointer; border-radius:4px; border:1px solid #444;" class="php-thumb">
-                            <img src="imges/projects/Management_System/mana_sy4.png" onclick="showImage('final_preview_img',this.src); updateActiveThumb(this)" style="width:75px; height:45px; object-fit:cover; cursor:pointer; border-radius:4px; border:1px solid #444;" class="php-thumb">
-                            <img src="imges/projects/Management_System/mana_sy5.png" onclick="showImage('final_preview_img',this.src); updateActiveThumb(this)" style="width:75px; height:45px; object-fit:cover; cursor:pointer; border-radius:4px; border:1px solid #444;" class="php-thumb">
-                        </div>
-                    </div>
-                    <div class="modal-body">
-                        <h2 class="modal-title" data-en="System Logic Comparison" data-ar="مقارنة منطق النظام"></h2>
-                        <p class="modal-description"
-                            data-en="I developed this system using two storage architectures to compare performance and scalability. Both versions handle user registration, profile image uploads, and full CRUD operations."
-                            data-ar="قمت بتطوير هذا النظام باستخدام بنيتين للتخزين لمقارنة الأداء والقابلية للتوسع."></p>
-                        <div class="technical-grid" style="display:grid; grid-template-columns:1fr 1fr; gap:20px; border-top:1px solid #333; padding-top:20px; margin-top:15px;">
-                            <div class="tech-box">
-                                <h4 style="color:#6366f1; margin-bottom:10px;" data-en="File-Based Storage" data-ar="التخزين المعتمد على الملفات"></h4>
-                                <ul style="list-style:none; padding:0; color:#ccc; font-size:0.85rem; line-height:1.8;">
-                                    <li><i class="fas fa-file-code" style="color:#6366f1;"></i> <span data-en="Direct File IO Logic" data-ar="منطق معالجة الملفات المباشر"></span></li>
-                                    <li><i class="fas fa-folder-open" style="color:#6366f1;"></i> <span data-en="Local Directory Uploads" data-ar="رفع الملفات للمجلدات المحلية"></span></li>
-                                    <li><i class="fas fa-save" style="color:#6366f1;"></i> <span data-en="Manual Data Serialization" data-ar="تنسيق وحفظ البيانات يدوياً"></span></li>
-                                </ul>
-                            </div>
-                            <div class="tech-box">
-                                <h4 style="color:#6366f1; margin-bottom:10px;" data-en="Database Integration" data-ar="الربط مع قواعد البيانات"></h4>
-                                <ul style="list-style:none; padding:0; color:#ccc; font-size:0.85rem; line-height:1.8;">
-                                    <li><i class="fas fa-database" style="color:#6366f1;"></i> <span data-en="MySQLi CRUD Operations" data-ar="عمليات CRUD عبر MySQLi"></span></li>
-                                    <li><i class="fas fa-table" style="color:#6366f1;"></i> <span data-en="Structured Table Schema" data-ar="هيكلة الجداول المنظمة"></span></li>
-                                    <li><i class="fas fa-key" style="color:#6366f1;"></i> <span data-en="Relational Data Handling" data-ar="معالجة البيانات العلائقية"></span></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="skills-highlight" style="margin-top:20px; padding:12px; background:#111; border-radius:8px; border:1px solid #333;">
-                            <h4 style="font-size:0.9rem; color:#6366f1;" data-en="Key Features:" data-ar="المميزات الرئيسية:"></h4>
-                            <p style="font-size:0.8rem; color:#bbb; margin-top:5px;"
-                                data-en="Implemented secure image uploading with extension validation and integrated seamless data retrieval across both storage engines."
-                                data-ar="تنفيذ رفع صور آمن مع التحقق من الامتدادات، وتكامل استرجاع البيانات بسلاسة عبر كلا محركي التخزين."></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Secure Store Engine -->
-            <div class="project-card fade-in" data-category="web">
-                <div class="project-image">
-                    <img src="imges/projects/e-commerce_system/e-com1.png" alt="E-Commerce System">
-                    <span class="project-category" data-en="Native & Laravel" data-ar="نيتف ولارافيل">Native & Laravel</span>
-                </div>
-                <div class="project-content">
-                    <h3 class="project-title" data-en="Secure Store Engine" data-ar="محرك المتجر الآمن">Secure Store Engine</h3>
-                    <p class="project-description" data-en="E-commerce system with advanced binary file validation (Mime-Type) for maximum security." data-ar="نظام متجر إلكتروني مع فحص متقدم لمحتوى الملفات الثنائي (Mime-Type) لأقصى درجات الأمان."></p>
-                    <div class="project-tech">
-                        <span class="tech-tag">PHP Native</span>
-                        <span class="tech-tag">Laravel</span>
-                        <span class="tech-tag">MIME Security</span>
-                    </div>
-                    <div class="project-links-container" style="display:flex; flex-direction:column; gap:10px; margin-top:15px;">
-                        <a href="#" class="project-link primary view-project" data-project="modal-store-pro" style="width:100%; justify-content:center; padding:10px 0;">
-                            <i class="fas fa-eye"></i> <span data-en="View Project" data-ar="عرض المشروع">عرض المشروع</span>
-                        </a>
-                        <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
-                            <a href="https://github.com/mohamedmahmouddorah/ecommercelf" target="_blank" class="project-link secondary" style="font-size:0.75rem; padding:8px; justify-content:center;">
-                                <i class="fab fa-github"></i> <span data-en="Native PHP" data-ar="نيتف PHP">Native PHP</span>
-                            </a>
-                            <a href="#" target="_blank" class="project-link secondary" style="font-size:0.75rem; padding:8px; justify-content:center;">
-                                <i class="fab fa-github"></i> <span data-en="Laravel" data-ar="لارافيل">Laravel</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div id="modal-store-pro" class="project-modal">
-                <div class="modal-content">
-                    <span class="close-modal">&times;</span>
-                    <div class="modal-gallery-wrapper" style="padding:15px;">
-                        <div class="main-display-container" style="background:#000; border-radius:12px; overflow:hidden; margin-bottom:12px; text-align:center; border:1px solid #444;">
-                            <img src="imges/projects/e-commerce_system/e-com1.png" id="store_preview_img" style="width:100%; max-height:400px; object-fit:contain;" alt="Store Preview">
-                        </div>
-                        <div class="thumbnails-grid" style="display:flex; gap:10px; justify-content:flex-start; flex-wrap:wrap;">
-                            <img src="imges/projects/e-commerce_system/e-com3.png" onclick="showImage('store_preview_img',this.src); updateActiveThumb(this)" style="width:75px; height:45px; object-fit:cover; cursor:pointer; border-radius:4px; border:2px solid #6366f1;" class="php-thumb active">
-                            <img src="imges/projects/e-commerce_system/e-com4.png" onerror="this.src='https://placehold.co/150x100/1a1a2e/fff?text=View+2'" onclick="showImage('store_preview_img',this.src); updateActiveThumb(this)" style="width:75px; height:45px; object-fit:cover; cursor:pointer; border-radius:4px; border:1px solid #444;" class="php-thumb">
-                            <img src="imges/projects/e-commerce_system/e-com5.png" onerror="this.src='https://placehold.co/150x100/1a1a2e/fff?text=View+3'" onclick="showImage('store_preview_img',this.src); updateActiveThumb(this)" style="width:75px; height:45px; object-fit:cover; cursor:pointer; border-radius:4px; border:1px solid #444;" class="php-thumb">
-                            <img src="imges/projects/e-commerce_system/e-com6.png" onerror="this.src='https://placehold.co/150x100/1a1a2e/fff?text=View+4'" onclick="showImage('store_preview_img',this.src); updateActiveThumb(this)" style="width:75px; height:45px; object-fit:cover; cursor:pointer; border-radius:4px; border:1px solid #444;" class="php-thumb">
-                            <img src="imges/projects/e-commerce_system/e-com7.png" onerror="this.src='https://placehold.co/150x100/1a1a2e/fff?text=View+5'" onclick="showImage('store_preview_img',this.src); updateActiveThumb(this)" style="width:75px; height:45px; object-fit:cover; cursor:pointer; border-radius:4px; border:1px solid #444;" class="php-thumb">
-                            <img src="imges/projects/e-commerce_system/e-com8.png" onerror="this.src='https://placehold.co/150x100/1a1a2e/fff?text=View+6'" onclick="showImage('store_preview_img',this.src); updateActiveThumb(this)" style="width:75px; height:45px; object-fit:cover; cursor:pointer; border-radius:4px; border:1px solid #444;" class="php-thumb">
-                            <img src="imges/projects/e-commerce_system/e-com9.png" onerror="this.src='https://placehold.co/150x100/1a1a2e/fff?text=View+7'" onclick="showImage('store_preview_img',this.src); updateActiveThumb(this)" style="width:75px; height:45px; object-fit:cover; cursor:pointer; border-radius:4px; border:1px solid #444;" class="php-thumb">
-                            <img src="imges/projects/e-commerce_system/e-com10.png" onerror="this.src='https://placehold.co/150x100/1a1a2e/fff?text=View+8'" onclick="showImage('store_preview_img',this.src); updateActiveThumb(this)" style="width:75px; height:45px; object-fit:cover; cursor:pointer; border-radius:4px; border:1px solid #444;" class="php-thumb">
-                            <img src="imges/projects/e-commerce_system/e-com11.png" onerror="this.src='https://placehold.co/150x100/1a1a2e/fff?text=View+9'" onclick="showImage('store_preview_img',this.src); updateActiveThumb(this)" style="width:75px; height:45px; object-fit:cover; cursor:pointer; border-radius:4px; border:1px solid #444;" class="php-thumb">
-                        </div>
-                    </div>
-                    <div class="modal-body">
-                        <h2 class="modal-title" data-en="Binary Level Security" data-ar="الأمان على مستوى المحتوى الثنائي"></h2>
-                        <p class="modal-description" data-en="Two implementations of the same store — one in raw PHP, one in Laravel — both validating files by actual binary content, not just extension." data-ar="تطبيقان لنفس المتجر — واحد بـ PHP الخام والآخر بـ Laravel — كلاهما يتحقق من الملفات بناءً على المحتوى الثنائي الفعلي وليس الامتداد فقط."></p>
-                        <div class="technical-grid" style="display:grid; grid-template-columns:1fr 1fr; gap:20px; border-top:1px solid #333; padding-top:20px; margin-top:15px;">
-                            <div class="tech-box">
-                                <h4 style="color:#6366f1; margin-bottom:10px;" data-en="Native PHP Validation" data-ar="التحقق بـ PHP النيتف"></h4>
-                                <ul style="list-style:none; padding:0; color:#ccc; font-size:0.85rem; line-height:1.8;">
-                                    <li><i class="fas fa-search" style="color:#6366f1;"></i> <span data-en="finfo_file() Magic Bytes" data-ar="فحص Magic Bytes بـ finfo_file()"></span></li>
-                                    <li><i class="fas fa-file-alt" style="color:#6366f1;"></i> <span data-en="Manual MIME Detection" data-ar="كشف MIME يدوياً"></span></li>
-                                    <li><i class="fas fa-ban" style="color:#6366f1;"></i> <span data-en="Strict Extension Blocking" data-ar="حجب صارم للامتدادات المشبوهة"></span></li>
-                                </ul>
-                            </div>
-                            <div class="tech-box">
-                                <h4 style="color:#6366f1; margin-bottom:10px;" data-en="Laravel Validation" data-ar="التحقق بـ Laravel"></h4>
-                                <ul style="list-style:none; padding:0; color:#ccc; font-size:0.85rem; line-height:1.8;">
-                                    <li><i class="fas fa-check-circle" style="color:#6366f1;"></i> <span data-en="mimetypes Validation Rules" data-ar="قواعد mimetypes للتحقق"></span></li>
-                                    <li><i class="fas fa-shield-alt" style="color:#6366f1;"></i> <span data-en="Laravel Request Policies" data-ar="سياسات Laravel Request"></span></li>
-                                    <li><i class="fas fa-lock" style="color:#6366f1;"></i> <span data-en="Secure File Storage Logic" data-ar="منطق تخزين آمن للملفات"></span></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="skills-highlight" style="margin-top:20px; padding:12px; background:#111; border-radius:8px; border:1px solid #333;">
-                            <h4 style="font-size:0.9rem; color:#6366f1;" data-en="Key Features:" data-ar="المميزات الرئيسية:"></h4>
-                            <p style="font-size:0.8rem; color:#bbb; margin-top:5px;" data-en="Both versions block malicious files disguised as images by reading actual binary content — not relying on the file extension alone." data-ar="كلا النسختين تمنعان رفع الملفات الخبيثة المتنكرة في شكل صور، بقراءة المحتوى الثنائي الفعلي وليس الامتداد فقط."></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Empty State -->
-            <div id="emptyState" style="display:none;">
-                <div class="empty-state-box">
-                    <i class="fas fa-folder-open"></i>
-                    <h3 data-en="No Projects Yet" data-ar="لا توجد مشاريع بعد">No Projects Yet</h3>
-                    <p data-en="No projects in this category yet — check back soon!" data-ar="لا توجد مشاريع في هذه الفئة حتى الآن!">No projects in this category yet — check back soon!</p>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</section>
     <script src="../js.js"></script>
     <script>
 
@@ -1190,8 +1605,8 @@
 
         // ── Project Filtering ──────────────────────────────────────────────
         const filterButtons = document.querySelectorAll('.filter-btn');
-        const projectCards  = document.querySelectorAll('.project-card');
-        const emptyState    = document.getElementById('emptyState');
+        const projectCards = document.querySelectorAll('.project-card');
+        const emptyState = document.getElementById('emptyState');
 
         if (filterButtons.length) {
             filterButtons.forEach(button => {
@@ -1275,7 +1690,7 @@
                         </div>
                         <div class="contact-details">
                             <h3 data-en="WhatsApp" data-ar="واتساب"></h3>
-                            <a href="https://wa.me/+201270846364" target="_blank">+20 127 084 6364</a>
+                            <a href="https://wa.me/+201017541628" target="_blank">+20 1017541628</a>
                             <p data-en="Available for quick chats" data-ar="متاح للمحادثات السريعة"></p>
                         </div>
                     </div>
@@ -1347,10 +1762,12 @@
         </div>
     </section>
 
-    <div class="certificate-modal" id="certModal">
-        <div class="modal-content-wrapper">
-            <img id="modalImg" src="" alt="Certificate Preview">
-        </div>
+   <div class="certificate-modal" id="certModal">
+    <div class="modal-content-wrapper">
+        <span class="cert-close-btn">&times;</span>
+        <img id="modalImg" src="" alt="Certificate Preview">
+    </div>
+</div>
     </div>
 
     <footer class="footer">
@@ -1465,4 +1882,5 @@
         });
     </script>
 </body>
+
 </html>
