@@ -70,17 +70,17 @@ if (themeBtn) {
 
 // Language + Typing Effect
 const typingTextsEN = [
-    "Full Stack Laravel Developer",
-    "Backend & API Specialist",
-    "Scalable Systems Architect",
-    "E-commerce Solutions Expert"
+    "Full Stack & Mobile Developer",
+    "Laravel & Flutter Specialist",
+    "Backend & Cross-Platform Architect",
+    "Web & Mobile Solutions Expert"
 ];
 
 const typingTextsAR = [
-    "مطور Full-Stack لارافيل",
-    "متخصص باك إند وواجهات برمجة",
-    "مهندس أنظمة قابلة للتوسع",
-    "خبير حلول التجارة الإلكترونية"
+    "مطور ويب وموبايل متكامل",
+    "متخصص لارافيل وفلاتر (Flutter)",
+    "مهندس أنظمة وتطبيقات متعددة المنصات",
+    "خبير حلول الويب والموبايل"
 ];
 
 let currentTexts = typingTextsEN;
@@ -208,13 +208,32 @@ if (contactForm) {
         const lang = document.documentElement.lang || 'en';
 
         // ── Validation ───────────────────────────────────────
-        const name    = document.getElementById('name')?.value.trim()    || '';
-        const email   = document.getElementById('email')?.value.trim()   || '';
+        const name = document.getElementById('name')?.value.trim() || '';
+        const email = document.getElementById('email')?.value.trim() || '';
         const subject = document.getElementById('subject')?.value.trim() || '';
         const message = document.getElementById('message')?.value.trim() || '';
 
         if (!name || !email || !subject || !message) {
-            alert(lang === 'ar' ? 'يرجى تعبئة جميع الحقول المطلوبة.' : 'Please fill in all required fields.');
+            // Remove any existing error message
+            const existingError = document.getElementById('form-error-msg');
+            if (existingError) existingError.remove();
+            
+            // Create a nice error message UI
+            const errorDiv = document.createElement('div');
+            errorDiv.id = 'form-error-msg';
+            errorDiv.style.cssText = `
+                background-color: rgba(239, 68, 68, 0.1);
+                border: 1px solid rgba(239, 68, 68, 0.4);
+                color: #ef4444;
+                padding: 12px;
+                border-radius: 8px;
+                margin-bottom: 20px;
+                text-align: center;
+                font-weight: bold;
+            `;
+            errorDiv.innerHTML = `<i class="fas fa-exclamation-circle"></i> ${lang === 'ar' ? 'يرجى تعبئة جميع الحقول المطلوبة أولاً.' : 'Please fill in all required fields first.'}`;
+            
+            contactForm.insertBefore(errorDiv, contactForm.firstChild);
             return;
         }
 
@@ -228,25 +247,45 @@ if (contactForm) {
 
         // ── Helper: success/error message ────────────────────
         function showResult(success) {
+            const form = document.getElementById('contactForm');
             const formContainer = document.querySelector('.contact-form-container');
-            if (!formContainer) return;
+            if (!formContainer || !form) return;
+            
             if (success) {
-                formContainer.innerHTML = `
-                <div style="
+                // Hide the form instead of replacing innerHTML
+                form.style.display = 'none';
+                
+                // Create success message element
+                const successDiv = document.createElement('div');
+                successDiv.id = 'success-message';
+                successDiv.style.cssText = `
                     padding: 40px 20px;
                     text-align: center;
                     background: rgba(99,102,241,0.07);
                     border: 1px solid rgba(99,102,241,0.2);
                     border-radius: 16px;
-                ">
+                `;
+                successDiv.innerHTML = `
                     <i class="fas fa-check-circle" style="font-size:3rem; color:#6366f1; margin-bottom:16px; display:block;"></i>
                     <h3 style="color:#e2e8f0; margin-bottom:10px;">
                         ${lang === 'ar' ? 'تم إرسال رسالتك بنجاح!' : 'Message Sent Successfully!'}
                     </h3>
-                    <p style="color:#94a3b8; font-size:0.95rem;">
+                    <p style="color:#94a3b8; font-size:0.95rem; margin-bottom:20px;">
                         ${lang === 'ar' ? 'شكراً لتواصلك، سأرد عليك في أقرب وقت.' : 'Thank you for reaching out. I will get back to you soon.'}
                     </p>
-                </div>`;
+                    <button class="btn btn-primary" id="reset-form-btn" style="padding: 12px 25px; border-radius: 8px; border: none; background: #6366f1; color: white; cursor: pointer; font-weight: 600; font-family: inherit;">
+                        ${lang === 'ar' ? 'إرسال رسالة أخرى' : 'Send Another Message'}
+                    </button>
+                `;
+                
+                formContainer.appendChild(successDiv);
+                
+                // Reset button logic
+                document.getElementById('reset-form-btn').addEventListener('click', function() {
+                    successDiv.remove(); // Remove success message
+                    form.reset();        // Clear form fields
+                    form.style.display = 'block'; // Show form again
+                });
             } else {
                 if (submitBtn) {
                     submitBtn.disabled = false;
@@ -256,23 +295,22 @@ if (contactForm) {
             }
         }
 
-        // ── Formspree Send ────────────────────────────────────
+        // ── EmailJS Send ──────────────────────────────────────
         try {
-            const formspreeId = contactForm.dataset.formspree; // هتحط الـ ID هنا
-            if (!formspreeId || formspreeId === 'YOUR_FORMSPREE_ID') {
-                throw new Error('Formspree ID not configured');
-            }
+            // Initialize EmailJS with public key
+            emailjs.init('aSDG83opFn2BSlfUW');
 
-            const res = await fetch(`https://formspree.io/f/${formspreeId}`, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-                body: JSON.stringify({ name, email, subject, message })
+            const res = await emailjs.send('service_g4a511u', 'template_cjuh3se', {
+                name:    name,
+                email:   email,
+                subject: subject,
+                message: message
             });
 
-            if (res.ok) {
+            if (res.status === 200) {
                 showResult(true);
             } else {
-                throw new Error('Formspree returned error');
+                throw new Error('EmailJS returned error');
             }
         } catch (err) {
             console.error('Form error:', err);
@@ -297,7 +335,7 @@ async function fetchPortfolioData() {
         // If current page doesn't have any of these containers, skip fetching
         if (!needsSkills && !needsExp && !needsEdu) return;
         console.log('Front-end mode active: Skipping API fetch');
-        updateLanguageText(); 
+        updateLanguageText();
         return;
 
         // Check for hardcoded content to prevent overwrite
@@ -438,7 +476,7 @@ document.addEventListener('DOMContentLoaded', fetchPortfolioData);
 /* --- Manual Image Lightbox for Certificates --- */
 document.addEventListener('DOMContentLoaded', () => {
     const certModal = document.getElementById('certModal');
-    const modalImg  = document.getElementById('modalImg');
+    const modalImg = document.getElementById('modalImg');
     const certThumbs = document.querySelectorAll('.certificate-thumb img');
 
     if (!certModal || !modalImg) return;
@@ -520,10 +558,93 @@ document.addEventListener('DOMContentLoaded', () => {
             max: 5,            // Extremely subtle for hero
             speed: 600,
             glare: true,
-            "max-glare": 0.1,  
+            "max-glare": 0.1,
             perspective: 1000,
             transition: true,
             easing: "cubic-bezier(.03,.98,.52,.99)"
         });
     }
+});
+
+/* ==========================================================================
+   Bi-Directional Scroll Reveal & Stagger Animation Engine
+   ========================================================================== */
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. Auto-tag elements for reveal animations
+    const revealSelectors = [
+        '.section-title',
+        '.about-hero',
+        '.info-card',
+        '.skills-cat-group',
+        '.skill-card-box',
+        '.timeline-card-container',
+        '.education-card',
+        '.certificate-card',
+        '.project-card',
+        '.contact-card',
+        '.contact-form-container'
+    ];
+
+    revealSelectors.forEach(selector => {
+        document.querySelectorAll(selector).forEach(el => {
+            if (!el.classList.contains('reveal-on-scroll')) {
+                el.classList.add('reveal-on-scroll');
+            }
+        });
+    });
+
+    // 2. Add directional variants for timeline items
+    document.querySelectorAll('.timeline-card-container.left').forEach(el => {
+        el.classList.add('reveal-left');
+    });
+    document.querySelectorAll('.timeline-card-container.right').forEach(el => {
+        el.classList.add('reveal-right');
+    });
+
+    // 3. Staggered Delays & Alternating Left / Center / Right Flying Assembly
+    const gridContainers = document.querySelectorAll(
+        '.projects-grid, .certificates-grid, .skills-grid-cards, .info-cards-grid, .education-grid'
+    );
+
+    gridContainers.forEach(grid => {
+        const children = Array.from(grid.children);
+        children.forEach((child, index) => {
+            const delay = (index % 6) * 0.09;
+            child.style.transitionDelay = `${delay}s`;
+
+            child.classList.remove('reveal-slide-left', 'reveal-slide-right', 'reveal-slide-up');
+
+            if (index % 3 === 0) {
+                child.classList.add('reveal-slide-left');
+            } else if (index % 3 === 1) {
+                child.classList.add('reveal-slide-up');
+            } else {
+                child.classList.add('reveal-slide-right');
+            }
+        });
+    });
+
+    // 4. Bi-Directional 60FPS Scroll Reveal (Animates smoothly on scroll UP and DOWN)
+    const observerOptions = {
+        threshold: 0.08,
+        rootMargin: '-20px 0px -40px 0px'
+    };
+
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('reveal-active');
+            } else {
+                // Reset when scrolled past viewport safety bounds so it re-reveals smoothly when scrolling back
+                const rect = entry.target.getBoundingClientRect();
+                if (rect.bottom < -80 || rect.top > window.innerHeight + 80) {
+                    entry.target.classList.remove('reveal-active');
+                }
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.reveal-on-scroll').forEach(el => {
+        revealObserver.observe(el);
+    });
 });

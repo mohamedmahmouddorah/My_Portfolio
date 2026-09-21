@@ -2228,3 +2228,328 @@ body.light-mode .modal-content-wrapper img {
         font-size: 1.9rem !important;
     }
 }
+
+/* ==========================================================================
+   Master Global Luxury Cards & Next-Gen Hover System
+   ========================================================================== */
+
+/* Universal Card Setup: Info, Education, Certificate, Project, Contact */
+.info-card,
+.education-card,
+.certificate-card,
+.project-card,
+.contact-card {
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1), 
+                box-shadow 0.35s ease, 
+                border-color 0.35s ease, 
+                background 0.35s ease !important;
+    z-index: 1;
+}
+
+/* Timeline Card Specific - Overflow Visible for Date Badge */
+.timeline-card-content {
+    position: relative;
+    overflow: visible !important;
+    transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1), 
+                box-shadow 0.35s ease, 
+                border-color 0.35s ease, 
+                background 0.35s ease !important;
+    z-index: 2;
+}
+
+.timeline-card-content .date-badge {
+    z-index: 10 !important;
+    top: -16px !important;
+}
+
+/* Glowing Top Accent Line on Hover for Cards */
+.info-card::before,
+.education-card::before,
+.certificate-card::before,
+.project-card::before,
+.contact-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #6366f1, #a855f7, #ec4899);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 20px 20px 0 0;
+    z-index: 3;
+}
+
+/* Radial Ambient Backlight Beam Behind Cards */
+.info-card::after,
+.timeline-card-content::after,
+.education-card::after,
+.certificate-card::after,
+.project-card::after,
+.contact-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 0%, rgba(99, 102, 241, 0.2), transparent 70%);
+    opacity: 0;
+    transition: opacity 0.35s ease;
+    z-index: -1;
+    pointer-events: none;
+    border-radius: inherit;
+}
+
+/* Clean Professional Hover States */
+.info-card:hover,
+.education-card:hover,
+.certificate-card:hover,
+.project-card:hover,
+.contact-card:hover {
+    transform: translateY(-7px) !important;
+    border-color: rgba(99, 102, 241, 0.5) !important;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35), 0 0 20px rgba(99, 102, 241, 0.25) !important;
+}
+
+.timeline-card-content:hover {
+    transform: translateY(-6px) !important;
+    border-color: rgba(99, 102, 241, 0.5) !important;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35), 0 0 20px rgba(99, 102, 241, 0.25) !important;
+}
+
+.info-card:hover::before,
+.education-card:hover::before,
+.certificate-card:hover::before,
+.project-card:hover::before,
+.contact-card:hover::before {
+    transform: scaleX(1);
+}
+
+.info-card:hover::after,
+.timeline-card-content:hover::after,
+.education-card:hover::after,
+.certificate-card:hover::after,
+.project-card:hover::after,
+.contact-card:hover::after {
+    opacity: 1;
+}
+
+/* Inner Elements Hover */
+.info-card:hover .card-icon,
+.education-card:hover .cat-icon,
+.contact-card:hover .contact-icon {
+    transform: translateY(-4px) scale(1.12);
+    filter: drop-shadow(0 6px 15px rgba(99, 102, 241, 0.5));
+    transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1), filter 0.35s ease;
+}
+
+.timeline-card-content:hover .card-tech-stack i {
+    transform: translateY(-2px) scale(1.15);
+    color: #818cf8;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.certificate-card:hover .certificate-thumb img {
+    transform: scale(1.08);
+    filter: brightness(1.08);
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.project-card:hover .project-image img {
+    transform: scale(1.08);
+    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* ==========================================================================
+   Ultra-Smooth 60FPS Bi-Directional Scroll Reveal System
+   ========================================================================== */
+
+.reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(28px) scale(0.97);
+    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+}
+
+.reveal-on-scroll.reveal-left {
+    transform: translateX(-35px) scale(0.97);
+}
+
+.reveal-on-scroll.reveal-right {
+    transform: translateX(35px) scale(0.97);
+}
+
+.reveal-on-scroll.reveal-active {
+    opacity: 1;
+    transform: translateY(0) translateX(0) scale(1);
+}
+
+/* Section Title Animated Underline Beam */
+.section-title {
+    position: relative;
+    display: block;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3.5px;
+    background: linear-gradient(90deg, #6366f1, #a855f7, #ec4899);
+    margin: 12px auto 0;
+    border-radius: 4px;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.15s;
+}
+
+.section-title.reveal-active::after {
+    transform: scaleX(1);
+}
+
+/* ==========================================================================
+   Master Projects & Certificates High-Impact Showcase System
+   ========================================================================== */
+
+/* Metallic Shimmer Light Sweep on Project & Certificate Thumbnails */
+.project-image,
+.certificate-thumb {
+    position: relative;
+    overflow: hidden;
+}
+
+.project-image::before,
+.certificate-thumb::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -120%;
+    width: 65%;
+    height: 100%;
+    background: linear-gradient(
+        90deg, 
+        transparent 0%, 
+        rgba(255, 255, 255, 0.32) 50%, 
+        transparent 100%
+    );
+    transform: skewX(-25deg);
+    transition: left 0.75s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 5;
+    pointer-events: none;
+}
+
+.project-card:hover .project-image::before,
+.certificate-card:hover .certificate-thumb::before {
+    left: 170%;
+}
+
+/* High-Impact Floating Lift & Aura for Projects & Certificates */
+.project-card:hover,
+.certificate-card:hover {
+    transform: translateY(-11px) scale(1.025) !important;
+    border-color: rgba(99, 102, 241, 0.6) !important;
+    box-shadow: 0 22px 50px rgba(0, 0, 0, 0.45), 
+                0 0 30px rgba(99, 102, 241, 0.35), 
+                0 0 15px rgba(236, 72, 153, 0.25) !important;
+}
+
+/* Image Zoom & Vibrance on Hover */
+.project-card:hover .project-image img,
+.certificate-card:hover .certificate-thumb img {
+    transform: scale(1.12) !important;
+    filter: brightness(1.1) contrast(1.05) !important;
+    transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+                filter 0.5s ease !important;
+}
+
+/* Floating Micro-Animations for Badges & Buttons */
+.project-category,
+.certificate-badge {
+    transition: transform 0.35s ease, box-shadow 0.35s ease, background 0.35s ease !important;
+}
+
+.project-card:hover .project-category,
+.certificate-card:hover .certificate-badge {
+    transform: translateY(-3px) scale(1.08) !important;
+    box-shadow: 0 6px 18px rgba(99, 102, 241, 0.45) !important;
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.95), rgba(168, 85, 247, 0.95)) !important;
+    color: #ffffff !important;
+}
+
+.view-project-btn,
+.view-cert-btn,
+.project-links a {
+    transition: transform 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+                box-shadow 0.35s ease, 
+                background 0.35s ease !important;
+}
+
+.project-card:hover .view-project-btn,
+.certificate-card:hover .view-cert-btn {
+    transform: translateY(-3px) scale(1.04) !important;
+    box-shadow: 0 8px 22px rgba(99, 102, 241, 0.4) !important;
+}
+
+/* Elastic Pop Animation for Project & Certificate Modals */
+.project-modal,
+.certificate-modal {
+    transition: opacity 0.35s ease, visibility 0.35s ease !important;
+}
+
+.project-modal-content,
+.certificate-modal-content,
+.modal-content-wrapper {
+    transform: scale(0.86);
+    opacity: 0;
+    transition: transform 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.35s ease !important;
+}
+
+.modal-visible .project-modal-content,
+.modal-visible .certificate-modal-content,
+.modal-visible .modal-content-wrapper {
+    transform: scale(1) !important;
+    opacity: 1 !important;
+}
+
+/* ==========================================================================
+   Dynamic Side Slide-In & Center Assembly System
+   ========================================================================== */
+
+.reveal-on-scroll.reveal-slide-left {
+    opacity: 0;
+    transform: translateX(-140px);
+    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+}
+
+.reveal-on-scroll.reveal-slide-right {
+    opacity: 0;
+    transform: translateX(140px);
+    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+}
+
+.reveal-on-scroll.reveal-slide-up {
+    opacity: 0;
+    transform: translateY(100px);
+    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+}
+
+.reveal-on-scroll.reveal-slide-left.reveal-active,
+.reveal-on-scroll.reveal-slide-right.reveal-active,
+.reveal-on-scroll.reveal-slide-up.reveal-active {
+    opacity: 1;
+    transform: translateX(0) translateY(0);
+}
+
+
+
+
+
