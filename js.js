@@ -25,11 +25,18 @@ window.onscroll = () => {
 // Mobile Menu
 const menuBtn = document.getElementById('menuBtn');
 const mobileMenu = document.getElementById('mobileMenu');
+const mobileMenuClose = document.getElementById('mobileMenuClose');
 
 if (menuBtn && mobileMenu) {
     menuBtn.addEventListener('click', () => {
         mobileMenu.classList.toggle('active');
     });
+
+    if (mobileMenuClose) {
+        mobileMenuClose.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+        });
+    }
 
     // إغلاق لما تضغط على أي لينك
     mobileMenu.querySelectorAll('a').forEach(link => {
@@ -40,7 +47,7 @@ if (menuBtn && mobileMenu) {
 
     // إغلاق لما تضغط بره القائمة
     document.addEventListener('click', (e) => {
-        if (!mobileMenu.contains(e.target) && !menuBtn.contains(e.target)) {
+        if (!mobileMenu.contains(e.target) && !menuBtn.contains(e.target) && (!mobileMenuClose || !mobileMenuClose.contains(e.target))) {
             mobileMenu.classList.remove('active');
         }
     });
@@ -154,7 +161,13 @@ if (langToggle) {
             }
         });
 
-        localStorage.setItem('lang', isEN ? 'ar' : 'en');
+        // Update placeholders
+        const newLang = isEN ? 'ar' : 'en';
+        document.querySelectorAll('[data-placeholder-en]').forEach(el => {
+            el.placeholder = el.dataset['placeholder' + (newLang === 'ar' ? 'Ar' : 'En')] || el.placeholder;
+        });
+
+        localStorage.setItem('lang', newLang);
     };
 }
 
@@ -194,127 +207,135 @@ document.querySelectorAll('.btn span').forEach(span => {
     }
 });
 
+// Update placeholders on page load
+document.querySelectorAll('[data-placeholder-en]').forEach(el => {
+    el.placeholder = el.dataset['placeholder' + (savedLang === 'ar' ? 'Ar' : 'En')] || el.placeholder;
+});
+
 // Start typing effect only on home page
 if (document.querySelector('.typing')) {
     setTimeout(typeWriter, 1000);
 }
 
-// Contact form submit handler: EmailJS + formatted mailto fallback
+// ══════════════════════════════════════════════
+// Contact Form – AJAX submit via Formspree
+// ══════════════════════════════════════════════
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
+    const FORMSPREE_URL = contactForm.dataset.action || 'https://formspree.io/f/mojpnzwz';
+
     contactForm.addEventListener('submit', async function (e) {
         e.preventDefault();
+        e.stopPropagation();
 
         const lang = document.documentElement.lang || 'en';
+        const isAr = lang === 'ar';
 
-        // ── Validation ───────────────────────────────────────
-        const name = document.getElementById('name')?.value.trim() || '';
-        const email = document.getElementById('email')?.value.trim() || '';
-        const subject = document.getElementById('subject')?.value.trim() || '';
-        const message = document.getElementById('message')?.value.trim() || '';
+        // ── Clear previous errors ─────────────────────────────
+        const oldError = document.getElementById('form-error-msg');
+        if (oldError) oldError.remove();
+        contactForm.querySelectorAll('.field-error').forEach(e => e.remove());
+        contactForm.querySelectorAll('.form-control').forEach(f => f.style.borderColor = '');
 
-        if (!name || !email || !subject || !message) {
-            // Remove any existing error message
-            const existingError = document.getElementById('form-error-msg');
-            if (existingError) existingError.remove();
-            
-            // Create a nice error message UI
+        // ── Validate fields ───────────────────────────────────
+        const fields = ['name', 'email', 'subject', 'message'];
+        let firstEmpty = null;
+
+        for (const id of fields) {
+            const el = document.getElementById(id);
+            if (!el || !el.value.trim()) {
+                el.style.borderColor = '#ef4444';
+                if (!firstEmpty) firstEmpty = el;
+            }
+        }
+
+        if (firstEmpty) {
             const errorDiv = document.createElement('div');
             errorDiv.id = 'form-error-msg';
-            errorDiv.style.cssText = `
-                background-color: rgba(239, 68, 68, 0.1);
-                border: 1px solid rgba(239, 68, 68, 0.4);
-                color: #ef4444;
-                padding: 12px;
-                border-radius: 8px;
-                margin-bottom: 20px;
-                text-align: center;
-                font-weight: bold;
-            `;
-            errorDiv.innerHTML = `<i class="fas fa-exclamation-circle"></i> ${lang === 'ar' ? 'يرجى تعبئة جميع الحقول المطلوبة أولاً.' : 'Please fill in all required fields first.'}`;
-            
+            errorDiv.style.cssText = 'background:rgba(239,68,68,.1);border:1px solid rgba(239,68,68,.4);color:#ef4444;padding:12px;border-radius:8px;margin-bottom:20px;text-align:center;font-weight:600;';
+            errorDiv.textContent = isAr ? 'يرجى تعبئة جميع الحقول المطلوبة.' : 'Please fill in all required fields.';
             contactForm.insertBefore(errorDiv, contactForm.firstChild);
+            firstEmpty.focus();
             return;
         }
 
-        // ── UI: Loading state ─────────────────────────────────
+        // ── Email format validation ───────────────────────────
+        const emailEl = document.getElementById('email');
+        const emailVal = emailEl.value.trim();
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(emailVal)) {
+            emailEl.style.borderColor = '#ef4444';
+            // Show inline error below email field
+            const emailGroup = emailEl.closest('.form-group');
+            const oldInline = emailGroup.querySelector('.field-error');
+            if (oldInline) oldInline.remove();
+            const inlineErr = document.createElement('small');
+            inlineErr.className = 'field-error';
+            inlineErr.style.cssText = 'color:#ef4444;font-size:0.85rem;margin-top:6px;display:block;';
+            inlineErr.textContent = isAr
+                ? 'يرجى إدخال بريد إلكتروني صحيح، مثال: mohamed_mahmoud@gmail.com'
+                : 'Please enter a valid email address, e.g. mohamed_mahmoud@gmail.com';
+            emailGroup.appendChild(inlineErr);
+            emailEl.focus();
+            return;
+        }
+
+        // ── Loading state ─────────────────────────────────────
         const submitBtn = contactForm.querySelector('.submit-btn');
-        const originalBtnHTML = submitBtn ? submitBtn.innerHTML : '';
+        const savedBtnHTML = submitBtn ? submitBtn.innerHTML : '';
         if (submitBtn) {
             submitBtn.disabled = true;
-            submitBtn.innerHTML = `<i class="fas fa-spinner fa-spin"></i> ${lang === 'ar' ? 'جاري الإرسال...' : 'Sending...'}`;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> ' + (isAr ? 'جاري الإرسال...' : 'Sending...');
         }
 
-        // ── Helper: success/error message ────────────────────
-        function showResult(success) {
-            const form = document.getElementById('contactForm');
-            const formContainer = document.querySelector('.contact-form-container');
-            if (!formContainer || !form) return;
-            
-            if (success) {
-                // Hide the form instead of replacing innerHTML
-                form.style.display = 'none';
-                
-                // Create success message element
-                const successDiv = document.createElement('div');
-                successDiv.id = 'success-message';
-                successDiv.style.cssText = `
-                    padding: 40px 20px;
-                    text-align: center;
-                    background: rgba(99,102,241,0.07);
-                    border: 1px solid rgba(99,102,241,0.2);
-                    border-radius: 16px;
-                `;
-                successDiv.innerHTML = `
-                    <i class="fas fa-check-circle" style="font-size:3rem; color:#6366f1; margin-bottom:16px; display:block;"></i>
-                    <h3 style="color:#e2e8f0; margin-bottom:10px;">
-                        ${lang === 'ar' ? 'تم إرسال رسالتك بنجاح!' : 'Message Sent Successfully!'}
-                    </h3>
-                    <p style="color:#94a3b8; font-size:0.95rem; margin-bottom:20px;">
-                        ${lang === 'ar' ? 'شكراً لتواصلك، سأرد عليك في أقرب وقت.' : 'Thank you for reaching out. I will get back to you soon.'}
-                    </p>
-                    <button class="btn btn-primary" id="reset-form-btn" style="padding: 12px 25px; border-radius: 8px; border: none; background: #6366f1; color: white; cursor: pointer; font-weight: 600; font-family: inherit;">
-                        ${lang === 'ar' ? 'إرسال رسالة أخرى' : 'Send Another Message'}
-                    </button>
-                `;
-                
-                formContainer.appendChild(successDiv);
-                
-                // Reset button logic
-                document.getElementById('reset-form-btn').addEventListener('click', function() {
-                    successDiv.remove(); // Remove success message
-                    form.reset();        // Clear form fields
-                    form.style.display = 'block'; // Show form again
-                });
-            } else {
-                if (submitBtn) {
-                    submitBtn.disabled = false;
-                    submitBtn.innerHTML = originalBtnHTML;
-                }
-                alert(lang === 'ar' ? 'حدث خطأ أثناء الإرسال. حاول مرة أخرى.' : 'Something went wrong. Please try again.');
-            }
-        }
-
-        // ── EmailJS Send ──────────────────────────────────────
+        // ── Send via Formspree ────────────────────────────────
         try {
-            // Initialize EmailJS with public key
-            emailjs.init('aSDG83opFn2BSlfUW');
-
-            const res = await emailjs.send('service_g4a511u', 'template_cjuh3se', {
-                name:    name,
-                email:   email,
-                subject: subject,
-                message: message
+            const res = await fetch(FORMSPREE_URL, {
+                method: 'POST',
+                body: new FormData(contactForm),
+                headers: { 'Accept': 'application/json' }
             });
 
-            if (res.status === 200) {
-                showResult(true);
-            } else {
-                throw new Error('EmailJS returned error');
+            if (!res.ok) throw new Error('Server error');
+
+            // ── Success: show card ────────────────────────────
+            const container = contactForm.closest('.contact-form-container');
+            const formTitle = container.querySelector('.form-title');
+            if (formTitle) formTitle.style.display = 'none';
+            contactForm.style.display = 'none';
+
+            const card = document.createElement('div');
+            card.id = 'successCard';
+            card.className = 'contact-success-card';
+            card.innerHTML = `
+                <div class="success-icon-wrap"><i class="fas fa-check"></i></div>
+                <h3 class="success-title">${isAr ? 'تم إرسال رسالتك بنجاح!' : 'Message Sent Successfully!'}</h3>
+                <p class="success-desc">${isAr ? 'شكراً لتواصلك. سأرد عليك خلال 24 ساعة.' : 'Thank you for reaching out. I will get back to you within 24 hours.'}</p>
+                <button type="button" class="reset-form-btn" id="resetFormBtn">
+                    <span>${isAr ? 'إرسال رسالة أخرى' : 'Send Another Message'}</span>
+                    <i class="fas fa-redo-alt"></i>
+                </button>
+            `;
+            container.appendChild(card);
+
+            // ── Reset button ──────────────────────────────────
+            document.getElementById('resetFormBtn').addEventListener('click', function () {
+                card.remove();
+                if (formTitle) formTitle.style.display = '';
+                contactForm.reset();
+                contactForm.style.display = '';
+                if (submitBtn) {
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = savedBtnHTML;
+                }
+            });
+
+        } catch (_) {
+            if (submitBtn) {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = savedBtnHTML;
             }
-        } catch (err) {
-            console.error('Form error:', err);
-            showResult(false);
+            alert(isAr ? 'حدث خطأ. تأكد من اتصالك بالإنترنت وحاول مجدداً.' : 'Something went wrong. Please check your connection and try again.');
         }
     });
 }
@@ -648,3 +669,4 @@ document.addEventListener('DOMContentLoaded', () => {
         revealObserver.observe(el);
     });
 });
+
