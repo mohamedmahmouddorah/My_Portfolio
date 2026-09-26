@@ -1979,12 +1979,14 @@ body.light-mode .modal-content-wrapper img {
 @media (max-width: 768px) {
     .about-hero {
         padding: 60px 16px 40px;
-        overflow-x: hidden;
+        overflow-x: clip; /* Changed from hidden to prevent inner scroll */
+        overflow-y: visible;
     }
 
     .about-content-wrapper {
         width: 100%;
-        overflow-x: hidden;
+        overflow-x: clip; /* Changed from hidden to prevent inner scroll */
+        overflow-y: visible;
     }
 
     .about-text-content {
