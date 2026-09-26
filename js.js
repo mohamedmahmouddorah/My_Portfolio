@@ -370,8 +370,8 @@ async function fetchPortfolioData() {
 
         // Scroll Reveal Animation
         const observerOptions = {
-            threshold: 0.1,
-            rootMargin: "0px 0px -50px 0px"
+            threshold: 0.02,
+            rootMargin: "50px 0px 50px 0px"
         };
 
         const observer = new IntersectionObserver((entries) => {
@@ -630,7 +630,7 @@ document.addEventListener('DOMContentLoaded', () => {
     gridContainers.forEach(grid => {
         const children = Array.from(grid.children);
         children.forEach((child, index) => {
-            const delay = (index % 6) * 0.09;
+            const delay = (index % 6) * 0.04; // Reduced delay from 0.09 for faster loading
             child.style.transitionDelay = `${delay}s`;
 
             child.classList.remove('reveal-slide-left', 'reveal-slide-right', 'reveal-slide-up');
@@ -647,8 +647,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 4. Bi-Directional 60FPS Scroll Reveal (Animates smoothly on scroll UP and DOWN)
     const observerOptions = {
-        threshold: 0.08,
-        rootMargin: '-20px 0px -40px 0px'
+        threshold: 0.02, // Trigger earlier
+        rootMargin: '50px 0px 50px 0px' // Trigger before it enters viewport
     };
 
     const revealObserver = new IntersectionObserver((entries) => {
