@@ -50,7 +50,7 @@
         }
 
         .cert-close-btn:hover {
-            background: #6366f1;
+            background: #ef4444;
         }
 
 
@@ -72,9 +72,16 @@
     <div id="particles-js"></div>
     <div class="progress-bar" id="progress"></div>
 
-    <!-- Navbar -->
     <nav class="navbar">
-        <div class="logo" data-en="Mohamed Mahmoud" data-ar="محمد محمود"></div>
+        <div class="logo" style="display:flex; align-items:center; gap:12px; text-decoration:none;" href="#">
+            <div style="position:relative; width:42px; height:42px; flex-shrink:0;">
+                <img src="imges/myphoto2.jpg" alt="Mohamed Mahmoud"
+                    style="width:100%; height:100%; object-fit:cover; border-radius:50%; border:2px solid var(--accent); display:block;">
+                <span
+                    style="position:absolute; bottom:0; right:0; width:11px; height:11px; background:#00e87a; border-radius:50%; border:2px solid var(--bg);"></span>
+            </div>
+            <span data-en="Mohamed Mahmoud" data-ar="محمد محمود">Mohamed Mahmoud</span>
+        </div>
 
         <div class="nav-container">
             <div class="nav-links">
@@ -110,24 +117,102 @@
         <a href="#contact" data-en="Contact" data-ar="تواصل معي"></a>
     </div>
 
-    <!-- Hero -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1 data-en="Mohamed Mahmoud" data-ar="محمد محمود"></h1>
-            <h2 class="typing"></h2>
-            <p data-en="Crafting high-performance, secure, and scalable web & mobile applications with Laravel, Flutter, and modern technologies."
-                data-ar="أبني تطبيقات ويب وموبايل عالية الأداء، آمنة، وقابلة للتوسع باستخدام لارافيل، فلاتر، والتقنيات الحديثة.">
+    <!-- Hero Section -->
+    <section class="hero" id="home"
+        style="text-align:center; display:flex; flex-direction:column; align-items:center; justify-content:center;">
+        <div class="hero-bg-glow glow-1"></div>
+        <div class="hero-bg-glow glow-2"></div>
+
+        <div class="hero-content"
+            style="max-width:920px; margin:0 auto; display:flex; flex-direction:column; align-items:center; position:relative; z-index:10;">
+
+            <!-- Kicker Badge -->
+            <div class="hero-kicker-badge fade-in" style="margin-bottom:44px;">
+                <span class="kicker-pulse"></span>
+                <i class="fas fa-bolt kicker-icon"></i>
+                <span data-en="Available for Enterprise &amp; Freelance Projects"
+                    data-ar="متاح للمشاريع والحلول البرمجية المتكاملة">Available for Enterprise &amp; Freelance
+                    Projects</span>
+            </div>
+
+            <!-- Name -->
+            <h1 class="hero-title fade-in delay-1" style="margin:0 0 14px; font-size:4.5rem; line-height:1.1;"
+                data-en="Mohamed Mahmoud Lotfy" data-ar="محمد محمود لطفي">Mohamed Mahmoud Lotfy</h1>
+
+            <!-- Typing -->
+            <div class="typing-container fade-in delay-2" style="justify-content:center; margin-bottom:20px;">
+                <span class="typing-label" data-en="Specialized in:" data-ar="متخصص في:">Specialized in:</span>
+                <h2 class="typing"></h2>
+            </div>
+
+            <!-- Description -->
+            <p class="hero-desc fade-in delay-3" style="text-align:center; max-width:780px; margin:0 auto 22px;"
+                data-en="Full Stack &amp; Mobile Developer dedicated to engineering high-performance web systems and cross-platform mobile apps. I specialize in Laravel API architectures, Flutter mobile UI, and secure database solutions that transform ideas into market-ready products."
+                data-ar="مطور ويب وموبايل متكامل متخصص في بناء أنظمة الويب عالية الأداء وتطبيقات الموبايل الذكية عبر المنصات. أبتكر معمارية برمجية متطورة بـ Laravel و Flutter لتقديم حلول رقمية سريعة وقابلة للتوسع.">
+                Full Stack &amp; Mobile Developer dedicated to engineering high-performance web systems and
+                cross-platform mobile apps. I specialize in Laravel API architectures, Flutter mobile UI, and secure
+                database solutions that transform ideas into market-ready products.
             </p>
 
-            <div class="btn-group">
-                <a href="#projects" class="btn btn-primary" data-en="View Projects" data-ar="عرض المشاريع"><span></span>
-                    <div class="glow"></div>
+            <!-- Tech Pills -->
+            <div class="hero-tech-pills fade-in delay-4" style="justify-content:center; margin-bottom:28px;">
+                <div class="pill-item"><i class="fab fa-laravel" style="color:var(--accent);"></i><span>Laravel</span>
+                </div>
+                <div class="pill-item"><i class="fas fa-mobile-alt" style="color:#54C5F8;"></i><span>Flutter</span>
+                </div>
+                <div class="pill-item"><i class="fab fa-php" style="color:#777BB4;"></i><span>PHP 8+</span></div>
+                <div class="pill-item"><i class="fas fa-database" style="color:var(--cyan);"></i><span
+                        data-en="MySQL &amp; APIs" data-ar="قواعد البيانات وواجهات برمجية">MySQL &amp; APIs</span></div>
+                <div class="pill-item"><i class="fas fa-layer-group" style="color:var(--accent2);"></i><span
+                        data-en="Full Stack" data-ar="تطوير متكامل">Full Stack</span></div>
+            </div>
+
+            <!-- CTA Buttons -->
+            <div class="hero-actions fade-in delay-5"
+                style="display:flex; gap:14px; flex-wrap:wrap; justify-content:center; margin-bottom:44px;">
+                <a href="#projects" class="btn btn-primary" style="font-size:0.95rem; padding:13px 28px;">
+                    <i class="fas fa-project-diagram"></i>
+                    <span data-en="Explore Projects" data-ar="استكشف المشاريع">Explore Projects</span>
                 </a>
-                <a href="#contact" class="btn btn-outline" data-en="Get In Touch" data-ar="تواصل معي"><span></span>
-                    <div class="glow"></div>
+                <a href="cv.pdf" target="_blank" class="btn btn-secondary"
+                    style="font-size:0.95rem; padding:13px 28px;">
+                    <i class="fas fa-file-download"></i>
+                    <span data-en="Download CV" data-ar="تحميل السيرة الذاتية">Download CV</span>
+                </a>
+                <a href="https://wa.me/+201017541628" target="_blank" class="btn btn-outline"
+                    style="font-size:0.95rem; padding:13px 28px;">
+                    <i class="fab fa-whatsapp"></i>
+                    <span data-en="WhatsApp" data-ar="تواصل واتساب">WhatsApp</span>
                 </a>
             </div>
+
+            <!-- Stats Row -->
+            <div class="hero-metrics-grid fade-in delay-5">
+                <div class="metric-card">
+                    <div class="metric-num">4+</div>
+                    <div class="metric-txt" data-en="Years Experience" data-ar="سنوات خبرة">Years Experience</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-num">15+</div>
+                    <div class="metric-txt" data-en="Projects Built" data-ar="مشاريع منجزة">Projects Built</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-num">100%</div>
+                    <div class="metric-txt" data-en="Clean Architecture" data-ar="كود نظيف">Clean Architecture</div>
+                </div>
+            </div>
+
         </div>
+
+        <a href="#projects" class="hero-scroll-hook" aria-label="Scroll down" style="margin-top:50px;">
+            <span data-en="Scroll to explore" data-ar="اسحب للاستكشاف"
+                style="font-size:1.1rem; font-weight:700; letter-spacing:1px; color:var(--text);">Scroll to
+                explore</span>
+            <div class="mouse-wrapper" style="border-color:var(--accent);">
+                <div class="mouse-dot"></div>
+            </div>
+            <i class="fas fa-chevron-down scroll-arrow" style="font-size:1rem; color:var(--accent);"></i>
+        </a>
     </section>
 
 
@@ -369,7 +454,7 @@
                         <span class="skill-card-name">VS Code</span>
                     </div>
                     <div class="skill-card-box">
-                        <div class="skill-card-icon"><i class="fas fa-microchip" style="color: #8B5CF6;"></i></div>
+                        <div class="skill-card-icon"><i class="fas fa-microchip" style="color: #12e8b0;"></i></div>
                         <span class="skill-card-name">IoT Concepts</span>
                     </div>
                 </div>
@@ -388,11 +473,11 @@
                             data-ar="التواصل الفعال">Communication</span>
                     </div>
                     <div class="skill-card-box">
-                        <div class="skill-card-icon"><i class="fas fa-users-cog" style="color: #EC4899;"></i></div>
+                        <div class="skill-card-icon"><i class="fas fa-users-cog" style="color: #09c97a;"></i></div>
                         <span class="skill-card-name" data-en="Teamwork" data-ar="العمل الجماعي">Teamwork</span>
                     </div>
                     <div class="skill-card-box">
-                        <div class="skill-card-icon"><i class="fas fa-brain" style="color: #F59E0B;"></i></div>
+                        <div class="skill-card-icon"><i class="fas fa-brain" style="color: #16e88a;"></i></div>
                         <span class="skill-card-name" data-en="Problem Solving" data-ar="حل المشكلات">Problem
                             Solving</span>
                     </div>
@@ -402,17 +487,17 @@
                             Management</span>
                     </div>
                     <div class="skill-card-box">
-                        <div class="skill-card-icon"><i class="fas fa-lightbulb" style="color: #FBBF24;"></i></div>
+                        <div class="skill-card-icon"><i class="fas fa-lightbulb" style="color: #19cf6e;"></i></div>
                         <span class="skill-card-name" data-en="Continuous Learning" data-ar="التعلم المستمر">Continuous
                             Learning</span>
                     </div>
                     <div class="skill-card-box">
-                        <div class="skill-card-icon"><i class="fas fa-globe" style="color: #6366F1;"></i></div>
+                        <div class="skill-card-icon"><i class="fas fa-globe" style="color: #16f9cb;"></i></div>
                         <span class="skill-card-name" data-en="Arabic (Native)" data-ar="العربية (الأم)">Arabic
                             (Native)</span>
                     </div>
                     <div class="skill-card-box">
-                        <div class="skill-card-icon"><i class="fas fa-language" style="color: #8B5CF6;"></i></div>
+                        <div class="skill-card-icon"><i class="fas fa-language" style="color: #12e8b0;"></i></div>
                         <span class="skill-card-name" data-en="English" data-ar="الإنجليزية">English</span>
                     </div>
                 </div>
@@ -421,7 +506,6 @@
         </div>
     </section>
 
-    <!-- Experience Section -->
     <!-- Experience Section -->
     <section id="experience" class="experience-section">
         <div class="container">
@@ -571,7 +655,7 @@
                         data-en="Building semantic web structures and applying advanced CSS3 styling techniques for modern, responsive browsers."
                         data-ar="بناء هياكل الويب الدلالية وتطبيق تقنيات CSS3 المتقدمة لإنشاء صفحات متجاوبة على المتصفحات الحديثة.">
                     </p>
-                    <div class="certificate-thumb">
+                    <div class="certificate-thumb" onclick="openCertModal('imges/certificates/html&css.png', 'Advanced HTML5 & CSS3', 'Maharah - ITI', 'Building semantic web structures and applying advanced CSS3 styling techniques for modern, responsive browsers.', 'HTML5, CSS3, Responsive Design')" style="cursor:pointer;">
                         <img src="imges/certificates/html&css.png" alt="HTML and CSS Certificate">
                     </div>
                 </div>
@@ -584,7 +668,7 @@
                         data-en="Mastering SQL, relational database design, data integrity, and core administration tasks."
                         data-ar="إتقان لغة SQL وتصميم قواعد البيانات العلائقية وضمان سلامة البيانات وتنفيذ مهام الإدارة الأساسية.">
                     </p>
-                    <div class="certificate-thumb">
+                    <div class="certificate-thumb" onclick="openCertModal('imges/certificates/DataBase.png', 'Database Administration Fundamentals', 'Information Technology Institute (ITI)', 'Mastering SQL, relational database design, data integrity, and core administration tasks.', 'SQL, Database Design, MySQL')" style="cursor:pointer;">
                         <img src="imges/certificates/DataBase.png" alt="Database Fundamentals">
                     </div>
                 </div>
@@ -597,7 +681,7 @@
                         data-en="Building dynamic, server-side web applications using PHP for efficient backend logic and content management."
                         data-ar="بناء تطبيقات ويب ديناميكية من جانب الخادم باستخدام PHP لإدارة المحتوى وتطوير منطق الخلفية بكفاءة.">
                     </p>
-                    <div class="certificate-thumb">
+                    <div class="certificate-thumb" onclick="openCertModal('imges/certificates/php Development.jpg', 'PHP Web Development', 'Maharah Platform - ITI', 'Building dynamic, server-side web applications using PHP for efficient backend logic and content management.', 'PHP, Backend, Web Development')" style="cursor:pointer;">
                         <img src="imges/certificates/php Development.jpg" alt="PHP Development ITI">
                     </div>
                 </div>
@@ -610,7 +694,7 @@
                         data-en="Comprehensive training covering both frontend and backend development within the PHP and Laravel ecosystem."
                         data-ar="تدريب شامل يغطي تطوير الواجهة الأمامية والخلفية ضمن بيئة عمل PHP و Laravel المتكاملة.">
                     </p>
-                    <div class="certificate-thumb">
+                    <div class="certificate-thumb" onclick="openCertModal('imges/certificates/Full-stack-in-port-said.jpg', 'Full Stack Web Development (PHP)', 'ITI - Information Technology Institute', 'Comprehensive training covering both frontend and backend development within the PHP and Laravel ecosystem.', 'PHP, Laravel, Full Stack')" style="cursor:pointer;">
                         <img src="imges/certificates/Full-stack-in-port-said.jpg" alt="Full Stack PHP">
                     </div>
                 </div>
@@ -623,7 +707,7 @@
                         data-en="Specialized training in responsive layouts, UI/UX principles, and modern web design standards."
                         data-ar="تدريب متخصص في تصميم التخطيطات المتجاوبة ومبادئ تجربة المستخدم ومعايير تصميم الويب الحديثة.">
                     </p>
-                    <div class="certificate-thumb">
+                    <div class="certificate-thumb" onclick="openCertModal('imges/certificates/Web Designer NTI.png', 'Professional Web Designer', 'National Telecommunication Institute (NTI)', 'Specialized training in responsive layouts, UI/UX principles, and modern web design standards.', 'UI/UX, Web Design, Responsive')" style="cursor:pointer;">
                         <img src="imges/certificates/Web Designer NTI.png" alt="Web Designer NTI">
                     </div>
                 </div>
@@ -635,7 +719,7 @@
                         data-en="Covering core concepts of network security, threat detection, and data protection strategies."
                         data-ar="تغطية المفاهيم الأساسية لأمن الشبكات واكتشاف التهديدات واستراتيجيات حماية البيانات.">
                     </p>
-                    <div class="certificate-thumb">
+                    <div class="certificate-thumb" onclick="openCertModal('imges/certificates/Cybersecurity.png', 'Cybersecurity Essentials', 'Cisco Networking Academy', 'Covering core concepts of network security, threat detection, and data protection strategies.', 'Cybersecurity, Network Security')" style="cursor:pointer;">
                         <img src="imges/certificates/Cybersecurity.png" alt="Cybersecurity">
                     </div>
                 </div>
@@ -646,7 +730,7 @@
                     <p class="certificate-desc"
                         data-en="Mastering Python fundamentals, data structures, and core programming logic for problem-solving."
                         data-ar="إتقان أساسيات بايثون وهياكل البيانات والمنطق البرمجي الأساسي لحل المشكلات."></p>
-                    <div class="certificate-thumb">
+                    <div class="certificate-thumb" onclick="openCertModal('imges/certificates/python.png', 'Python Programming', 'MaharaTech - ITI', 'Mastering Python fundamentals, data structures, and core programming logic for problem-solving.', 'Python, Programming, Data Structures')" style="cursor:pointer;">
                         <img src="imges/certificates/python.png" alt="Python">
                     </div>
                 </div>
@@ -659,7 +743,7 @@
                         data-en="Advanced professional certification in Artificial Intelligence technologies, issued by Huawei Certified Academy."
                         data-ar="شهادة احترافية متقدمة في تقنيات الذكاء الاصطناعي، صادرة من أكاديمية هواوي المعتمدة.">
                     </p>
-                    <div class="certificate-thumb">
+                    <div class="certificate-thumb" onclick="openCertModal('imges/certificates/HCIA-AI_Professional_certification.jpg', 'HCIA-AI V3.5 Professional', 'Huawei Certified Academy', 'Advanced professional certification in Artificial Intelligence technologies, issued by Huawei Certified Academy.', 'AI, Machine Learning, Huawei')" style="cursor:pointer;">
                         <img src="imges/certificates/HCIA-AI_Professional_certification.jpg" alt="HCIA-AI">
                     </div>
                 </div>
@@ -672,7 +756,7 @@
                         data-en="Introduction to core AI concepts, Machine Learning, and Deep Learning applications within the Huawei ICT program."
                         data-ar="مقدمة في مفاهيم الذكاء الاصطناعي الأساسية وتعلم الآلة وتطبيقات التعلم العميق ضمن برنامج هواوي لتكنولوجيا المعلومات.">
                     </p>
-                    <div class="certificate-thumb">
+                    <div class="certificate-thumb" onclick="openCertModal('imges/certificates/HCIA-AI.jpg', 'Artificial Intelligence Fundamentals', 'Huawei ICT Academy', 'Introduction to core AI concepts, Machine Learning, and Deep Learning applications within the Huawei ICT program.', 'AI, Machine Learning, Deep Learning')" style="cursor:pointer;">
                         <img src="imges/certificates/HCIA-AI.jpg" alt="Huawei AI Fundamentals">
                     </div>
                 </div>
@@ -685,7 +769,7 @@
                         data-en="Certified associate in AI covering Deep Learning, Neural Networks, and AI application frameworks by Huawei."
                         data-ar="شهادة معتمدة في الذكاء الاصطناعي تشمل التعلم العميق والشبكات العصبية وأطر عمل تطبيقات الذكاء الاصطناعي من هواوي.">
                     </p>
-                    <div class="certificate-thumb">
+                    <div class="certificate-thumb" onclick="openCertModal('imges/certificates/ai_huawei.png', 'HCIA-AI V3.5 Certification', 'Huawei ICT Academy', 'Certified associate in AI covering Deep Learning, Neural Networks, and AI application frameworks by Huawei.', 'AI, Neural Networks, Huawei')" style="cursor:pointer;">
                         <img src="imges/certificates/ai_huawei.png" alt="HCIA-AI Huawei">
                     </div>
                 </div>
@@ -697,7 +781,7 @@
                         data-en="Building and customizing WordPress-based websites with a focus on CMS management and theme development."
                         data-ar="بناء وتخصيص المواقع القائمة على ووردبريس مع التركيز على إدارة نظام المحتوى وتطوير القوالب.">
                     </p>
-                    <div class="certificate-thumb">
+                    <div class="certificate-thumb" onclick="openCertModal('imges/certificates/wordpress.png', 'WordPress Development', 'MaharaTech - ITI', 'Building and customizing WordPress-based websites with a focus on CMS management and theme development.', 'WordPress, CMS, Web Development')" style="cursor:pointer;">
                         <img src="imges/certificates/wordpress.png" alt="WordPress">
                     </div>
                 </div>
@@ -710,7 +794,7 @@
                         data-en="Developing strategic thinking, teamwork, and leadership skills through the Ministry of Youth & Sports program."
                         data-ar="تطوير مهارات التفكير الاستراتيجي والعمل الجماعي والقيادة من خلال برنامج وزارة الشباب والرياضة.">
                     </p>
-                    <div class="certificate-thumb">
+                    <div class="certificate-thumb" onclick="openCertModal('imges/certificates/Freeway.png', 'Leadership Cup Track', 'Ministry of Youth & Sports', 'Developing strategic thinking, teamwork, and leadership skills through the Ministry of Youth & Sports program.', 'Leadership, Teamwork, Soft Skills')" style="cursor:pointer;">
                         <img src="imges/certificates/Freeway.png" alt="Leadership">
                     </div>
                 </div>
@@ -718,7 +802,10 @@
             </div>
     </section>
 
-    <!-- Projects Section -->
+
+        </div>
+    </section>
+
     <!-- Projects Section -->
     <section id="projects" class="projects-section">
         <div class="container">
@@ -741,7 +828,8 @@
                  DestinationConnect
             ═══════════════════════════════════════════ -->
                 <div class="project-card fade-in" data-category="web">
-                    <div class="project-image">
+                    <div class="project-image" onclick="document.querySelector('[data-project=project-travel]').click()"
+                        style="cursor:pointer;">
                         <img src="imges/projects/DestinationConnect/DestinationConnect.png" alt="DestinationConnect"
                             onerror="this.src='https://placehold.co/400x250/1a1a2e/6366f1?text=DestinationConnect'">
                         <span class="project-category" data-en="Frontend" data-ar="واجهة مستخدم">Frontend</span>
@@ -775,10 +863,16 @@
                         <span class="close-modal">&times;</span>
                         <div class="modal-gallery-wrapper" style="padding:15px;">
                             <div class="main-display-container"
-                                style="margin-bottom:12px; text-align:center; background:#000; border-radius:12px; overflow:hidden;">
+                                style="position:relative; margin-bottom:12px; text-align:center; background:#000; border-radius:12px; overflow:hidden;">
                                 <img src="imges/projects/DestinationConnect/DestinationConnect1.png"
                                     id="travel_main_img" style="width:100%; max-height:400px; object-fit:contain;"
                                     alt="Destination Preview">
+                                <button onclick="prevImage('travel_main_img')"
+                                    style="position:absolute; left:10px; top:50%; transform:translateY(-50%); background:#6366f1; color:white; border:none; width:44px; height:44px; border-radius:50%; cursor:pointer; font-size:20px; z-index:5; box-shadow:0 4px 15px rgba(99,102,241,0.4); transition:all 0.3s ease;"><i
+                                        class="fas fa-chevron-left"></i></button>
+                                <button onclick="nextImage('travel_main_img')"
+                                    style="position:absolute; right:10px; top:50%; transform:translateY(-50%); background:#6366f1; color:white; border:none; width:44px; height:44px; border-radius:50%; cursor:pointer; font-size:20px; z-index:5; box-shadow:0 4px 15px rgba(99,102,241,0.4); transition:all 0.3s ease;"><i
+                                        class="fas fa-chevron-right"></i></button>
                             </div>
                             <div class="thumbnails-grid"
                                 style="display:grid; grid-template-columns:repeat(auto-fill, minmax(80px, 1fr)); gap:10px;">
@@ -808,19 +902,19 @@
                             </p>
                             <div class="features-section"
                                 style="margin-top:20px; border-top:1px solid #444; padding-top:15px;">
-                                <h4 style="color:#6366f1; margin-bottom:10px;" data-en="Core Logic:"
+                                <h4 style="color:#16f9cb; margin-bottom:10px;" data-en="Core Logic:"
                                     data-ar="المنطق الأساسي:"></h4>
                                 <ul style="list-style:none; padding:0; color:#ccc; font-size:0.95rem;">
                                     <li style="margin-bottom:8px;"><i class="fas fa-check-circle"
-                                            style="color:#6366f1; margin-left:8px;"></i> <span
+                                            style="color:#16f9cb; margin-left:8px;"></i> <span
                                             data-en="Interactive Country Selection"
                                             data-ar="اختيار الدولة والوجهة بشكل تفاعلي"></span></li>
                                     <li style="margin-bottom:8px;"><i class="fas fa-check-circle"
-                                            style="color:#6366f1; margin-left:8px;"></i> <span
+                                            style="color:#16f9cb; margin-left:8px;"></i> <span
                                             data-en="Dynamic Booking & Requirement Forms"
                                             data-ar="نماذج حجز ديناميكية لجمع المتطلبات"></span></li>
                                     <li style="margin-bottom:8px;"><i class="fas fa-check-circle"
-                                            style="color:#6366f1; margin-left:8px;"></i> <span
+                                            style="color:#16f9cb; margin-left:8px;"></i> <span
                                             data-en="Frontend Form Validation"
                                             data-ar="نظام تحقق (Validation) لضمان صحة البيانات"></span></li>
                                 </ul>
@@ -840,7 +934,7 @@
 
                 <!-- Flow Store -->
                 <div class="project-card fade-in" data-category="web">
-                    <div class="project-image">
+                    <div class="project-image" onclick="document.querySelector('[data-project=flow_store_multi]').click()" style="cursor:pointer;">
                         <img src="imges/projects/flow_store/flow_store.png" alt="Flow Store Beni Suef"
                             onerror="this.src='https://placehold.co/400x250/dc321f/ffffff?text=Flow+Store+Main'">
                         <span class="project-category" data-en="Front-End" data-ar="واجهات أمامية">Front-End</span>
@@ -873,10 +967,16 @@
                     <div class="modal-content">
                         <span class="close-modal">&times;</span>
                         <div class="modal-gallery-wrapper" style="padding:15px;">
-                            <div class="main-display-container" style="margin-bottom:10px; text-align:center;">
+                            <div class="main-display-container" style="margin-bottom:10px; text-align:center; position:relative;">
                                 <img src="imges/projects/flow_store/flow_store1.png" id="flow_main_img"
                                     style="width:100%; max-height:500px; object-fit:contain; border-radius:8px; border:1px solid #333;"
                                     alt="Main Showcase">
+                                <button onclick="prevImage('flow_main_img')"
+                                    style="position:absolute; left:10px; top:50%; transform:translateY(-50%); background:#6366f1; color:white; border:none; width:44px; height:44px; border-radius:50%; cursor:pointer; font-size:20px; z-index:5; box-shadow:0 4px 15px rgba(99,102,241,0.4); transition:all 0.3s ease;"><i
+                                        class="fas fa-chevron-left"></i></button>
+                                <button onclick="nextImage('flow_main_img')"
+                                    style="position:absolute; right:10px; top:50%; transform:translateY(-50%); background:#6366f1; color:white; border:none; width:44px; height:44px; border-radius:50%; cursor:pointer; font-size:20px; z-index:5; box-shadow:0 4px 15px rgba(99,102,241,0.4); transition:all 0.3s ease;"><i
+                                        class="fas fa-chevron-right"></i></button>
                             </div>
                             <div class="thumbnails-grid"
                                 style="display:grid; grid-template-columns:repeat(auto-fill, minmax(80px, 1fr)); gap:10px;">
@@ -927,7 +1027,7 @@
 
                 <!-- University Management System -->
                 <div class="project-card fade-in" data-category="web">
-                    <div class="project-image">
+                    <div class="project-image" onclick="document.querySelector('[data-project=edu_track_system]').click()" style="cursor:pointer;">
                         <img src="imges/projects/unvrsity/unvrsity.png" alt="University Management System"
                             onerror="this.src='https://placehold.co/400x250/1a1a2e/6366f1?text=University+System'">
                         <span class="project-category" data-en="Full-Stack" data-ar="فول ستاك">Full-Stack</span>
@@ -962,9 +1062,15 @@
                         <span class="close-modal">&times;</span>
                         <div class="modal-gallery-wrapper" style="padding:15px;">
                             <div class="main-display-container"
-                                style="margin-bottom:12px; text-align:center; background:#000; border-radius:12px; overflow:hidden;">
+                                style="margin-bottom:12px; text-align:center; background:#000; border-radius:12px; overflow:hidden; position:relative;">
                                 <img src="imges/projects/unvrsity/unvrsity1.png" id="edu_main_img"
                                     style="width:100%; max-height:450px; object-fit:contain;" alt="Main System View">
+                                <button onclick="prevImage('edu_main_img')"
+                                    style="position:absolute; left:10px; top:50%; transform:translateY(-50%); background:#6366f1; color:white; border:none; width:44px; height:44px; border-radius:50%; cursor:pointer; font-size:20px; z-index:5; box-shadow:0 4px 15px rgba(99,102,241,0.4); transition:all 0.3s ease;"><i
+                                        class="fas fa-chevron-left"></i></button>
+                                <button onclick="nextImage('edu_main_img')"
+                                    style="position:absolute; right:10px; top:50%; transform:translateY(-50%); background:#6366f1; color:white; border:none; width:44px; height:44px; border-radius:50%; cursor:pointer; font-size:20px; z-index:5; box-shadow:0 4px 15px rgba(99,102,241,0.4); transition:all 0.3s ease;"><i
+                                        class="fas fa-chevron-right"></i></button>
                             </div>
                             <div class="thumbnails-grid"
                                 style="display:grid; grid-template-columns:repeat(auto-fill, minmax(80px, 1fr)); gap:10px;">
@@ -1019,7 +1125,7 @@
                                 style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
                                 <h2 class="modal-title" data-en="Advanced LMS Ecosystem"
                                     data-ar="نظام إدارة التعلم المتقدم"></h2>
-                                <i class="fas fa-qrcode" style="font-size:2rem; color:#6366f1;"></i>
+                                <i class="fas fa-qrcode" style="font-size:2rem; color:#16f9cb;"></i>
                             </div>
                             <p class="modal-description"
                                 data-en="This ecosystem bridges the gap between public university information and internal academic management. It features a unique QR-based attendance system and a secure assignment portal."
@@ -1031,10 +1137,10 @@
                                     <h4 data-en="For Doctors & TAs:" data-ar="للدكاترة والمعيدين:"></h4>
                                     <ul style="list-style:none; padding:0;">
                                         <li style="margin-bottom:8px;"><i class="fas fa-check-circle"
-                                                style="color:#6366f1; margin-left:5px;"></i> <span
+                                                style="color:#16f9cb; margin-left:5px;"></i> <span
                                                 data-en="Generate QR for fast attendance"
                                                 data-ar="توليد QR Code لتحضير الطلاب"></span></li>
-                                        <li><i class="fas fa-check-circle" style="color:#6366f1; margin-left:5px;"></i>
+                                        <li><i class="fas fa-check-circle" style="color:#16f9cb; margin-left:5px;"></i>
                                             <span data-en="Grade assignments instantly"
                                                 data-ar="رصد درجات التكليفات فورياً"></span>
                                         </li>
@@ -1044,14 +1150,14 @@
                                     <h4 data-en="For Students:" data-ar="للطلاب:"></h4>
                                     <ul style="list-style:none; padding:0;">
                                         <li style="margin-bottom:8px;"><i class="fas fa-check-circle"
-                                                style="color:#6366f1; margin-left:5px;"></i> <span
+                                                style="color:#16f9cb; margin-left:5px;"></i> <span
                                                 data-en="Submit assignments online"
                                                 data-ar="رفع وتسليم التكليفات"></span></li>
                                         <li style="margin-bottom:8px;"><i class="fas fa-check-circle"
-                                                style="color:#6366f1; margin-left:5px;"></i> <span
+                                                style="color:#16f9cb; margin-left:5px;"></i> <span
                                                 data-en="Access course materials"
                                                 data-ar="مشاهدة المحتوى الدراسي"></span></li>
-                                        <li><i class="fas fa-check-circle" style="color:#6366f1; margin-left:5px;"></i>
+                                        <li><i class="fas fa-check-circle" style="color:#16f9cb; margin-left:5px;"></i>
                                             <span data-en="Real-time grade notifications"
                                                 data-ar="متابعة الدرجات فور رصدها"></span>
                                         </li>
@@ -1061,10 +1167,10 @@
                                     <h4 data-en="For Super Admin:" data-ar="للمشرف العام:"></h4>
                                     <ul style="list-style:none; padding:0;">
                                         <li style="margin-bottom:8px;"><i class="fas fa-check-circle"
-                                                style="color:#6366f1; margin-left:5px;"></i> <span
+                                                style="color:#16f9cb; margin-left:5px;"></i> <span
                                                 data-en="Dynamic Access Control (ACL)"
                                                 data-ar="تحكم ديناميكي كامل في الصلاحيات"></span></li>
-                                        <li><i class="fas fa-check-circle" style="color:#6366f1; margin-left:5px;"></i>
+                                        <li><i class="fas fa-check-circle" style="color:#16f9cb; margin-left:5px;"></i>
                                             <span data-en="Delegate Admin permissions"
                                                 data-ar="تخصيص وتفويض المهام للإداريين"></span>
                                         </li>
@@ -1088,7 +1194,7 @@
 
                 <!-- Student Grade Tracker -->
                 <div class="project-card fade-in" data-category="java">
-                    <div class="project-image">
+                    <div class="project-image" onclick="document.querySelector('[data-project=project-java-student]').click()" style="cursor:pointer;">
                         <img src="imges/projects/java/student_tracker.png" alt="Student Grade Tracker"
                             onerror="this.src='https://placehold.co/400x250/1a1a2e/6366f1?text=Java+Tracker'">
                         <span class="project-category" data-en="Java" data-ar="جافا">Java</span>
@@ -1121,9 +1227,15 @@
                         <span class="close-modal">&times;</span>
                         <div class="modal-gallery-wrapper" style="padding:15px;">
                             <div class="main-display-container"
-                                style="margin-bottom:12px; text-align:center; background:#000; border-radius:12px; overflow:hidden;">
+                                style="margin-bottom:12px; text-align:center; background:#000; border-radius:12px; overflow:hidden; position:relative;">
                                 <img src="imges/projects/java/student_tracker.png" id="student_main_img"
                                     style="width:100%; max-height:450px; object-fit:contain;" alt="Main View">
+                                <button onclick="prevImage('student_main_img')"
+                                    style="position:absolute; left:10px; top:50%; transform:translateY(-50%); background:#6366f1; color:white; border:none; width:44px; height:44px; border-radius:50%; cursor:pointer; font-size:20px; z-index:5; box-shadow:0 4px 15px rgba(99,102,241,0.4); transition:all 0.3s ease;"><i
+                                        class="fas fa-chevron-left"></i></button>
+                                <button onclick="nextImage('student_main_img')"
+                                    style="position:absolute; right:10px; top:50%; transform:translateY(-50%); background:#6366f1; color:white; border:none; width:44px; height:44px; border-radius:50%; cursor:pointer; font-size:20px; z-index:5; box-shadow:0 4px 15px rgba(99,102,241,0.4); transition:all 0.3s ease;"><i
+                                        class="fas fa-chevron-right"></i></button>
                             </div>
                             <div class="thumbnails-grid"
                                 style="display:grid; grid-template-columns:repeat(auto-fill, minmax(80px, 1fr)); gap:10px;">
@@ -1161,7 +1273,7 @@
 
                 <!-- Stock Trading Platform -->
                 <div class="project-card fade-in" data-category="java">
-                    <div class="project-image">
+                    <div class="project-image" onclick="document.querySelector('[data-project=project-java-stock]').click()" style="cursor:pointer;">
                         <img src="imges/projects/java/stock_platform.png" alt="Stock Trading Platform"
                             onerror="this.src='https://placehold.co/400x250/1a1a2e/6366f1?text=Stock+Trading'">
                         <span class="project-category" data-en="Java" data-ar="جافا">Java</span>
@@ -1194,9 +1306,15 @@
                         <span class="close-modal">&times;</span>
                         <div class="modal-gallery-wrapper" style="padding:15px;">
                             <div class="main-display-container"
-                                style="margin-bottom:12px; text-align:center; background:#000; border-radius:12px; overflow:hidden;">
+                                style="margin-bottom:12px; text-align:center; background:#000; border-radius:12px; overflow:hidden; position:relative;">
                                 <img src="imges/projects/java/stock_platform.png" id="stock_main_img"
                                     style="width:100%; max-height:450px; object-fit:contain;" alt="Main System View">
+                                <button onclick="prevImage('stock_main_img')"
+                                    style="position:absolute; left:10px; top:50%; transform:translateY(-50%); background:#6366f1; color:white; border:none; width:44px; height:44px; border-radius:50%; cursor:pointer; font-size:20px; z-index:5; box-shadow:0 4px 15px rgba(99,102,241,0.4); transition:all 0.3s ease;"><i
+                                        class="fas fa-chevron-left"></i></button>
+                                <button onclick="nextImage('stock_main_img')"
+                                    style="position:absolute; right:10px; top:50%; transform:translateY(-50%); background:#6366f1; color:white; border:none; width:44px; height:44px; border-radius:50%; cursor:pointer; font-size:20px; z-index:5; box-shadow:0 4px 15px rgba(99,102,241,0.4); transition:all 0.3s ease;"><i
+                                        class="fas fa-chevron-right"></i></button>
                             </div>
                             <div class="thumbnails-grid"
                                 style="display:grid; grid-template-columns:repeat(auto-fill, minmax(80px, 1fr)); gap:10px;">
@@ -1242,7 +1360,7 @@
 
                 <!-- AI Chatbot Calculator -->
                 <div class="project-card fade-in" data-category="java">
-                    <div class="project-image">
+                    <div class="project-image" onclick="document.querySelector('[data-project=project-java-chatbot]').click()" style="cursor:pointer;">
                         <img src="imges/projects/java/chatbot.png" alt="AI Chatbot Calculator"
                             onerror="this.src='https://placehold.co/400x250/1a1a2e/6366f1?text=AI+Chatbot'">
                         <span class="project-category" data-en="Java" data-ar="جافا">Java</span>
@@ -1293,7 +1411,7 @@
 
                 <!-- ITI E-commerce System -->
                 <div class="project-card fade-in" data-category="php">
-                    <div class="project-image">
+                    <div class="project-image" onclick="document.querySelector('[data-project=project-ecommerce]').click()" style="cursor:pointer;">
                         <img src="imges/projects/ITI_E-commerce_System/em.png" alt="ITI E-commerce System"
                             onerror="this.src='https://placehold.co/400x250/1a1a2e/6366f1?text=ITI+E-commerce'">
                         <span class="project-category" data-en="Full Stack PHP" data-ar="باك إند PHP">Full Stack
@@ -1328,9 +1446,15 @@
                         <span class="close-modal">&times;</span>
                         <div class="modal-gallery-wrapper" style="padding:15px;">
                             <div class="main-display-container"
-                                style="background:#000; border-radius:12px; overflow:hidden; margin-bottom:12px; text-align:center; border:1px solid #333;">
+                                style="background:#000; border-radius:12px; overflow:hidden; margin-bottom:12px; text-align:center; border:1px solid #333; position:relative;">
                                 <img src="imges/projects/ITI_E-commerce_System/em1.png" id="ecommerce_main_img"
                                     style="width:100%; max-height:400px; object-fit:contain;" alt="Dashboard Preview">
+                                <button onclick="prevImage('ecommerce_main_img')"
+                                    style="position:absolute; left:10px; top:50%; transform:translateY(-50%); background:#6366f1; color:white; border:none; width:44px; height:44px; border-radius:50%; cursor:pointer; font-size:20px; z-index:5; box-shadow:0 4px 15px rgba(99,102,241,0.4); transition:all 0.3s ease;"><i
+                                        class="fas fa-chevron-left"></i></button>
+                                <button onclick="nextImage('ecommerce_main_img')"
+                                    style="position:absolute; right:10px; top:50%; transform:translateY(-50%); background:#6366f1; color:white; border:none; width:44px; height:44px; border-radius:50%; cursor:pointer; font-size:20px; z-index:5; box-shadow:0 4px 15px rgba(99,102,241,0.4); transition:all 0.3s ease;"><i
+                                        class="fas fa-chevron-right"></i></button>
                             </div>
                             <div class="thumbnails-grid"
                                 style="display:grid; grid-template-columns:repeat(auto-fill, minmax(80px, 1fr)); gap:10px;">
@@ -1372,20 +1496,20 @@
                             </p>
                             <div class="features-section"
                                 style="margin-top:20px; border-top:1px solid #444; padding-top:15px;">
-                                <h4 style="color:#6366f1; margin-bottom:10px;" data-en="Technical Breakdown:"
+                                <h4 style="color:#16f9cb; margin-bottom:10px;" data-en="Technical Breakdown:"
                                     data-ar="التفاصيل التقنية:"></h4>
                                 <ul style="list-style:none; padding:0; color:#ccc; font-size:0.95rem;">
                                     <li style="margin-bottom:8px;"><i class="fas fa-database"
-                                            style="color:#6366f1; margin-left:8px;"></i> <span
+                                            style="color:#16f9cb; margin-left:8px;"></i> <span
                                             data-en="Relational Database Design (Users, Products, Categories)"
                                             data-ar="تصميم قاعدة بيانات علائقية (المستخدمين، المنتجات، الأقسام)"></span>
                                     </li>
                                     <li style="margin-bottom:8px;"><i class="fas fa-lock"
-                                            style="color:#6366f1; margin-left:8px;"></i> <span
+                                            style="color:#16f9cb; margin-left:8px;"></i> <span
                                             data-en="Secure Authentication using PHP Sessions"
                                             data-ar="نظام تسجيل دخول آمن باستخدام جلسات PHP"></span></li>
                                     <li style="margin-bottom:8px;"><i class="fas fa-code"
-                                            style="color:#6366f1; margin-left:8px;"></i> <span
+                                            style="color:#16f9cb; margin-left:8px;"></i> <span
                                             data-en="Full CRUD system for product inventory"
                                             data-ar="نظام CRUD كامل لإدارة مخزون المنتجات"></span></li>
                                 </ul>
@@ -1396,7 +1520,7 @@
 
                 <!-- User & Media System -->
                 <div class="project-card fade-in" data-category="php">
-                    <div class="project-image">
+                    <div class="project-image" onclick="document.querySelector('[data-project=project-php-system-final]').click()" style="cursor:pointer;">
                         <img src="imges/projects/Management_System/mana_sy.png" alt="User Management System">
                         <span class="project-category" data-en="PHP Development" data-ar="تطوير PHP">PHP
                             Development</span>
@@ -1443,9 +1567,15 @@
                         <span class="close-modal">&times;</span>
                         <div class="modal-gallery-wrapper" style="padding:15px;">
                             <div class="main-display-container"
-                                style="background:#000; border-radius:12px; overflow:hidden; margin-bottom:12px; text-align:center; border:1px solid #444;">
+                                style="background:#000; border-radius:12px; overflow:hidden; margin-bottom:12px; text-align:center; border:1px solid #444; position:relative;">
                                 <img src="imges/projects/Management_System/mana_sy1.png" id="final_preview_img"
                                     style="width:100%; max-height:400px; object-fit:contain;" alt="System Preview">
+                                <button onclick="prevImage('final_preview_img')"
+                                    style="position:absolute; left:10px; top:50%; transform:translateY(-50%); background:#6366f1; color:white; border:none; width:44px; height:44px; border-radius:50%; cursor:pointer; font-size:20px; z-index:5; box-shadow:0 4px 15px rgba(99,102,241,0.4); transition:all 0.3s ease;"><i
+                                        class="fas fa-chevron-left"></i></button>
+                                <button onclick="nextImage('final_preview_img')"
+                                    style="position:absolute; right:10px; top:50%; transform:translateY(-50%); background:#6366f1; color:white; border:none; width:44px; height:44px; border-radius:50%; cursor:pointer; font-size:20px; z-index:5; box-shadow:0 4px 15px rgba(99,102,241,0.4); transition:all 0.3s ease;"><i
+                                        class="fas fa-chevron-right"></i></button>
                             </div>
                             <div class="thumbnails-grid"
                                 style="display:flex; gap:10px; justify-content:flex-start; flex-wrap:wrap;">
@@ -1476,33 +1606,33 @@
                             <div class="technical-grid"
                                 style="display:grid; grid-template-columns:1fr 1fr; gap:20px; border-top:1px solid #333; padding-top:20px; margin-top:15px;">
                                 <div class="tech-box">
-                                    <h4 style="color:#6366f1; margin-bottom:10px;" data-en="File-Based Storage"
+                                    <h4 style="color:#16f9cb; margin-bottom:10px;" data-en="File-Based Storage"
                                         data-ar="التخزين المعتمد على الملفات"></h4>
                                     <ul
                                         style="list-style:none; padding:0; color:#ccc; font-size:0.85rem; line-height:1.8;">
-                                        <li><i class="fas fa-file-code" style="color:#6366f1;"></i> <span
+                                        <li><i class="fas fa-file-code" style="color:#16f9cb;"></i> <span
                                                 data-en="Direct File IO Logic"
                                                 data-ar="منطق معالجة الملفات المباشر"></span></li>
-                                        <li><i class="fas fa-folder-open" style="color:#6366f1;"></i> <span
+                                        <li><i class="fas fa-folder-open" style="color:#16f9cb;"></i> <span
                                                 data-en="Local Directory Uploads"
                                                 data-ar="رفع الملفات للمجلدات المحلية"></span></li>
-                                        <li><i class="fas fa-save" style="color:#6366f1;"></i> <span
+                                        <li><i class="fas fa-save" style="color:#16f9cb;"></i> <span
                                                 data-en="Manual Data Serialization"
                                                 data-ar="تنسيق وحفظ البيانات يدوياً"></span></li>
                                     </ul>
                                 </div>
                                 <div class="tech-box">
-                                    <h4 style="color:#6366f1; margin-bottom:10px;" data-en="Database Integration"
+                                    <h4 style="color:#16f9cb; margin-bottom:10px;" data-en="Database Integration"
                                         data-ar="الربط مع قواعد البيانات"></h4>
                                     <ul
                                         style="list-style:none; padding:0; color:#ccc; font-size:0.85rem; line-height:1.8;">
-                                        <li><i class="fas fa-database" style="color:#6366f1;"></i> <span
+                                        <li><i class="fas fa-database" style="color:#16f9cb;"></i> <span
                                                 data-en="MySQLi CRUD Operations"
                                                 data-ar="عمليات CRUD عبر MySQLi"></span></li>
-                                        <li><i class="fas fa-table" style="color:#6366f1;"></i> <span
+                                        <li><i class="fas fa-table" style="color:#16f9cb;"></i> <span
                                                 data-en="Structured Table Schema"
                                                 data-ar="هيكلة الجداول المنظمة"></span></li>
-                                        <li><i class="fas fa-key" style="color:#6366f1;"></i> <span
+                                        <li><i class="fas fa-key" style="color:#16f9cb;"></i> <span
                                                 data-en="Relational Data Handling"
                                                 data-ar="معالجة البيانات العلائقية"></span></li>
                                     </ul>
@@ -1510,7 +1640,7 @@
                             </div>
                             <div class="skills-highlight"
                                 style="margin-top:20px; padding:12px; background:#111; border-radius:8px; border:1px solid #333;">
-                                <h4 style="font-size:0.9rem; color:#6366f1;" data-en="Key Features:"
+                                <h4 style="font-size:0.9rem; color:#16f9cb;" data-en="Key Features:"
                                     data-ar="المميزات الرئيسية:"></h4>
                                 <p style="font-size:0.8rem; color:#bbb; margin-top:5px;"
                                     data-en="Implemented secure image uploading with extension validation and integrated seamless data retrieval across both storage engines."
@@ -1523,7 +1653,7 @@
 
                 <!-- Secure Store Engine -->
                 <div class="project-card fade-in" data-category="web">
-                    <div class="project-image">
+                    <div class="project-image" onclick="document.querySelector('[data-project=modal-store-pro]').click()" style="cursor:pointer;">
                         <img src="imges/projects/e-commerce_system/e-com1.png" alt="E-Commerce System">
                         <span class="project-category" data-en="Native & Laravel" data-ar="نيتف ولارافيل">Native &
                             Laravel</span>
@@ -1570,9 +1700,15 @@
                         <span class="close-modal">&times;</span>
                         <div class="modal-gallery-wrapper" style="padding:15px;">
                             <div class="main-display-container"
-                                style="background:#000; border-radius:12px; overflow:hidden; margin-bottom:12px; text-align:center; border:1px solid #444;">
+                                style="background:#000; border-radius:12px; overflow:hidden; margin-bottom:12px; text-align:center; border:1px solid #444; position:relative;">
                                 <img src="imges/projects/e-commerce_system/e-com1.png" id="store_preview_img"
                                     style="width:100%; max-height:400px; object-fit:contain;" alt="Store Preview">
+                                <button onclick="prevImage('store_preview_img')"
+                                    style="position:absolute; left:10px; top:50%; transform:translateY(-50%); background:#6366f1; color:white; border:none; width:44px; height:44px; border-radius:50%; cursor:pointer; font-size:20px; z-index:5; box-shadow:0 4px 15px rgba(99,102,241,0.4); transition:all 0.3s ease;"><i
+                                        class="fas fa-chevron-left"></i></button>
+                                <button onclick="nextImage('store_preview_img')"
+                                    style="position:absolute; right:10px; top:50%; transform:translateY(-50%); background:#6366f1; color:white; border:none; width:44px; height:44px; border-radius:50%; cursor:pointer; font-size:20px; z-index:5; box-shadow:0 4px 15px rgba(99,102,241,0.4); transition:all 0.3s ease;"><i
+                                        class="fas fa-chevron-right"></i></button>
                             </div>
                             <div class="thumbnails-grid"
                                 style="display:flex; gap:10px; justify-content:flex-start; flex-wrap:wrap;">
@@ -1632,32 +1768,32 @@
                             <div class="technical-grid"
                                 style="display:grid; grid-template-columns:1fr 1fr; gap:20px; border-top:1px solid #333; padding-top:20px; margin-top:15px;">
                                 <div class="tech-box">
-                                    <h4 style="color:#6366f1; margin-bottom:10px;" data-en="Native PHP Validation"
+                                    <h4 style="color:#16f9cb; margin-bottom:10px;" data-en="Native PHP Validation"
                                         data-ar="التحقق بـ PHP النيتف"></h4>
                                     <ul
                                         style="list-style:none; padding:0; color:#ccc; font-size:0.85rem; line-height:1.8;">
-                                        <li><i class="fas fa-search" style="color:#6366f1;"></i> <span
+                                        <li><i class="fas fa-search" style="color:#16f9cb;"></i> <span
                                                 data-en="finfo_file() Magic Bytes"
                                                 data-ar="فحص Magic Bytes بـ finfo_file()"></span></li>
-                                        <li><i class="fas fa-file-alt" style="color:#6366f1;"></i> <span
+                                        <li><i class="fas fa-file-alt" style="color:#16f9cb;"></i> <span
                                                 data-en="Manual MIME Detection" data-ar="كشف MIME يدوياً"></span></li>
-                                        <li><i class="fas fa-ban" style="color:#6366f1;"></i> <span
+                                        <li><i class="fas fa-ban" style="color:#16f9cb;"></i> <span
                                                 data-en="Strict Extension Blocking"
                                                 data-ar="حجب صارم للامتدادات المشبوهة"></span></li>
                                     </ul>
                                 </div>
                                 <div class="tech-box">
-                                    <h4 style="color:#6366f1; margin-bottom:10px;" data-en="Laravel Validation"
+                                    <h4 style="color:#16f9cb; margin-bottom:10px;" data-en="Laravel Validation"
                                         data-ar="التحقق بـ Laravel"></h4>
                                     <ul
                                         style="list-style:none; padding:0; color:#ccc; font-size:0.85rem; line-height:1.8;">
-                                        <li><i class="fas fa-check-circle" style="color:#6366f1;"></i> <span
+                                        <li><i class="fas fa-check-circle" style="color:#16f9cb;"></i> <span
                                                 data-en="mimetypes Validation Rules"
                                                 data-ar="قواعد mimetypes للتحقق"></span></li>
-                                        <li><i class="fas fa-shield-alt" style="color:#6366f1;"></i> <span
+                                        <li><i class="fas fa-shield-alt" style="color:#16f9cb;"></i> <span
                                                 data-en="Laravel Request Policies"
                                                 data-ar="سياسات Laravel Request"></span></li>
-                                        <li><i class="fas fa-lock" style="color:#6366f1;"></i> <span
+                                        <li><i class="fas fa-lock" style="color:#16f9cb;"></i> <span
                                                 data-en="Secure File Storage Logic"
                                                 data-ar="منطق تخزين آمن للملفات"></span></li>
                                     </ul>
@@ -1665,7 +1801,7 @@
                             </div>
                             <div class="skills-highlight"
                                 style="margin-top:20px; padding:12px; background:#111; border-radius:8px; border:1px solid #333;">
-                                <h4 style="font-size:0.9rem; color:#6366f1;" data-en="Key Features:"
+                                <h4 style="font-size:0.9rem; color:#16f9cb;" data-en="Key Features:"
                                     data-ar="المميزات الرئيسية:"></h4>
                                 <p style="font-size:0.8rem; color:#bbb; margin-top:5px;"
                                     data-en="Both versions block malicious files disguised as images by reading actual binary content — not relying on the file extension alone."
@@ -1691,24 +1827,38 @@
         </div>
     </section>
     <script>
-
-        // ── Image switcher (simplified — no video) ────────────────────────
+        // ── Image switcher ────────────────────────────────────────────────
         function showImage(imgId, src) {
             const img = document.getElementById(imgId);
-            img.src = src;
+            if (img) { img.src = src; img.closest('.main-display-container').querySelectorAll('img[data-gallery]').forEach(t => t.style.border = '1px solid #444'); }
         }
 
-        function updateActiveThumb(el) {
-            const container = el.closest('.thumbnails-grid') || el.parentElement;
-            container.querySelectorAll('.php-thumb').forEach(t => t.style.border = '1px solid #444');
-            el.style.border = '2px solid #6366f1';
+        // ── Arrow Navigation ──────────────────────────────────────────────
+        function prevImage(imgId) {
+            const img = document.getElementById(imgId);
+            if (!img) return;
+            const thumbs = img.closest('.modal-gallery-wrapper').querySelectorAll('.thumbnails-grid img');
+            const srcs = Array.from(thumbs).map(t => t.src);
+            if (!srcs.length) return;
+            const cur = srcs.indexOf(img.src.split('?')[0]) !== -1 ? srcs.indexOf(img.src) : 0;
+            const prev = (cur - 1 + srcs.length) % srcs.length;
+            img.src = srcs[prev];
+        }
+        function nextImage(imgId) {
+            const img = document.getElementById(imgId);
+            if (!img) return;
+            const thumbs = img.closest('.modal-gallery-wrapper').querySelectorAll('.thumbnails-grid img');
+            const srcs = Array.from(thumbs).map(t => t.src);
+            if (!srcs.length) return;
+            const cur = srcs.indexOf(img.src) !== -1 ? srcs.indexOf(img.src) : -1;
+            const next = (cur + 1) % srcs.length;
+            img.src = srcs[next];
         }
 
-        // ── Project Filtering ──────────────────────────────────────────────
+        // ── Project Filter ────────────────────────────────────────────────
         const filterButtons = document.querySelectorAll('.filter-btn');
         const projectCards = document.querySelectorAll('.project-card');
         const emptyState = document.getElementById('emptyState');
-
         if (filterButtons.length) {
             filterButtons.forEach(button => {
                 button.addEventListener('click', () => {
@@ -1718,46 +1868,61 @@
                     let visibleCount = 0;
                     projectCards.forEach(card => {
                         if (filter === 'all' || card.getAttribute('data-category') === filter) {
-                            card.style.display = 'flex';
-                            card.classList.remove('visible');
-                            setTimeout(() => card.classList.add('visible'), 50);
-                            visibleCount++;
-                        } else {
-                            card.style.display = 'none';
-                        }
+                            card.style.display = 'flex'; card.classList.remove('visible');
+                            setTimeout(() => card.classList.add('visible'), 50); visibleCount++;
+                        } else { card.style.display = 'none'; }
                     });
                     if (emptyState) emptyState.style.display = visibleCount === 0 ? 'flex' : 'none';
                 });
             });
         }
 
-        // ── Modal Logic ────────────────────────────────────────────────────
+        // ── Project Modal Logic ───────────────────────────────────────────
         document.querySelectorAll('.view-project').forEach(button => {
             button.addEventListener('click', (e) => {
-                e.preventDefault();
-                button.blur();
+                e.preventDefault(); button.blur();
                 const modal = document.getElementById(button.getAttribute('data-project'));
                 if (modal) { modal.classList.add('modal-visible'); document.body.style.overflow = 'hidden'; }
             });
         });
-
         function closeModal() {
-            document.querySelectorAll('.modal-visible').forEach(m => m.classList.remove('modal-visible'));
+            document.querySelectorAll('.project-modal.modal-visible').forEach(m => m.classList.remove('modal-visible'));
             document.body.style.overflow = 'auto';
         }
-
         document.querySelectorAll('.close-modal').forEach(btn => btn.addEventListener('click', closeModal));
-        window.addEventListener('click', (e) => { if (e.target.classList.contains('project-modal') || e.target.classList.contains('certificate-modal')) closeModal(); });
+        window.addEventListener('click', e => { if (e.target.classList.contains('project-modal')) closeModal(); });
 
-        // ── Scroll Animations ──────────────────────────────────────────────
-        const animateOnScroll = () => {
-            document.querySelectorAll('.fade-in').forEach(el => {
-                if (el.getBoundingClientRect().top < window.innerHeight - 100) el.classList.add('visible');
+        // ── Certificate Modal ─────────────────────────────────────────────
+        function openCertModal(imgSrc, title, subtitle, desc, tagsStr) {
+            document.getElementById('modalImg').src = imgSrc;
+            document.getElementById('certModalTitle').textContent = title;
+            document.getElementById('certModalSubtitle').textContent = subtitle;
+            document.getElementById('certModalDesc').textContent = desc;
+            document.getElementById('certModalFullImg').href = imgSrc;
+            const tagsEl = document.getElementById('certModalTags');
+            tagsEl.innerHTML = '';
+            tagsStr.split(',').forEach(tag => {
+                const s = document.createElement('span');
+                s.className = 'tech-tag';
+                s.textContent = tag.trim();
+                tagsEl.appendChild(s);
             });
-        };
+            const modal = document.getElementById('certModal');
+            modal.classList.add('modal-visible');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeCertModal() {
+            document.getElementById('certModal').classList.remove('modal-visible');
+            document.body.style.overflow = 'auto';
+        }
+        window.addEventListener('click', e => { if (e.target.id === 'certModal') closeCertModal(); });
+
+        // ── Scroll Animations ─────────────────────────────────────────────
+        const animateOnScroll = () => document.querySelectorAll('.fade-in').forEach(el => {
+            if (el.getBoundingClientRect().top < window.innerHeight - 100) el.classList.add('visible');
+        });
         window.addEventListener('load', animateOnScroll);
         window.addEventListener('scroll', animateOnScroll);
-
     </script>
     <!-- Contact Section -->
     <section id="contact" class="contact-section">
@@ -1832,19 +1997,30 @@
                     <form id="contactForm" data-action="https://formspree.io/f/mojpnzwz" novalidate>
                         <div class="form-group">
                             <label for="name" data-en="Your Name" data-ar="اسمك"></label>
-                            <input type="text" id="name" name="name" class="form-control" placeholder="e.g. Mohamed Mahmoud" data-placeholder-en="e.g. Mohamed Mahmoud" data-placeholder-ar="مثال: محمد محمود" required>
+                            <input type="text" id="name" name="name" class="form-control"
+                                placeholder="e.g. Mohamed Mahmoud" data-placeholder-en="e.g. Mohamed Mahmoud"
+                                data-placeholder-ar="مثال: محمد محمود" required>
                         </div>
                         <div class="form-group">
                             <label for="email" data-en="Email Address" data-ar="عنوان البريد الإلكتروني"></label>
-                            <input type="email" id="email" name="email" class="form-control" placeholder="e.g. mohamed_mamoud@gmail.com" data-placeholder-en="e.g. mohamed_mamoud@gmail.com" data-placeholder-ar="مثال: mohamed_mamoud@gmail.com" required>
+                            <input type="email" id="email" name="email" class="form-control"
+                                placeholder="e.g. mohamed_mamoud@gmail.com"
+                                data-placeholder-en="e.g. mohamed_mamoud@gmail.com"
+                                data-placeholder-ar="مثال: mohamed_mamoud@gmail.com" required>
                         </div>
                         <div class="form-group">
                             <label for="subject" data-en="Subject" data-ar="الموضوع"></label>
-                            <input type="text" id="subject" name="subject" class="form-control" placeholder="e.g. Project Collaboration" data-placeholder-en="e.g. Project Collaboration" data-placeholder-ar="مثال: تعاون في مشروع" required>
+                            <input type="text" id="subject" name="subject" class="form-control"
+                                placeholder="e.g. Project Collaboration"
+                                data-placeholder-en="e.g. Project Collaboration"
+                                data-placeholder-ar="مثال: تعاون في مشروع" required>
                         </div>
                         <div class="form-group">
                             <label for="message" data-en="Your Message" data-ar="رسالتك"></label>
-                            <textarea id="message" name="message" class="form-control" placeholder="e.g. Hi Mohamed, I'd like to discuss..." data-placeholder-en="e.g. Hi Mohamed, I'd like to discuss..." data-placeholder-ar="مثال: مرحباً محمد، أود مناقشة..." required></textarea>
+                            <textarea id="message" name="message" class="form-control"
+                                placeholder="e.g. Hi Mohamed, I'd like to discuss..."
+                                data-placeholder-en="e.g. Hi Mohamed, I'd like to discuss..."
+                                data-placeholder-ar="مثال: مرحباً محمد، أود مناقشة..." required></textarea>
                         </div>
                         <button type="submit" class="submit-btn" data-en="Send Message" data-ar="إرسال الرسالة">
                             <span data-en="Send Message" data-ar="إرسال الرسالة"></span> <i
@@ -1864,10 +2040,32 @@
         </div>
     </section>
 
-    <div class="certificate-modal" id="certModal">
-        <div class="modal-content-wrapper">
-            <span class="cert-close-btn">&times;</span>
-            <img id="modalImg" src="" alt="Certificate Preview">
+    <!-- Certificate Detail Modal -->
+    <div class="project-modal" id="certModal" style="z-index:999999;">
+        <div class="modal-content" style="max-width:860px; padding:0;">
+            <span class="close-modal" onclick="closeCertModal()">&times;</span>
+            <div style="padding:20px 64px 15px 20px;">
+                <h2 id="certModalTitle" style="font-size:1.3rem; margin-bottom:5px; color:var(--text);">Certificate
+                    Title</h2>
+                <span id="certModalSubtitle" style="color:var(--accent); font-size:0.9rem;">Issuer</span>
+            </div>
+            <div style="padding:15px; text-align:center; background:#070a0f;">
+                <img id="modalImg" src="" alt="Certificate Preview"
+                    style="width:100%; max-height:450px; object-fit:contain; border-radius:4px;">
+            </div>
+            <div style="padding:20px;">
+                <h4
+                    style="font-size:0.8rem; letter-spacing:1px; color:var(--text-muted); margin-bottom:10px; text-transform:uppercase;">
+                    Program Overview &amp; Skills</h4>
+                <p id="certModalDesc"
+                    style="font-size:0.95rem; line-height:1.6; color:var(--text); margin-bottom:20px;"></p>
+                <div id="certModalTags" style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:20px;"></div>
+                <div style="display:flex; justify-content:flex-end; gap:10px;">
+                    <a id="certModalFullImg" href="#" target="_blank" class="btn btn-outline"
+                        style="padding:8px 16px; font-size:0.9rem;"><i class="fas fa-external-link-alt"></i> Full
+                        Image</a>
+                </div>
+            </div>
         </div>
     </div>
     </div>
@@ -1892,84 +2090,7 @@
     </footer>
 
     <script src="js.js"></script>
-    <script>
-        // Project Filtering
-        const filterBtns = document.querySelectorAll('.filter-btn');
-        const projCards = document.querySelectorAll('.project-card');
-        const projEmptyState = document.getElementById('emptyState');
-        if (filterBtns.length) {
-            filterBtns.forEach(button => {
-                button.addEventListener('click', () => {
-                    filterBtns.forEach(btn => btn.classList.remove('active'));
-                    button.classList.add('active');
-                    const filter = button.getAttribute('data-filter');
-                    let visibleCount = 0;
-                    projectCards.forEach(card => {
-                        if (filter === 'all' || card.getAttribute('data-category') === filter) {
-                            card.style.display = 'flex';
-                            card.classList.remove('visible');
-                            setTimeout(() => card.classList.add('visible'), 50);
-                            visibleCount++;
-                        } else { card.style.display = 'none'; }
-                    });
-                    if (emptyState) emptyState.style.display = visibleCount === 0 ? 'block' : 'none';
-                });
-            });
 
-            // Trigger 'All' filter on load to animate cards in
-            document.addEventListener('DOMContentLoaded', () => {
-                const activeFilter = document.querySelector('.filter-btn.active');
-                if (activeFilter) {
-                    activeFilter.click();
-                } else if (filterButtons.length > 0) {
-                    filterButtons[0].click();
-                }
-            });
-        }
-        // Mobile Menu Toggle logic
-        const menuBtn = document.getElementById('menuBtn');
-        const mobileMenu = document.getElementById('mobileMenu');
-        if (menuBtn && mobileMenu) {
-            menuBtn.addEventListener('click', () => {
-                mobileMenu.classList.toggle('active');
-            });
-        }
-        // Skills animation
-        document.addEventListener('DOMContentLoaded', () => {
-            const fills = document.querySelectorAll('.progress-fill');
-            fills.forEach(fill => { const w = fill.style.width; fill.style.width = '0'; setTimeout(() => fill.style.width = w, 300); });
-        });
-        // Smooth scroll for nav links and close mobile menu
-        document.querySelectorAll('.nav-links a, .mobile-menu a').forEach(link => {
-            link.addEventListener('click', (e) => {
-                const href = link.getAttribute('href');
-                if (href && href.startsWith('#') && href !== '#') {
-                    e.preventDefault();
-                    const target = document.getElementById(href.substring(1));
-                    if (target) { window.scrollTo({ top: target.offsetTop - 70, behavior: 'smooth' }); }
-                } else if (href === '#') {
-                    e.preventDefault();
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                }
-
-                // Close mobile menu on click
-                if (mobileMenu && mobileMenu.classList.contains('active')) {
-                    mobileMenu.classList.remove('active');
-                }
-            });
-        });
-        // Active nav link on scroll
-        window.addEventListener('scroll', () => {
-            const sections = document.querySelectorAll('section[id]');
-            const links = document.querySelectorAll('.nav-links a, .mobile-menu a');
-            let current = '';
-            sections.forEach(s => { if (pageYOffset >= s.offsetTop - 150) current = s.getAttribute('id'); });
-            links.forEach(l => {
-                l.classList.remove('active');
-                if (l.getAttribute('href') === '#' + current) l.classList.add('active');
-            });
-        });
-    </script>
     <!-- ===== End Scripts ===== -->
 </body>
 

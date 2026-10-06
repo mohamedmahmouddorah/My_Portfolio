@@ -3,8 +3,8 @@ const particlesContainer = document.getElementById('particles-js');
 if (particlesContainer) {
     particlesJS("particles-js", {
         particles: {
-            number: { value: 80 }, color: { value: "#6366f1" }, opacity: { value: 0.2 }, size: { value: 3 },
-            line_linked: { enable: true, distance: 140, color: "#6366f1", opacity: 0.15, width: 1 }, move: { speed: 2 }
+            number: { value: 70 }, color: { value: "#6366f1" }, opacity: { value: 0.18 }, size: { value: 2.5 },
+            line_linked: { enable: true, distance: 140, color: "#6366f1", opacity: 0.12, width: 1 }, move: { speed: 1.8 }
         },
         interactivity: {
             events: { onhover: { enable: true, mode: "grab" } },
@@ -121,96 +121,68 @@ function typeWriter() {
     setTimeout(typeWriter, speed);
 }
 
-// Language Toggle
+// ─── Smart Language Engine ───────────────────────────────────────────────────
+// Safely updates only text nodes of elements with data-en/data-ar,
+// WITHOUT destroying child elements (icons, spans, etc.)
+function applyLang(lang) {
+    const isAR = lang === 'ar';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = isAR ? 'rtl' : 'ltr';
+    const langTextEl = document.getElementById('langText');
+    if (langTextEl) langTextEl.textContent = isAR ? 'AR' : 'EN';
+
+    document.querySelectorAll('[data-en]').forEach(el => {
+        // Skip the lang toggle button itself
+        if (el.id === 'langToggle' || el.id === 'langText') return;
+
+        const text = isAR ? el.dataset.ar : el.dataset.en;
+        if (!text) return;
+
+        // If element has only text (no child elements like icons/spans), set textContent directly
+        const hasChildElements = [...el.childNodes].some(n => n.nodeType === 1);
+        if (!hasChildElements) {
+            el.textContent = text;
+            return;
+        }
+
+        // Has children: find the first direct text node and update it,
+        // OR find a <span> child that carries the text
+        const spanChild = el.querySelector('span[data-en], span:not([class])') || el.querySelector('span');
+        if (spanChild && !spanChild.hasAttribute('data-en')) {
+            spanChild.textContent = text;
+        } else if (!spanChild) {
+            // Only text nodes, update the first one
+            const textNode = [...el.childNodes].find(n => n.nodeType === 3 && n.textContent.trim());
+            if (textNode) textNode.textContent = text;
+        }
+    });
+
+    // Update placeholders
+    document.querySelectorAll('[data-placeholder-en]').forEach(el => {
+        el.placeholder = el.dataset[isAR ? 'placeholderAr' : 'placeholderEn'] || el.placeholder;
+    });
+
+    localStorage.setItem('lang', lang);
+}
+
+// Language Toggle button
 const langToggle = document.getElementById('langToggle');
 if (langToggle) {
     langToggle.onclick = () => {
-        const isEN = document.documentElement.lang === 'en';
-        document.documentElement.lang = isEN ? 'ar' : 'en';
-        document.documentElement.dir = isEN ? 'rtl' : 'ltr';
-        const langText = document.getElementById('langText');
-        if (langText) langText.textContent = isEN ? 'AR' : 'EN';
-
-        // Update typing effect if exists
-        currentTexts = isEN ? typingTextsAR : typingTextsEN;
-        textIndex = 0;
-        charIndex = 0;
-        isDeleting = false;
-        const typingEl = document.querySelector('.typing');
-        if (typingEl) {
-            typingEl.textContent = '';
-        }
-
-        // Update all elements with data-en and data-ar attributes (including labels, buttons, etc.)
-        document.querySelectorAll('[data-en]').forEach(el => {
-            const text = isEN ? el.dataset.ar : el.dataset.en;
-            if (text) {
-                if (el.tagName === 'BUTTON' && el.querySelector('span')) {
-                    el.querySelector('span').textContent = text;
-                } else {
-                    el.textContent = text;
-                }
-            }
-        });
-
-        // Update button spans without parent data attributes
-        document.querySelectorAll('.btn span').forEach(span => {
-            const parent = span.parentElement;
-            if (parent && parent.dataset) {
-                span.textContent = parent.dataset[isEN ? 'ar' : 'en'];
-            }
-        });
-
-        // Update placeholders
-        const newLang = isEN ? 'ar' : 'en';
-        document.querySelectorAll('[data-placeholder-en]').forEach(el => {
-            el.placeholder = el.dataset['placeholder' + (newLang === 'ar' ? 'Ar' : 'En')] || el.placeholder;
-        });
-
-        localStorage.setItem('lang', newLang);
+        const newLang = document.documentElement.lang === 'ar' ? 'en' : 'ar';
+        applyLang(newLang);
+        // Reset typing effect
+        currentTexts = newLang === 'ar' ? typingTextsAR : typingTextsEN;
+        textIndex = 0; charIndex = 0; isDeleting = false;
+        const te = document.querySelector('.typing');
+        if (te) te.textContent = '';
     };
 }
 
-// First load - restore language preference
+// Restore language on load
 const savedLang = localStorage.getItem('lang') || 'en';
-document.documentElement.lang = savedLang;
-document.documentElement.dir = savedLang === 'ar' ? 'rtl' : 'ltr';
-
-const langText = document.getElementById('langText');
-if (langText) {
-    langText.textContent = savedLang === 'ar' ? 'AR' : 'EN';
-}
-
-if (savedLang === 'ar') {
-    currentTexts = typingTextsAR;
-} else {
-    currentTexts = typingTextsEN;
-}
-
-// Update all elements on page load
-document.querySelectorAll('[data-en]').forEach(el => {
-    const text = savedLang === 'ar' ? el.dataset.ar : el.dataset.en;
-    if (text) {
-        if (el.tagName === 'BUTTON' && el.querySelector('span')) {
-            el.querySelector('span').textContent = text;
-        } else {
-            el.textContent = text;
-        }
-    }
-});
-
-// Update button spans
-document.querySelectorAll('.btn span').forEach(span => {
-    const parent = span.parentElement;
-    if (parent && parent.dataset) {
-        span.textContent = parent.dataset[savedLang === 'ar' ? 'ar' : 'en'];
-    }
-});
-
-// Update placeholders on page load
-document.querySelectorAll('[data-placeholder-en]').forEach(el => {
-    el.placeholder = el.dataset['placeholder' + (savedLang === 'ar' ? 'Ar' : 'En')] || el.placeholder;
-});
+if (savedLang === 'ar') currentTexts = typingTextsAR;
+applyLang(savedLang);
 
 // Start typing effect only on home page
 if (document.querySelector('.typing')) {
@@ -340,252 +312,11 @@ if (contactForm) {
     });
 }
 
-// ==========================================
-// API INTEGRATION
-// ==========================================
-const API_BASE_URL = 'http://127.0.0.1:8000/api';
 
-async function fetchPortfolioData() {
-    updateLanguageText();
-    try {
-        // Determine if we need to fetch data based on page content
-        const needsSkills = document.getElementById('backend-skills');
-        const needsExp = document.getElementById('experience-container');
-        const needsEdu = document.getElementById('education-container');
 
-        // If current page doesn't have any of these containers, skip fetching
-        if (!needsSkills && !needsExp && !needsEdu) return;
-        console.log('Front-end mode active: Skipping API fetch');
-        updateLanguageText();
-        return;
+/* Certificates use the same overlay as projects (.modal-visible + X close). */
 
-        // Check for hardcoded content to prevent overwrite
-        if ((needsSkills && needsSkills.innerHTML.trim().length > 0) ||
-            (needsExp && needsExp.innerHTML.trim().length > 0) ||
-            (needsEdu && needsEdu.innerHTML.trim().length > 0)) {
-            console.log('Static content detected. Skipping API fetch.');
-            updateLanguageText();
-            return;
-        }
 
-        // Scroll Reveal Animation
-        const observerOptions = {
-            threshold: 0.02,
-            rootMargin: "50px 0px 50px 0px"
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target); // Only animate once
-                }
-            });
-        }, observerOptions);
-
-        const scrollElements = document.querySelectorAll('.scroll-reveal');
-        scrollElements.forEach(el => observer.observe(el));
-        console.log('Fetching portfolio data...');
-        const response = await fetch(`${API_BASE_URL}/portfolio`);
-
-        if (!response.ok) {
-            console.warn('API not reachable. Using static fallback if available.');
-            return;
-        }
-        const data = await response.json();
-        console.log("API Data:", data);
-
-        if (needsSkills && data.skills) renderSkills(data.skills);
-        if (needsExp && data.experience) renderExperience(data.experience);
-        if (needsEdu && data.education) renderEducation(data.education);
-
-    } catch (error) {
-        console.error('Failed to fetch portfolio data:', error);
-    }
-}
-
-function renderSkills(skillsGrouped) {
-    const categories = {
-        'backend': 'backend-skills',
-        'frontend': 'frontend-skills',
-        'languages': 'language-skills',
-        'tools': 'tools-skills'
-    };
-
-    for (const [catKey, containerId] of Object.entries(categories)) {
-        const container = document.getElementById(containerId);
-        // Check if container exists and if we have data for this category
-        if (!container || !skillsGrouped[catKey]) continue;
-
-        container.innerHTML = skillsGrouped[catKey].map(skill => `
-                    <div class="skill-card card-hover">
-                        ${skill.icon ? `<i class="${skill.icon} skill-icon"></i>` : ''}
-                        <h3>${skill.name_en}</h3>
-                        <p data-en="${skill.name_en} - ${skill.proficiency}%" data-ar="${skill.name_ar} - ${skill.proficiency}%"></p>
-                    </div>
-                `).join('');
-    }
-    // Trigger language update to set initial text
-    updateLanguageText();
-}
-
-function renderExperience(experiences) {
-    const container = document.getElementById('experience-container');
-    if (!container) return;
-
-    container.innerHTML = experiences.map(exp => `
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content card-hover">
-                        <span class="timeline-date">${exp.period}</span>
-                        <h3 data-en="${exp.role_en}" data-ar="${exp.role_ar}"></h3>
-                        <h4 data-en="${exp.company_en}" data-ar="${exp.company_ar}"></h4>
-                        <div class="desc-content" style="margin-top:10px" data-en="${exp.description_en || ''}" data-ar="${exp.description_ar || ''}">
-                        </div>
-                    </div>
-                </div>
-            `).join('');
-    updateLanguageText();
-}
-
-function renderEducation(educations) {
-    const container = document.getElementById('education-container');
-    if (!container) return;
-
-    container.innerHTML = educations.map(edu => `
-                <div class="edu-card card-hover">
-                    <i class="fas fa-graduation-cap"></i>
-                    <h3 data-en="${edu.degree_en}" data-ar="${edu.degree_ar}"></h3>
-                    <span class="edu-year" data-en="${edu.year}" data-ar="${edu.year}"></span>
-                    <p data-en="${edu.description_en || ''}" data-ar="${edu.description_ar || ''}"></p>
-                </div>
-            `).join('');
-    updateLanguageText();
-}
-
-// Helper to update text after dynamic injection
-function updateLanguageText() {
-    const isEN = document.documentElement.lang === 'en' || !document.documentElement.lang; // default en
-
-    // Create list from text if it contains dashes
-    const formatList = (text) => {
-        if (text && text.includes('- ')) {
-            return '<ul class="custom-list">' +
-                text.split('\n').filter(line => line.trim().startsWith('-')).map(line => `<li>${line.replace(/^- /, '')}</li>`).join('') +
-                '</ul>';
-        }
-        return text;
-    };
-
-    document.querySelectorAll('[data-en]').forEach(el => {
-        const text = isEN ? el.dataset.en : el.dataset.ar;
-        if (text) {
-            if (el.classList.contains('desc-content')) {
-                el.innerHTML = formatList(text);
-            } else if (el.tagName === 'BUTTON' && el.querySelector('span')) {
-                el.querySelector('span').textContent = text;
-            } else {
-                el.textContent = text;
-            }
-        }
-    });
-}
-
-// Call on load
-document.addEventListener('DOMContentLoaded', fetchPortfolioData);
-
-/* --- Manual Image Lightbox for Certificates --- */
-document.addEventListener('DOMContentLoaded', () => {
-    const certModal = document.getElementById('certModal');
-    const modalImg = document.getElementById('modalImg');
-    const certThumbs = document.querySelectorAll('.certificate-thumb img');
-
-    if (!certModal || !modalImg) return;
-
-    // ── دالة الفتح ──────────────────────────────────────────
-    function openCertModal(src, alt) {
-        modalImg.src = src;
-        modalImg.alt = alt || '';
-        certModal.style.display = 'flex';
-        requestAnimationFrame(() => {
-            requestAnimationFrame(() => {
-                certModal.classList.add('active');
-            });
-        });
-        document.body.style.overflow = 'hidden';
-    }
-
-    // ── دالة الغلق ──────────────────────────────────────────
-    function closeCertModal() {
-        certModal.classList.remove('active');
-        setTimeout(() => {
-            certModal.style.display = 'none';
-            modalImg.src = '';
-        }, 400);
-        document.body.style.overflow = '';
-    }
-
-    // ── فتح عند الضغط على الصورة ───────────────────────────
-    certThumbs.forEach(thumb => {
-        thumb.addEventListener('click', (e) => {
-            e.stopPropagation();
-            openCertModal(e.target.src, e.target.alt);
-        });
-    });
-
-    // ── زرار الغلق × ────────────────────────────────────────
-    const certCloseBtn = certModal.querySelector('.cert-close-btn');
-    if (certCloseBtn) {
-        certCloseBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            closeCertModal();
-        });
-        // دعم اللمس على الموبايل
-        certCloseBtn.addEventListener('touchend', (e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            closeCertModal();
-        });
-    }
-
-    // ── غلق عند الضغط على الـ background بس ────────────────
-    certModal.addEventListener('click', (e) => {
-        if (e.target === certModal) closeCertModal();
-    });
-
-    // ── غلق بالـ Escape ──────────────────────────────────────
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && certModal.classList.contains('active')) {
-            closeCertModal();
-        }
-    });
-});
-
-/* --- 3D Vanilla-Tilt.js Interactions --- */
-document.addEventListener('DOMContentLoaded', () => {
-    // 1. Inject VanillaTilt.js dynamically if not present
-    if (typeof VanillaTilt === 'undefined') {
-        const script = document.createElement('script');
-        script.src = 'https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js';
-        script.onload = initTilt;
-        document.head.appendChild(script);
-    } else {
-        initTilt();
-    }
-
-    function initTilt() {
-        // 2. Initialize VanillaTilt only on the hero section, keeping cards clean and professional
-        VanillaTilt.init(document.querySelectorAll(".hero-content-3d"), {
-            max: 5,            // Extremely subtle for hero
-            speed: 600,
-            glare: true,
-            "max-glare": 0.1,
-            perspective: 1000,
-            transition: true,
-            easing: "cubic-bezier(.03,.98,.52,.99)"
-        });
-    }
-});
 
 /* ==========================================================================
    Bi-Directional Scroll Reveal & Stagger Animation Engine
@@ -670,3 +401,128 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+
+
+        // ── Image switcher with arrows ────────────────────────
+        function showImage(imgId, src) {
+            const img = document.getElementById(imgId);
+            if (!img) return;
+            img.src = src;
+
+            // Highlight thumbnail
+            const container = img.closest('.project-modal');
+            if(container) {
+                const thumbs = container.querySelectorAll('.thumbnails-grid img');
+                thumbs.forEach(t => {
+                    if (t.src === src) {
+                        t.style.border = '2px solid #6366f1';
+                    } else {
+                        t.style.border = '1px solid #444';
+                    }
+                });
+            }
+        }
+
+        window.nextImage = function(imgId) {
+            const img = document.getElementById(imgId);
+            if (!img) return;
+            const container = img.closest('.project-modal');
+            if(!container) return;
+            const thumbs = Array.from(container.querySelectorAll('.thumbnails-grid img'));
+            if(thumbs.length === 0) return;
+
+            let currentIndex = thumbs.findIndex(t => t.src === img.src);
+            if(currentIndex === -1) currentIndex = 0;
+
+            let nextIndex = (currentIndex + 1) % thumbs.length;
+            showImage(imgId, thumbs[nextIndex].src);
+        }
+
+        window.prevImage = function(imgId) {
+            const img = document.getElementById(imgId);
+            if (!img) return;
+            const container = img.closest('.project-modal');
+            if(!container) return;
+            const thumbs = Array.from(container.querySelectorAll('.thumbnails-grid img'));
+            if(thumbs.length === 0) return;
+
+            let currentIndex = thumbs.findIndex(t => t.src === img.src);
+            if(currentIndex === -1) currentIndex = 0;
+
+            let prevIndex = (currentIndex - 1 + thumbs.length) % thumbs.length;
+            showImage(imgId, thumbs[prevIndex].src);
+        }
+        
+window.openCertModal = function (src, title, subtitle, desc, tagsStr) {
+    const modal = document.getElementById('certModal');
+    const img = document.getElementById('modalImg');
+    const titleEl = document.getElementById('certModalTitle');
+    const subtitleEl = document.getElementById('certModalSubtitle');
+    const descEl = document.getElementById('certModalDesc');
+    const tagsContainer = document.getElementById('certModalTags');
+    const fullImgBtn = document.getElementById('certModalFullImg');
+
+    if (!modal || !img) return;
+
+    img.src = src;
+    if (titleEl && title) titleEl.textContent = title;
+    if (subtitleEl && subtitle) subtitleEl.textContent = subtitle;
+    if (descEl && desc) descEl.textContent = desc;
+    if (fullImgBtn) fullImgBtn.href = src;
+
+    if (tagsContainer && tagsStr) {
+        tagsContainer.innerHTML = '';
+        tagsStr.split(',').forEach(t => {
+            const span = document.createElement('span');
+            span.className = 'tech-tag';
+            span.textContent = t.trim();
+            tagsContainer.appendChild(span);
+        });
+    }
+
+    modal.classList.remove('active');
+    modal.style.display = '';
+    modal.classList.add('modal-visible');
+    document.body.style.overflow = 'hidden';
+};
+
+window.closeCertModal = function () {
+    const modal = document.getElementById('certModal');
+    if (!modal) return;
+    modal.classList.remove('modal-visible', 'active');
+    modal.style.display = '';
+    document.body.style.overflow = 'auto';
+};
+
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.certificate-card').forEach(card => {
+        card.style.cursor = 'pointer';
+        card.addEventListener('click', () => {
+            const thumb = card.querySelector('.certificate-thumb');
+            if (thumb && typeof thumb.onclick === 'function') {
+                thumb.onclick();
+            }
+        });
+    });
+
+    const certModal = document.getElementById('certModal');
+    if (!certModal) return;
+
+    certModal.querySelectorAll('.close-modal').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            window.closeCertModal();
+        });
+    });
+
+    certModal.addEventListener('click', (e) => {
+        if (e.target === certModal) window.closeCertModal();
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && certModal.classList.contains('modal-visible')) {
+            window.closeCertModal();
+        }
+    });
+});
