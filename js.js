@@ -14,13 +14,34 @@ if (particlesContainer) {
     });
 }
 
-// Progress Bar
+// Progress Bar & Scroll to Top Button
 window.onscroll = () => {
     const progress = document.getElementById('progress');
     if (progress) {
         progress.style.width = (scrollY / (document.body.scrollHeight - innerHeight)) * 100 + '%';
     }
+
+    // Show/hide scroll to top button
+    const scrollBtn = document.getElementById('scrollToTop');
+    if (scrollBtn) {
+        if (window.scrollY > 300) {
+            scrollBtn.classList.add('visible');
+        } else {
+            scrollBtn.classList.remove('visible');
+        }
+    }
 };
+
+// Scroll to Top functionality
+const scrollToTopBtn = document.getElementById('scrollToTop');
+if (scrollToTopBtn) {
+    scrollToTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+}
 
 // Mobile Menu
 const menuBtn = document.getElementById('menuBtn');

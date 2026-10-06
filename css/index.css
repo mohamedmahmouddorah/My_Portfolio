@@ -89,6 +89,55 @@ body {
     box-shadow: 0 0 10px rgba(22, 249, 203, 0.8);
 }
 
+/* Scroll to Top Button */
+.scroll-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: var(--gradient-btn);
+    border: none;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+    z-index: 999998;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 8px 25px rgba(99, 102, 241, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.scroll-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.scroll-to-top:hover {
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 12px 35px rgba(99, 102, 241, 0.6);
+}
+
+.light-mode .scroll-to-top {
+    box-shadow: 0 8px 25px rgba(99, 102, 241, 0.3);
+}
+
+.light-mode .scroll-to-top:hover {
+    box-shadow: 0 12px 35px rgba(99, 102, 241, 0.5);
+}
+
+/* RTL Support - Button on left side in Arabic */
+[dir="rtl"] .scroll-to-top {
+    right: auto;
+    left: 30px;
+}
+
 /* ==================== 2. NAVBAR & HEADER ==================== */
 /* Navbar */
 .navbar {
